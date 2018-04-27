@@ -1,4 +1,4 @@
-# 冒泡排序之C语言实现
+# 简单选择排序之C语言实现
 
 ## 代码
 
@@ -15,7 +15,8 @@ typedef enum {
 
 typedef int ElemType;
 
-void bubbleSort(ElemType arr[], size_t length);
+/* 简单选择排序 */
+void simpleSelectionSort(ElemType arr[], size_t length);
 
 /* 交换元素 */
 void swapElem(ElemType *a, ElemType *b);
@@ -31,30 +32,28 @@ ComparisonResult compareElem(ElemType a, ElemType b);
 
 int main(int argc, const char *argv[]) {
 
-    ElemType arr[] = { 987, 473, 686, 385, 213, 376, 848, 799, 774, 611 };
+    ElemType arr[] = { 656, 520, 753, 899, 820, 629, 146, 533, 214, 789 };
     size_t length = sizeof arr / sizeof arr[0];
 
     printArr("排序前", arr, length);
 
-    bubbleSort(arr, length);
+    simpleSelectionSort(arr, length);
 
     printArr("排序后", arr, length);
 
     return EXIT_SUCCESS;
 }
 
-void bubbleSort(ElemType arr[], size_t length) {
+void simpleSelectionSort(ElemType arr[], size_t length) {
     for (size_t i = 0; i < length - 1; ++i) {
-        bool needSwap = false;
-        for (size_t j = 0; j < length - i - 1; ++j) {
-            if (compareElem(arr[j], arr[j + 1]) == OrderedDescending) {
-                needSwap = true;
-                swapElem(arr + j, arr + j + 1);
+        size_t targetElemIndex = i;
+        for (size_t j = i + 1; j < length; ++j) {
+            if (compareElem(arr[j], arr[targetElemIndex]) == OrderedAscending) {
+                targetElemIndex = j;
             }
         }
-        if (!needSwap) {
-            break;
-        }
+
+        swapElem(arr + i, arr + targetElemIndex);
     }
 }
 
@@ -89,9 +88,8 @@ ComparisonResult compareElem(ElemType a, ElemType b) {
 
 ## 输出
 
-```txt
-排序前: (987, 473, 686, 385, 213, 376, 848, 799, 774, 611)
-排序后: (213, 376, 385, 473, 611, 686, 774, 799, 848, 987)
 ```
-
+排序前: (656, 520, 753, 899, 820, 629, 146, 533, 214, 789)
+排序后: (146, 214, 520, 533, 629, 656, 753, 789, 820, 899)
+```
 
