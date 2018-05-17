@@ -1,4 +1,4 @@
-# [ObjC][Runtime] method_exchangeImplementations
+# [ObjC][Runtime] class_replaceMethod
 
 [TOC]
 
@@ -48,28 +48,36 @@
 
 #### ViewController.m
 
-
 ```objc
 #import "ViewController.h"
 #import <objc/runtime.h>
+
+@interface ViewController ()
+
+@end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     Dog *dog = [[Dog alloc] init];
     Cat *cat = [[Cat alloc] init];
 
-    NSLog(@"Before method_exchangeImplementations():");
+    SEL sel = @selector(eat);
+    Class dogClass = [Dog class];
+    Class catClass = [Cat class];
 
+    NSLog(@"Before class_replaceMethod():");
     [dog eat];
     [cat eat];
 
-    Method m1 = class_getInstanceMethod([Dog class], @selector(eat));
-    Method m2 = class_getInstanceMethod([Cat class], @selector(eat));
-    method_exchangeImplementations(m1, m2);
+    Method method = class_getInstanceMethod(dogClass, sel);
+    IMP imp = class_getMethodImplementation(dogClass, sel);
+    const char *encoding = method_getTypeEncoding(method);
+    class_replaceMethod(catClass, sel, imp, encoding);
 
-    NSLog(@"After method_exchangeImplementations():");
+    NSLog(@"After class_replaceMethod():");
     [dog eat];
     [cat eat];
 }
@@ -80,12 +88,12 @@
 ###  输出
 
 ```console
-Before method_exchangeImplementations():
+Before class_replaceMethod():
 -[Dog eat]
 -[Cat eat]
 
-After method_exchangeImplementations():
--[Cat eat]
+After class_replaceMethod():
+-[Dog eat]
 -[Dog eat]
 ```
 
