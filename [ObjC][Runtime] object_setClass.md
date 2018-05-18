@@ -49,11 +49,18 @@
     YellowDog *yellowDog = [[YellowDog alloc] init];
     Dog *dog = [[Dog alloc] init];
 
-    NSLog(@"[dog class] = %@, [yellowDog class] = %@", [dog class], [yellowDog class]);
+    NSLog(@"Before object_setClass():");
+    NSLog(@"[dog class] = %@, [yellowDog class] = %@",
+          [dog class] /* Dog */,
+          [yellowDog class]) /* YellowDog */;
 
     Class previousClass = object_setClass(yellowDog, [dog class]);
 
-    NSLog(@"[dog class] = %@, [yellowDog class] = %@, previousClass = %@", [dog class], [yellowDog class], previousClass);
+    NSLog(@"After object_setClass():");
+    NSLog(@"[dog class] = %@, [yellowDog class] = %@, previousClass = %@",
+          [dog class] /* Dog */,
+          [yellowDog class] /* Dog */,
+          previousClass) /* YellowDog */;
 }
 
 @end
@@ -62,8 +69,10 @@
 ###  输出
 
 ```console
+Before object_setClass():
 [dog class] = Dog, [yellowDog class] = YellowDog
 
+After object_setClass():
 [dog class] = Dog, [yellowDog class] = Dog, previousClass = YellowDog
 ```
 
