@@ -11,7 +11,7 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSString *str = @"The quick brown fox jump sover the lazy dog.";
+        NSString *str = @"The quick brown fox jumps over the lazy dog.";
 
         NSMutableString *reversedStrM = [NSMutableString stringWithCapacity:str.length];
         for (NSUInteger i = 0; i < str.length; ++i) {
@@ -29,8 +29,7 @@ int main(int argc, const char * argv[]) {
 
 ### 输出
 
-
 ```console
-.god yzal eht revos pmuj xof nworb kciuq ehT
+.god yzal eht revo pmuj xof nworb kciuq ehT
 ```
 
