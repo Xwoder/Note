@@ -97,6 +97,6 @@ superclassOfSuperclassOfSuperclassOfYellowDogClass = (null)<0x0>, isMetaClass = 
 
 * `YellowDog`类对象的 `superclass`为`Dog`类对象
 * `Dog`类对象的`superclass`为`NSObject`类对象
-* `NSObject`类对象的`superclass`为`null`
+* `NSObject`类对象的`superclass`为`Nil`
 
 
