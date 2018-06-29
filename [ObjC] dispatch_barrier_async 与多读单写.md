@@ -129,7 +129,7 @@
 
 连续输出的
 
-```txt
+```objc
 -[ViewController read]
 ```
 
