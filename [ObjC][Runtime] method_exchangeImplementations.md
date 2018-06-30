@@ -88,3 +88,27 @@ After method_exchangeImplementations():
 -[Dog eat]
 ```
 
+## 说明
+
+`method_exchangeImplementations` 函数的实现如下
+
+```objc
+void method_exchangeImplementations(Method m1, Method m2)
+{
+    if (!m1  ||  !m2) return;
+
+    rwlock_writer_t lock(runtimeLock);
+
+    IMP m1_imp = m1->imp;
+    m1->imp = m2->imp;
+    m2->imp = m1_imp;
+
+    flushCaches(nil);
+
+    updateCustomRR_AWZ(nil, m1);
+    updateCustomRR_AWZ(nil, m2);
+}
+```
+
+由此可知，`method_exchangeImplementations` 函数交换的是两个 `Method` 的 `IMP`
+
