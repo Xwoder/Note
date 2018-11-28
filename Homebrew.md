@@ -16,6 +16,8 @@ https://brew.sh/
 $ brew list
 ```
 
+显示所有安装的 `formula`
+
 ### leaves
 
 ```bash
