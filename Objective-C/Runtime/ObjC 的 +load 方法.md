@@ -1,6 +1,4 @@
-# ObjC 中的 +load 方法
-
-[TOC]
+# ObjC 的 +load 方法
 
 在 `Runtime` 自动调用 `+load` 方法时，是通过 `+load` 方法的函数指针直接调用的。
 
@@ -146,3 +144,4 @@ for (i = 0; i < used; i++) {
 
 
 ![ObjC +load 方法调用流程](ObjC +load 方法调用流程.svg)
+
