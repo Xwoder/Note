@@ -1,5 +1,7 @@
 # ObjC 的 +load 方法
 
+在 `Objective-C` 中，一个类或分类的 `+load` 方法，是当这个类或分类被加载至 `runtime` 的时候调用的。 
+
 在 `Runtime` 自动调用 `+load` 方法时，是通过 `+load` 方法的函数指针直接调用的。
 
 负责调用类的 `+load` 方法的是 `call_class_loads` 函数，其实现如下
