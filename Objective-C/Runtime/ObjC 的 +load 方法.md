@@ -2,7 +2,52 @@
 
 在 `Objective-C` 中，一个类或分类的 `+load` 方法，是当这个类或分类被加载至 `runtime` 的时候调用的。 
 
-在 `runtime` 自动调用 `+load` 方法时，是通过 `+load` 方法的函数指针直接调用的。
+而 `runtime` 加载类或分类的时机又在调用 `main` 函数之前，所以 `+load` 方法会在 `main` 函数被调用之前被调用。
+
+可以用一个简单的程序进行例证
+
+```objc
+#import <Foundation/Foundation.h>
+
+@interface MyObject : NSObject
+
+@end
+
+@implementation MyObject
+
++ (void)load {
+    NSLog(@"+[MyObject load]");
+}
+
+@end
+
+@interface MyObject (Ext)
+
+@end
+
+@implementation MyObject (Ext)
+
++ (void)load {
+    NSLog(@"%s", __func__);
+}
+
+@end
+
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        NSLog(@"main");
+    }
+    return 0;
+}
+```
+
+运行上述程序将在控制台得到输出
+
+```txt
++[MyObject load]
++[MyObject(Ext) load]
+main
+```
 
 负责调用类的 `+load` 方法的是 `call_class_loads` 函数，其实现如下
 
@@ -141,7 +186,7 @@ for (i = 0; i < used; i++) {
 }
 ```
 
-可以看出，不论是对于 `Class` 还是 `Category`，均是通过获得其对应的 `+load` 方法的函数地址，然后直接调用的。
+可以看出，不论是对于 `Class` 还是 `Category`，在 `runtime` 自动调用 `+load` 方法时，都是通过 `+load` 方法的函数指针直接调用的，而不是使用 `ObjC` 的消息机制。这也是由 `runtime` 主动调用的类方法中，`+load` 类方法与 `+initialize` 等其他类方法的一个最大不同，由此也产生了很多不同的现象，其中之一就是：在一个类的分类中重写 `+load` 方法，不会影响类中的 `+load` 方法的调用。本文开头的例证程序已经说明了这一点。
 
 下图是 `+load` 方法在 `runtime` 内部的调用流程图
 
