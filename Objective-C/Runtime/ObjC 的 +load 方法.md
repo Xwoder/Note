@@ -2,7 +2,7 @@
 
 在 `Runtime` 自动调用 `+load` 方法时，是通过 `+load` 方法的函数指针直接调用的。
 
-负责调用类的 +load 方法的是 `call_class_loads` 函数，其实现如下
+负责调用类的 `+load` 方法的是 `call_class_loads` 函数，其实现如下
 
 ```Objective-C++
 static void call_class_loads(void)
@@ -141,7 +141,7 @@ for (i = 0; i < used; i++) {
 
 可以看出，不论是对于 `Class` 还是 `Category`，均是通过获得其对应的 `+load` 方法的函数地址，然后直接调用的。
 
+下图是 `+load` 方法在 `runtime` 内部的调用流程图
 
-
-![ObjC +load 方法调用流程](ObjC +load 方法调用流程.svg)
+![](http://assets.processon.com/chart_image/5b18faaee4b02e4b26fb6535.png)
 
