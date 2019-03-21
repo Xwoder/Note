@@ -65,6 +65,8 @@ main
 1. 类的 `+load` 方法的调用的准备阶段
 2. 分类的 `+load` 方法的调用的准备阶段
 
+`runtime` 主动调用 `+load` 方法的**准备阶段**完成之后，会进入下一个阶段，即**调用阶段**
+
 **调用阶段**则是依据在准备阶段确定的先后次序，逐个调用类或分类的 `+load` 方法的阶段。类似的，**调用阶段**也可以分为 2 个小阶段
 
 1. 类的 `+load` 方法的调用阶段
@@ -125,7 +127,7 @@ void prepare_load_methods(const headerType *mhdr)
 
 其中的 `schedule_class_load` 函数对应准备阶段的第 1 个小阶段，即类的 `+load` 方法的调用的准备阶段；而 `add_category_to_loadable_list` 函数对应第 2 个小阶段，即分类的 `+load` 方法的调用的准备阶段。
 
-### 第 1 个小阶段
+### 类的 `+load` 方法调用的准备阶段
 
 类的 `+load` 方法的调用的准备阶段的 `schedule_class_load` 函数的实现如下
 
@@ -202,7 +204,7 @@ struct loadable_class {
 
 其中的 `method` 成员存储的就是类的 `+load` 方法的 `IMP`。
 
-### 第 2 个小阶段
+### 分类的 `+load` 方法调用的准备阶段
 
 在类的 `+load` 方法的调用的准备阶段完成后，会进入第 2 个小阶段，完成分类的 `+load` 方法的调用的准备工作。
 
@@ -292,9 +294,7 @@ void call_load_methods(void)
 
 其内部，对于一个类，通过先后调用 `call_class_loads` 函数和 `call_category_loads` 函数实现对类或分类的 `+load` 方法的调用。
 
-
-
-### 第 1 个小阶段
+### 类的 `+load` 方法调用的调用阶段
 
 负责调用分类的 `+load` 方法的是 `call_class_loads` 函数，其实现如下
 
@@ -344,9 +344,7 @@ for (i = 0; i < used; i++) {
 }
 ```
 
-
-
-### 第 2 个小阶段
+### 分类的 `+load` 方法调用的调用阶段
 
 而负责调用分类的 `+load` 方法的是 `call_category_loads` 函数，其实现如下
 
@@ -453,7 +451,6 @@ for (i = 0; i < used; i++) {
 
 对于第 1 点，本文开头的例证程序已经说明了这一点。
 
-
 对于第 2 点，是因为没有 `+load` 方法可供调用。特别的，如果一个类实现了 `+load` 方法，而其子类没有实现该方法，则 `runtime` 不会去调用子类的 `+load` 方法，更不会因此去调用父类的实现。这一点与由 `runtime` 经由消息机制主动调用的 `+initialize` 方法不同。
 
 下面是一个例证程序
@@ -507,10 +504,7 @@ struct loadable_category {
 
 这两个结构体有一个共同的成员 `IMP method`，将运行时，该成员将被赋值为 `+load` 方法的实现，即一个 `IMP` 类型的值。
 
-获取一个类或分类的 `+load` 方法的实现并分别添加至上述两个数组的过程分别在 `add_class_to_loadable_list` 和 `add_category_to_loadable_list` 函数内完成，其实现如下
-
-
-在 `add_class_to_loadable_list` 和 `add_category_to_loadable_list` 函数全部调用完毕后，`runtime` 主动调用 `+load` 方法的**准备阶段**就算完成了，在此之后，会进入下一个阶段，即**调用阶段**，在该阶段会调用一个名为 `call_load_methods` 的函数，并在内部又先后调用 `call_class_loads` 和 `call_category_loads` 函数，从而最终调用 `+load` 方法。
+获取一个类或分类的 `+load` 方法的实现并分别添加至上述两个数组的过程分别在 `add_class_to_loadable_list` 和 `add_category_to_loadable_list` 函数内完成。
 
 
 
