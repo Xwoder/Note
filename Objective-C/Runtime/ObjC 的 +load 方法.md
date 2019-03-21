@@ -4,9 +4,9 @@
 
 在 `Objective-C` 中，一个类或分类的 `+load` 方法，是当这个类或分类被加载至 `runtime` 的时候被调用的。
 
-同时，`runtime` 加载类或分类的时机在调用 `main` 函数之前，所以 `+load` 方法会在 `main` 函数被调用之前被调用。
+同时，`runtime` 加载类或分类的时机是在调用 `main` 函数之前，所以 `+load` 方法会在 `main` 函数被调用之前被调用。
 
-可以用一个简单的程序进行例证
+可以用一个简单的程序例证
 
 ```objc
 #import <Foundation/Foundation.h>
@@ -60,10 +60,10 @@ main
 * 准备阶段
 * 调用阶段
 
-**准备阶段**的主要工作就是把所有需要调用 `+load` 方法的类或分类与其 `+load` 方法组建为某种结构并按照一定先后次序缓存在内存中的阶段。而其可以按照先后次序分为 2 个小阶段
+**准备阶段**的主要工作就是把所有需要调用 `+load` 方法的类或分类与其 `+load` 方法组建为某种结构并按照一定先后次序缓存在内存中的阶段，并且其可以按照处理对象的不同为 2 个更小的阶段
 
-1. 类的 `+load` 方法的调用的准备阶段
-2. 分类的 `+load` 方法的调用的准备阶段
+1. 类的 `+load` 方法的准备阶段
+2. 分类的 `+load` 方法的准备阶段
 
 `runtime` 主动调用 `+load` 方法的**准备阶段**完成之后，会进入下一个阶段，即**调用阶段**
 
@@ -72,7 +72,7 @@ main
 1. 类的 `+load` 方法的调用阶段
 2. 分类的 `+load` 方法的调用阶段
 
-以上 2 个大阶段的先后次序和触发逻辑在 `load_images` 函数里得到了反应，这也是以上 2 个大阶段及其后续过程的开端，其源码如下
+以上 2 个大阶段的先后次序和触发逻辑在 `load_images` 函数里得到了反映，这也是以上 2 个大阶段及其后续过程的开端，其源码如下
 
 ```C++
 void
@@ -94,11 +94,11 @@ load_images(const char *path __unused, const struct mach_header *mh)
 }
 ```
 
-其中 `prepare_load_methods` 函数的实现对应了**准备阶段**的工作，`prepare_load_methods` 函数对应了**调用阶段**的工作。
+其中 `prepare_load_methods` 函数的实现对应了**准备阶段**的工作，`call_load_methods` 函数的实现对应了**调用阶段**的工作。
 
-## 准备阶段
+## 1. 准备阶段
 
-准备阶段的入口函数 `prepare_load_methods` 实现如下
+准备阶段的入口函数 `prepare_load_methods` 的实现如下
 
 ```C++
 void prepare_load_methods(const headerType *mhdr)
@@ -125,11 +125,11 @@ void prepare_load_methods(const headerType *mhdr)
 }
 ```
 
-其中的 `schedule_class_load` 函数对应准备阶段的第 1 个小阶段，即类的 `+load` 方法的调用的准备阶段；而 `add_category_to_loadable_list` 函数对应第 2 个小阶段，即分类的 `+load` 方法的调用的准备阶段。
+其中的 `schedule_class_load` 函数对应准备阶段的第 1 个小阶段，即类的 `+load` 方法的准备阶段；而 `add_category_to_loadable_list` 函数对应第 2 个小阶段，即分类的 `+load` 方法的准备阶段。
 
-### 类的 `+load` 方法调用的准备阶段
+### 1.1 类的 `+load` 方法的准备阶段
 
-类的 `+load` 方法的调用的准备阶段的 `schedule_class_load` 函数的实现如下
+负责类的 `+load` 方法的准备阶段具体工作的 `schedule_class_load` 函数的实现如下
 
 ```C++
 static void schedule_class_load(Class cls)
@@ -155,7 +155,7 @@ static void schedule_class_load(Class cls)
 schedule_class_load(cls->superclass);
 ```
 
-这一调用方式，确保了该类的父类会被首先调用 `add_class_to_loadable_list` 函数，从而在调用阶段实现父类的 `+load` 方法会先于子类被调用这一个特性。
+这一调用方式，确保了该类的父类会被 `add_class_to_loadable_list` 函数首先处理，从而在调用阶段实现父类的 `+load` 方法会先于子类被处理这一个特性。
 
 上文中的 `add_class_to_loadable_list` 的函数实现如下
 
@@ -193,7 +193,7 @@ void add_class_to_loadable_list(Class cls)
 }
 ```
 
-其中的 `loadable_classes` 是一个数组，其内缓存的结构类型是 `struct loadable_class`，定义如下
+其中的 `loadable_classes` 是一个数组，其元素类型为 `struct loadable_class`，定义如下
 
 ```C++
 struct loadable_class {
@@ -204,9 +204,9 @@ struct loadable_class {
 
 其中的 `method` 成员存储的就是类的 `+load` 方法的 `IMP`。
 
-### 分类的 `+load` 方法调用的准备阶段
+### 1.2 分类的 `+load` 方法的准备阶段
 
-在类的 `+load` 方法的调用的准备阶段完成后，会进入第 2 个小阶段，完成分类的 `+load` 方法的调用的准备工作。
+在类的 `+load` 方法的准备阶段完成后，会进入第 2 个小阶段，完成分类的 `+load` 方法的准备工作。
 
 这一阶段对应函数 `add_category_to_loadable_list` 的具体实现
 
@@ -256,7 +256,7 @@ struct loadable_category {
 };
 ```
 
-## 调用阶段
+## 2. 调用阶段
 
 在 `runtime` 中，负责调用类的 `+load` 方法的是 `call_load_methods` 函数，其也是**调用阶段**的入口函数，其实现如下
 
@@ -294,7 +294,7 @@ void call_load_methods(void)
 
 其内部，对于一个类，通过先后调用 `call_class_loads` 函数和 `call_category_loads` 函数实现对类或分类的 `+load` 方法的调用。
 
-### 类的 `+load` 方法调用的调用阶段
+### 2.1 类的 `+load` 方法的调用阶段
 
 负责调用分类的 `+load` 方法的是 `call_class_loads` 函数，其实现如下
 
@@ -344,7 +344,7 @@ for (i = 0; i < used; i++) {
 }
 ```
 
-### 分类的 `+load` 方法调用的调用阶段
+### 2.2 分类的 `+load` 方法的调用阶段
 
 而负责调用分类的 `+load` 方法的是 `call_category_loads` 函数，其实现如下
 
@@ -442,16 +442,14 @@ for (i = 0; i < used; i++) {
 }
 ```
 
-可以看出，不论是对于 `Class` 还是 `Category`，在 `runtime` 自动调用 `+load` 方法时，都是通过 `+load` 方法的函数指针直接调用的，而不是使用 `ObjC` 的消息机制。这也是由 `runtime` 主动调用的类方法中，`+load` 类方法与 `+initialize` 等其他类方法的一个最大不同。
-
-由此也产生了很多不同的现象
+可以看出，不论是对于 `Class` 还是 `Category`，在 `runtime` 自动调用 `+load` 方法时，都是通过 `+load` 方法的函数指针直接调用的，而不是使用 `ObjC` 的消息机制。这也是由 `runtime` 主动调用的类方法中，`+load` 类方法与 `+initialize` 等其他类方法的一个最大的不同。由此也产生了很多不同的现象
 
 1. 在一个类的分类中重写 `+load` 方法，不会影响类中的 `+load` 方法的调用。
 2. 如果一个类或分类，没有实现 `+load` 方法，则 `runtime` 不会去调用它们的 `+load` 方法。
 
 对于第 1 点，本文开头的例证程序已经说明了这一点。
 
-对于第 2 点，是因为没有 `+load` 方法可供调用。特别的，如果一个类实现了 `+load` 方法，而其子类没有实现该方法，则 `runtime` 不会去调用子类的 `+load` 方法，更不会因此去调用父类的实现。这一点与由 `runtime` 经由消息机制主动调用的 `+initialize` 方法不同。
+对于第 2 点，是因为不存在该函数的指针，进而没有 `+load` 方法可供调用。特别的，如果一个类实现了 `+load` 方法，而其子类没有实现该方法，则 `runtime` 不会去调用子类的 `+load` 方法，更不会因此去调用父类的实现。这一点与由 `runtime` 经由消息机制主动调用的 `+initialize` 方法不同。
 
 下面是一个例证程序
 
@@ -492,20 +490,5 @@ int main(int argc, const char * argv[]) {
 +[Father load]
 main
 ```
-
-在 `runtime` 的内部实现中，存在着 2 个结构体数组，分别名为 `loadable_classes` 和 `loadable_categories`，其元素类型分别为 `struct loadable_class` 和 `struct loadable_category`，其内部结构如下
-
-```C++
-struct loadable_category {
-    Category cat;  // may be nil
-    IMP method;
-};
-```
-
-这两个结构体有一个共同的成员 `IMP method`，将运行时，该成员将被赋值为 `+load` 方法的实现，即一个 `IMP` 类型的值。
-
-获取一个类或分类的 `+load` 方法的实现并分别添加至上述两个数组的过程分别在 `add_class_to_loadable_list` 和 `add_category_to_loadable_list` 函数内完成。
-
-
 
 
