@@ -327,6 +327,8 @@ void add_category_to_loadable_list(Category cat)
 
 在 `add_class_to_loadable_list` 和 `add_category_to_loadable_list` 函数全部调用完毕后，`runtime` 主动调用 `+load` 方法的**准备阶段**就算完成了，在此之后，会进入下一个阶段，即**调用阶段**，在该阶段会调用一个名为 `call_load_methods` 的函数，并在内部又先后调用 `call_class_loads` 和 `call_category_loads` 函数，从而最终调用 `+load` 方法。
 
+在**准备阶段**，又可以分为 2 个小阶段，第 1 个小阶段用来完成类的 `+load` 方法的调用的准备工作，第 2 个小阶段用来完成分类的 `+load` 方法的调用的准备工作。
+
 下图是 `+load` 方法在 `runtime` 内部的被调用流程图
 
 ![](http://assets.processon.com/chart_image/5b18faaee4b02e4b26fb6535.png)
