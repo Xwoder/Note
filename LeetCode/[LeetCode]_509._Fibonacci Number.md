@@ -53,67 +53,67 @@
 class Solution {
     public int fib(int N) {
 
-		if (N < 2) {
-			return N;
-		}
+        if (N < 2) {
+            return N;
+        }
 
-		int first = 0;
-		int second = 1;
+        int first = 0;
+        int second = 1;
 
-		while (N >= 2) {
-			int temp = second + first;
-			first = second;
-			second = temp;
-			--N;
-		}
+        while (N >= 2) {
+            int temp = second + first;
+            first = second;
+            second = temp;
+            --N;
+        }
 
-		return second;
-	}
+        return second;
+    }
 }
 ```
 
 ### 解法2
 
 ```Java
-public class Solution {
-	public int fib(int N) {
+class Solution {
+    public int fib(int N) {
 
-		int[] array = {
-				0,
-				1,
-				1,
-				2,
-				3,
-				5,
-				8,
-				13,
-				21,
-				34,
-				55,
-				89,
-				144,
-				233,
-				377,
-				610,
-				987,
-				1597,
-				2584,
-				4181,
-				6765,
-				10946,
-				17711,
-				28657,
-				46368,
-				75025,
-				121393,
-				196418,
-				317811,
-				514229,
-				832040
-		};
+        int[] array = {
+                0,
+                1,
+                1,
+                2,
+                3,
+                5,
+                8,
+                13,
+                21,
+                34,
+                55,
+                89,
+                144,
+                233,
+                377,
+                610,
+                987,
+                1597,
+                2584,
+                4181,
+                6765,
+                10946,
+                17711,
+                28657,
+                46368,
+                75025,
+                121393,
+                196418,
+                317811,
+                514229,
+                832040
+        };
 
-		return array[N];
-	}
+        return array[N];
+    }
 }
 ```
 
