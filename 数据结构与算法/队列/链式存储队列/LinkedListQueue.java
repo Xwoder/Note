@@ -1,48 +1,48 @@
-import java.util.ArrayList;
+import java.util.LinkedList;
 
-public class SequenceQueue<E> {
+public class LinkedListQueue<E> {
 
-    private ArrayList<E> innerArrayList;
+    private LinkedList<E> innerLinkedList;
 
-    public SequenceQueue() {
-        innerArrayList = new ArrayList<>();
+    public LinkedListQueue() {
+        innerLinkedList = new LinkedList<>();
     }
 
     public int size() {
-        return innerArrayList.size();
+        return innerLinkedList.size();
     }
 
     public boolean isEmpty() {
-        return innerArrayList.isEmpty();
+        return innerLinkedList.isEmpty();
     }
 
     public void enQueue(E element) {
-        innerArrayList.add(element);
+        innerLinkedList.addLast(element);
     }
 
     public E deQueue() {
-        if (innerArrayList.isEmpty()) {
+        if (innerLinkedList.isEmpty()) {
             throw new IndexOutOfBoundsException(0);
         }
-        return innerArrayList.remove(0);
+        return innerLinkedList.removeFirst();
     }
 
     public E front() {
-        if (innerArrayList.isEmpty()) {
+        if (innerLinkedList.isEmpty()) {
             throw new IndexOutOfBoundsException(0);
         }
-        return innerArrayList.get(0);
+        return innerLinkedList.getFirst();
     }
 
     public void clear() {
-        innerArrayList.clear();
+        innerLinkedList.clear();
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        int size = innerArrayList.size();
+        int size = innerLinkedList.size();
 
         sb.append("size = ").append(size);
 
@@ -51,7 +51,7 @@ public class SequenceQueue<E> {
             if (i != 0) {
                 sb.append(", ");
             }
-            sb.append(innerArrayList.get(i));
+            sb.append(innerLinkedList.get(i));
         }
         sb.append("]");
 
