@@ -1,5 +1,3 @@
-package ;
-
 import java.util.ArrayList;
 
 public class SequenceStack<E> {
