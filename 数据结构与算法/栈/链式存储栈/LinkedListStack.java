@@ -1,50 +1,48 @@
-package ;
+import java.util.LinkedList;
 
-import java.util.ArrayList;
+public class LinkedListStack<E> {
 
-public class SequenceStack<E> {
+    private LinkedList<E> innerLinkedList;
 
-    private ArrayList<E> innerArrayList;
-
-    public SequenceStack() {
-        innerArrayList = new ArrayList<>();
+    public LinkedListStack() {
+        innerLinkedList = new java.util.LinkedList<>();
     }
 
     public int size() {
-        return innerArrayList.size();
+        return innerLinkedList.size();
     }
 
     public boolean isEmpty() {
-        return innerArrayList.isEmpty();
+        return innerLinkedList.isEmpty();
     }
 
     public void push(E element) {
-        innerArrayList.add(element);
+        innerLinkedList.add(element);
     }
 
     public E pop() {
-        if (innerArrayList.isEmpty()) {
+        if (innerLinkedList.isEmpty()) {
             throw new IndexOutOfBoundsException(0);
         }
-        return innerArrayList.remove(innerArrayList.size() - 1);
+        return innerLinkedList.removeLast();
     }
 
     public E peek() {
-        if (innerArrayList.isEmpty()) {
+        if (innerLinkedList.isEmpty()) {
             throw new IndexOutOfBoundsException(0);
         }
-        return innerArrayList.get(innerArrayList.size() - 1);
+        return innerLinkedList.getLast();
     }
 
     public void clear() {
-        innerArrayList.clear();
+        innerLinkedList.clear();
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        int size = innerArrayList.size();
+        int size = innerLinkedList.size();
 
         sb.append("size = ").append(size);
 
@@ -53,7 +51,7 @@ public class SequenceStack<E> {
             if (i != 0) {
                 sb.append(", ");
             }
-            sb.append(innerArrayList.get(i));
+            sb.append(innerLinkedList.get(i));
         }
         sb.append("]");
 

@@ -1,9 +1,7 @@
-package ;
-
 public class Main {
 
     public static void main(String[] args) {
-        SequenceStack<Integer> s = new SequenceStack<>();
+        LinkedListStack<Integer> s = new LinkedListStack<>();
         s.push(10);
         s.push(20);
         s.push(30);
