@@ -1,4 +1,4 @@
-package ;
+package com.xwoder;
 
 public class Main {
 
