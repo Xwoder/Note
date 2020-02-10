@@ -60,10 +60,10 @@ class Node {
 class Solution {
     public List<Integer> preorder(Node root) {
         if (root == null) {
-            return new ArrayList();
+            return new LinkedList();
         }
 
-        List<Integer> arrayList = new ArrayList<>();
+        List<Integer> arrayList = new LinkedList<>();
 
         arrayList.add(root.val);
 
