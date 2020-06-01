@@ -65,3 +65,62 @@ void max(double a, double b) {
     cout << "void max(double, double)" << endl;
 }
 ```
+
+## 重载函数的二义性
+
+### 由默认参数引发的二义性
+
+```C++
+#include <cstdlib>
+
+int sum(int a, int b);
+
+int sum(int a, int b, int c = 0);
+
+int main() {
+
+    sum(10, 20);
+
+    return EXIT_SUCCESS;
+}
+
+int sum(int a, int b) {
+    return 0;
+}
+
+int sum(int a, int b, int c) {
+    return 0;
+}
+```
+
+编译上述程序，将报告类似如下内容的错误
+
+> error: call to 'sum' is ambiguous
+
+### 由引用参数引发的二义性
+
+```C++
+#include <cstdlib>
+
+void print(int n);
+
+void print(int &n);
+
+int main() {
+
+    int n = -1;
+    print(n);
+
+    return EXIT_SUCCESS;
+}
+
+void print(int n) {
+}
+
+void print(int &n) {
+}
+```
+
+编译上述程序，将报告类似如下内容的错误
+
+> error: call to 'sum' is ambiguous
