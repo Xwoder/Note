@@ -1,7 +1,6 @@
 # C++ const 与 pointer
 
 ```C++
-#include <iostream>
 #include <cstdlib>
 
 int main() {
