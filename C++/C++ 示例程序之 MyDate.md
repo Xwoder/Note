@@ -12,15 +12,28 @@ private:
     unsigned int day;
 
 public:
+
+#pragma mark - 构造函数
+
+    /* 无参构造函数 */
     MyDate();
 
+    /* 带参构造函数 */
     MyDate(unsigned int year, unsigned int month, unsigned int day);
+
+#pragma mark - 复制构造函数
+
+    /* 复制构造函数；const 参数版 */
+    MyDate(MyDate const &date);
+
+    /* 复制构造函数；非 const 参数版 */
+    MyDate(MyDate &date);
+
+#pragma mark - Getter & Setter
 
     void setDate(unsigned int year, unsigned int month, unsigned int day);
 
     void setDate(MyDate const &date);
-
-    MyDate &getDate(void);
 
     unsigned int getYear() const;
 
@@ -36,6 +49,10 @@ public:
 
     void print(void) const;
 
+#pragma mark - 析构函数
+
+    virtual ~MyDate();
+
 };
 ```
 
@@ -48,9 +65,13 @@ public:
 using std::cout;
 using std::endl;
 
-MyDate::MyDate() {}
+MyDate::MyDate() {
+    cout << __PRETTY_FUNCTION__ << endl;
+}
 
-MyDate::MyDate(unsigned int year, unsigned int month, unsigned int day) : year(year), month(month), day(day) {}
+MyDate::MyDate(unsigned int year, unsigned int month, unsigned int day) : year(year), month(month), day(day) {
+    cout << __PRETTY_FUNCTION__ << endl;
+}
 
 void MyDate::setYear(unsigned int year) {
     MyDate::year = year;
@@ -86,12 +107,22 @@ void MyDate::print(void) const {
     cout << getYear() << "-" << getMonth() << "-" << getDay() << endl;
 }
 
-MyDate &MyDate::getDate(void) {
-    return *this;
-}
-
 void MyDate::setDate(MyDate const &date) {
     setDate(date.year, date.month, date.day);
+}
+
+MyDate::MyDate(MyDate const &date) {
+    cout << __PRETTY_FUNCTION__ << endl;
+    setDate(date.getYear(), date.getMonth(), date.getDay());
+}
+
+MyDate::MyDate(MyDate &date) {
+    cout << __PRETTY_FUNCTION__ << endl;
+    setDate(date.getYear(), date.getMonth(), date.getDay());
+}
+
+MyDate::~MyDate() {
+    cout << __PRETTY_FUNCTION__ << endl;
 }
 ```
 
@@ -126,6 +157,19 @@ int main() {
 
     date.setDate(MyDate(2030, 1, 1));
     date.print();
+
+    MyDate const unixDate(1970, 1, 1);
+
+    // 调用参数类型为const修饰的构造函数
+    MyDate unixDate1(unixDate);
+
+    // 调用参数类型为非const修饰的构造函数
+    MyDate unixDate2(unixDate2);
+
+    // 调用构造函数
+    MyDate newYearDate = MyDate(2020, 1, 1);
+    // 调用复制构造函数
+    MyDate newYearDateCopyed = newYearDate;
 
     return EXIT_SUCCESS;
 }
