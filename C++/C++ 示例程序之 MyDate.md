@@ -6,12 +6,25 @@
 
 ```C++
 class MyDate {
+
 private:
+
+#pragma mark - 成员变量
     unsigned int year;
     unsigned int month;
     unsigned int day;
 
+#pragma mark - 静态变量
+
+    static unsigned long long int instanceCount;
+
 public:
+
+#pragma mark - 静态方法
+
+    static unsigned long long int getInstanceCount();
+
+    static void setInstanceCount(unsigned long long int instanceCount);
 
 #pragma mark - 构造函数
 
@@ -47,6 +60,8 @@ public:
 
     void setDay(unsigned int day);
 
+#pragma mark - 其他方法
+
     void print(void) const;
 
 #pragma mark - 析构函数
@@ -64,6 +79,8 @@ public:
 
 using std::cout;
 using std::endl;
+
+unsigned long long int MyDate::instanceCount = 0;
 
 MyDate::MyDate() {
     cout << __PRETTY_FUNCTION__ << endl;
@@ -123,6 +140,14 @@ MyDate::MyDate(MyDate &date) {
 
 MyDate::~MyDate() {
     cout << __PRETTY_FUNCTION__ << endl;
+}
+
+unsigned long long int MyDate::getInstanceCount() {
+    return instanceCount;
+}
+
+void MyDate::setInstanceCount(unsigned long long int instanceCount) {
+    MyDate::instanceCount = instanceCount;
 }
 ```
 
