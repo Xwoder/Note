@@ -313,3 +313,73 @@ CALL proc_month_to_season(10, @`season`);
 |         4 |
 +-----------+
 ```
+
+## 循环语句
+
+### `WHILE...DO...END WHILE`
+
+```SQL
+CREATE PROCEDURE `proc_sum_from_one_to`(IN `n` INT, OUT `sum` INT)
+BEGIN
+    DECLARE `i` INT DEFAULT 1;
+    SET `sum` = 0;
+    WHILE `i` <= `n`
+        DO
+            SET `sum` = `sum` + `i`;
+            SET `i` = `i` + 1;
+        END WHILE;
+
+END;
+```
+
+调用改存储过程
+
+```SQL
+CALL proc_sum_from_one_to(100, @`sum`);
+```
+
+查看输出变量的值，将得到
+
+```text
++--------+
+| @`sum` |
++--------+
+|   5050 |
++--------+
+```
+
+### `REPEAT...UNTIL...END REPEAT`
+
+```SQL
+CREATE PROCEDURE `proc_sum_from_one_to`(IN `n` INT, OUT `sum` INT)
+BEGIN
+    DECLARE `i` INT DEFAULT 1;
+    SET `sum` = 0;
+    REPEAT
+        SET `sum` = `sum` + `i`;
+        SET `i` = `i` + 1;
+    UNTIL `i` > `n` END REPEAT;
+END;
+```
+
+`UNTIL` 语句表示的是退出循环的条件
+
+#### `LOOP`循环
+
+```SQL
+CREATE PROCEDURE `proc_sum_from_one_to`(IN `n` INT, OUT `sum` INT)
+BEGIN
+    DECLARE `i` INT DEFAULT 1;
+    SET `sum` = 0;
+    `calc_loop`:
+    LOOP
+        SET `sum` = `sum` + `i`;
+        SET `i` = `i` + 1;
+        IF `i` > `n` THEN
+            LEAVE `calc_loop`;
+        END IF;
+    END LOOP;
+END;
+```
+
+`LOOP` 循环的退出需要结合 `LEAVE` 使用
