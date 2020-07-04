@@ -364,7 +364,7 @@ END;
 
 `UNTIL` 语句表示的是退出循环的条件
 
-#### `LOOP`循环
+### `LOOP`
 
 ```SQL
 CREATE PROCEDURE `proc_sum_from_one_to`(IN `n` INT, OUT `sum` INT)
@@ -382,4 +382,4 @@ BEGIN
 END;
 ```
 
-`LOOP` 循环的退出需要结合 `LEAVE` 使用
+`LOOP` 循环的退出或结束需要结合 `LEAVE` 使用
