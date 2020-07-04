@@ -294,31 +294,7 @@ sum_price_cloth | sum_price_kitchen | sum_price_office
 
 ## 存储过程
 
-### 例1
-
-```SQL
-# 创建
-CREATE PROCEDURE `procName`()
-BEGIN
-    SELECT * FROM `Product`;
-END;
-
-# 调用
-CALL `procName`;
-```
-
-### 例2
-
-```SQL
-# 创建
-CREATE PROCEDURE `procName`(IN `id` CHAR(5))
-BEGIN
-    SELECT * FROM `Product` WHERE `product_id` = `id`;
-END;
-
-# 调用
-CALL procName(`0001`);
-```
+[存储过程](./MySQL 存储过程.md)
 
 ## 函数
 
@@ -451,3 +427,72 @@ DROP USER `jack`;
 ```
 GRANT SELECT, UPDATE, ... ON `数据库名`.`数据表名` TO `用户名`;
 ```
+
+## 视图
+
+### 创建视图
+
+```SQL
+CREATE VIEW 视图名称 AS SELECT语句;
+```
+
+例
+
+```SQL
+CREATE VIEW `view_product` AS
+    SELECT `product_id`, `product_name`
+        FROM `Product`;
+```
+
+### 查询
+
+对视图的查询与对表的查询语法一致，可以通过 `SELECT` 语句进行查询。例
+
+```SQL
+SELECT *
+    FROM `view_product`;
+
+SELECT *
+    FROM `view_product`
+    WHERE `product_id` = '0001';
+```
+
+### 更新
+
+```SQL
+UPDATE `view_product`
+SET `product_name` = '新T恤'
+    WHERE `product_id` = '0001';
+```
+
+对视图的更新会影响到该与视图有关的基表
+
+### 修改
+
+```SQL
+ALTER VIEW `view_product` AS
+    SELECT `product_id`, `product_name`, `product_type`
+        FROM `Product`;
+```
+
+### 查看
+
+```SQL
+SHOW CREATE VIEW `view_product`;
+```
+
+### 删除
+
+```SQL
+DROP VIEW `view_product`;
+```
+
+## 分隔符
+
+`MySQL`中，默认的语句分隔符为 `;`，可以通过 `DELIMITER` 命令修改，如
+
+```SQL
+DELIMITER $
+```
+
+执行完上述语句后，分隔符将改为`$`符，之后输入的语句都应以`$`结尾。
