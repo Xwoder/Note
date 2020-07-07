@@ -383,3 +383,99 @@ END;
 ```
 
 `LOOP` 循环的退出或结束需要结合 `LEAVE` 使用
+
+## 游标
+
+### 语法
+
+#### 声明
+
+```SQL
+DECLARE `游标名` CURSOR FOR SELECT语句
+```
+
+#### 打开
+
+```SQL
+OPEN `游标名`;
+```
+
+#### 关闭
+
+```SQL
+CLOSE `游标名`;
+```
+
+#### 获取
+
+```SQL
+FETCH `游标名` INTO `变量名`...;
+```
+
+### 例
+
+#### 例1
+
+```SQL
+CREATE PROCEDURE `proc_test`()
+BEGIN
+    DECLARE `id` CHAR(4);
+    DECLARE `name` VARCHAR(100);
+    DECLARE `type` VARCHAR(32);
+
+    # 声明游标
+    DECLARE `cur` CURSOR FOR
+        SELECT `product_id`, `product_name`, `product_type` FROM `Product`;
+
+    # 打开游标
+    OPEN `cur`;
+
+    # 获取游标
+    FETCH `cur` INTO `id`,`name` ,`type`;
+    SELECT concat('id = ', `id`, ', name = ', `name`, ', type = ', `type`);
+    
+    # 获取游标
+    FETCH `cur` INTO `id`,`name` ,`type`;
+    SELECT concat('id = ', `id`, ', name = ', `name`, ', type = ', `type`);
+
+    # 关闭游标
+    CLOSE `cur`;
+
+END;
+```
+
+#### 例2
+
+游标配合循环结构使用
+
+```SQL
+CREATE PROCEDURE `proc_test`()
+BEGIN
+    DECLARE `id` CHAR(4);
+    DECLARE `name` VARCHAR(100);
+    DECLARE `type` VARCHAR(32);
+
+    # 声明循环退出条件变量
+    DECLARE `has_data` BOOLEAN DEFAULT TRUE;
+
+    # 声明游标
+    DECLARE `cur` CURSOR FOR
+        SELECT `product_id`, `product_name`, `product_type` FROM `Product`;
+
+    DECLARE EXIT HANDLER FOR NOT FOUND SET `has_data` = FALSE;
+
+    # 打开游标
+    OPEN `cur`;
+
+    REPEAT
+        # 获取游标
+        FETCH `cur` INTO `id`,`name` ,`type`;
+
+        SELECT concat('id = ', `id`, ', name = ', `name`, ', type = ', `type`);
+    UNTIL NOT `has_data` END REPEAT;
+
+    # 关闭游标
+    CLOSE `cur`;
+
+END;
+```
