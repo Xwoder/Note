@@ -1,6 +1,8 @@
-# Python 循环之 for
+# Python 循环之 for...in...else...
 
 [TOC]
+
+## 使用方法
 
 ```python
 names = ['Michael', 'Bob', 'Tracy']
