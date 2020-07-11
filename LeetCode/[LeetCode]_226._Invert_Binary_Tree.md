@@ -45,6 +45,8 @@ Output:
 > 使用前序遍历实现
 
 ```Java
+package com.xwoder;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -55,16 +57,19 @@ Output:
  * }
  */
 class Solution {
-    public int maxDepth(TreeNode root) {
+    public TreeNode invertTree(TreeNode root) {
         if (root == null) {
-            return 0;
+            return null;
         }
 
-        int maxDepthOfLeft = maxDepth(root.left);
-        int maxDepthOfRight = maxDepth(root.right);
-        int maxDepth = 1 + Math.max(maxDepthOfLeft, maxDepthOfRight);
+        TreeNode tempNode = root.left;
+        root.left = root.right;
+        root.right = tempNode;
 
-        return maxDepth;
+        invertTree(root.left);
+        invertTree(root.right);
+
+        return root;
     }
 }
 ```
