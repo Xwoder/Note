@@ -4,7 +4,7 @@
 
 ## 链接
 
-[1046. Last Stone Weight](https://leetcode-cn.com/problems/last-stone-weight/)
+[1046. Last Stone Weight](https://leetcode.com/problems/last-stone-weight/)
 
 ## 题目
 
