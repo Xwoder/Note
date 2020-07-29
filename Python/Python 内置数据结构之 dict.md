@@ -8,6 +8,10 @@
 
 使用 `{}` 定义
 
+```Python
+empty_dict = {}
+```
+
 ```python
 score_dict = {
     'Tracy': 60,
@@ -50,9 +54,9 @@ score_dict['Michael']
 # 95
 ```
 
-### 通过 get() 访问
+### 通过 `get()` 访问
 
-`get()` 函数的第2个参数为获取指定`key`对应的值失败时，返回的默认值
+对于 `get()` 方法，如果第 1 个参数指定的键在字典中不存在，则返回第2个参数指定的默认值。
 
 ```python
 # 100
@@ -86,17 +90,17 @@ score_dict['Ross'] = 80
 # score_dict == {'Michael': 100, 'Bob': 75, 'Tracy': 85, 'Ross': 80}
 ```
 
-## in
+## `in` / `not in`
 
 ```python
-# False
 'Jack' in score_dict
+'Jack' not in score_dict
 
-# True
 'Michael' in score_dict
+'Michael' not in score_dict
 ```
 
-## 删除/pop
+## 删除 / `pop()`
 
 ```python
 # 100
@@ -156,13 +160,13 @@ for score in score_dict.values():
 # score = 85
 ```
 
-## 长度/len
+## 长度 / `len()`
 
 ```python
 len(score_dict)
 ```
 
-## 更新/update
+## 更新 / `update()`
 
 ```python
 score_dict = {
@@ -181,9 +185,31 @@ score_dict.update(score_new_dict)
 # score_dict == {'Tracy': 80, 'Michael': 95, 'Bob': 75, 'Tom': 90}
 ```
 
-## 清空/clear
+## 清空 / `clear()`
 
 ```python
 score_dict.clear()
 ```
 
+## 复制
+
+```Python
+area_code.copy()
+```
+
+## 生成式
+
+```Python
+d = {
+    1: 10,
+    2: 20,
+    3: 30,
+    4: 40,
+    5: 50
+}
+
+d_filter = {key: value for key, value in d.items() if key % 2 == 0}
+# d_filter == {
+#     2: 20, 4: 40
+# }
+```
