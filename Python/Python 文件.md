@@ -34,4 +34,26 @@
 ../
 ```
 
+## 读取
+
+```Python
+input_file_name = "file_to_read.txt"
+
+file_reader = open(input_file_name, "r")
+
+for row in file_reader:
+    print(row, end="")
+
+file_reader.close()
+```
+
+### `with...as...`
+
+```Python
+input_file_name = "file_to_read.txt"
+
+with open(input_file_name, "r") as file_reader:
+    for row in file_reader:
+        print(row, end="")
+```
 
