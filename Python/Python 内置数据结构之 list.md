@@ -267,6 +267,35 @@ L.sort(reverse=True)
 # L == [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 ```
 
+### `itemgetter`
+
+```Python
+from operator import itemgetter
+
+l = [
+    {'fname': 'Big', 'uid': 1004, 'lname': 'Jones'},
+    {'fname': 'Brian', 'uid': 1003, 'lname': 'Jones'},
+    {'fname': 'David', 'uid': 1002, 'lname': 'Beazley'},
+    {'fname': 'John', 'uid': 1001, 'lname': 'Cleese'}
+]
+
+# [
+#      {'fname': 'John', 'uid': 1001, 'lname': 'Cleese'},
+#      {'fname': 'David', 'uid': 1002, 'lname': 'Beazley'},
+#      {'fname': 'Brian', 'uid': 1003, 'lname': 'Jones'},
+#      {'fname': 'Big', 'uid': 1004, 'lname': 'Jones'}
+# ]
+l.sort(key=itemgetter("uid"))
+
+# [
+#     {'fname': 'David', 'uid': 1002, 'lname': 'Beazley'},
+#     {'fname': 'John', 'uid': 1001, 'lname': 'Cleese'},
+#     {'fname': 'Big', 'uid': 1004, 'lname': 'Jones'},
+#     {'fname': 'Brian', 'uid': 1003, 'lname': 'Jones'}
+# ]
+l.sort(key=itemgetter("lname", "fname"))
+```
+
 ## 逆序
 
 ```python
@@ -332,4 +361,3 @@ name_list = list(name_tuple)
 # list
 type(name_list)
 ```
-
