@@ -109,3 +109,25 @@ name_tuple = tuple(name_list)
 type(name_tuple)
 ```
 
+## *rest
+
+```
+values = (1, 2, 3, 4, 5, 6, 7, 8, 9)
+one, two, *rest = values
+
+# 1
+print(one)
+
+# 2
+print(two)
+
+# [3, 4, 5, 6, 7, 8, 9]
+print(rest)
+```
+
+可以通过将 `rest` 替换为 `_` 来表示忽略剩余数据
+
+```Python
+values = (1, 2, 3, 4, 5, 6, 7, 8, 9)
+one, two, *_ = values
+```
