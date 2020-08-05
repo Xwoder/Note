@@ -34,17 +34,32 @@
 ../
 ```
 
-## 读取
+## 基本操作
+
+### 打开
+
+```Python
+file = open(文件名)
+file = open(文件名, 打开方式)
+```
+
+### 关闭
+
+```Python
+file.close()
+```
+
+### 读取
 
 ```Python
 input_file_name = "file_to_read.txt"
 
-file_reader = open(input_file_name, "r")
+file = open(input_file_name, "r")
 
-for row in file_reader:
-    print(row, end="")
+for row in file:
+    print(row)
 
-file_reader.close()
+file.close()
 ```
 
 ### `with...as...`
