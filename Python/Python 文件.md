@@ -51,6 +51,8 @@ file.close()
 
 ### 读取
 
+### `for` 循环
+
 ```Python
 input_file_name = "file_to_read.txt"
 
@@ -58,6 +60,64 @@ file = open(input_file_name, "r")
 
 for row in file:
     print(row)
+
+file.close()
+```
+
+### `read()`
+
+```Python
+file = open("note.txt", "r")
+
+content = file.read()
+
+# <class 'str'>
+print(type(content))
+
+# I am not yours, not lost in you,
+# Not lost, although I long to be
+# Lost as a candle lit at noon,
+# Lost as a snowflake in the sea.
+print(content)
+
+file.close()
+```
+
+### `readline()`
+
+```Python
+file = open("note.txt", "r")
+
+while True:
+    line = file.readline()
+
+    if len(line) <= 0:
+        break
+
+    line = line.replace("\n", "")
+
+    print(line)
+
+file.close()
+```
+
+### `readlines()`
+
+```Python
+file = open("note.txt", "r")
+
+lines = file.readlines()
+
+# <class 'list'>
+print(type(lines))
+
+# [
+#     'I am not yours, not lost in you,\n',
+#     'Not lost, although I long to be\n',
+#     'Lost as a candle lit at noon,\n',
+#     'Lost as a snowflake in the sea.'
+# ]
+print(lines)
 
 file.close()
 ```
