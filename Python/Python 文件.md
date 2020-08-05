@@ -72,3 +72,4 @@ with open(input_file_name, "r") as file_reader:
         print(row, end="")
 ```
 
+使用 `with...as...`语句，文件会在 `with` 代码块结束后自动关闭
