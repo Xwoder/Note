@@ -4,38 +4,34 @@
 
 ## 定义
 
-字符串是使用*双引号*或*单引号*包围的一串字符
+利用双引号定义字符串
 
 ```python
 "Hello World"
-'Hello World'
 "I'm a programmer."
 ```
 
-### 非转义符串
+利用单引号定义字符串
 
-```python
-print(r'\\\t\\')
-
-# 输出
-# \\\t\\
+```Python
+'Hello World'
 ```
 
-### 多行字符串
+利用三引号定义多行字符串
 
-
-```python
-print('''123
+```Python
+'''123
 456
-789''')
-
-# 输出
-# 123
-# 456
-# 789
+789'''
 ```
 
-## 字符串操作
+非转义符串
+
+```python
+r'\\\t\\'
+```
+
+## 操作
 
 ### 长度
 
@@ -44,6 +40,12 @@ print('''123
 ```python
 # 11
 len('Hello World')
+```
+
+### 重复
+
+```
+"=" * 50
 ```
 
 ### 连接
@@ -57,13 +59,13 @@ s3 = 'World'
 
 s4 = s1 + s2 + s3
 print(s4)
-```
+​```~~~~
 
 ### 重复
 
 使用操作符`*`可以重复一个指定的字符串指定次
 
-```python
+​```python
 '-' * 10
 ```
 
@@ -120,23 +122,13 @@ for ch in str:
 
 ```python
 # 2
-str.count('o')
+'Hello World'.count('o')
 
 # 1
-str.count('ld')
+'Hello World'.count('ld')
 
 # 0
-str.count('abc')
-```
-
-### 查找
-
-```python
-# 2
-str.index('l')
-
-# 4
-str.index('o')
+'Hello World'.count('abc')
 ```
 
 ### 格式判定
@@ -178,13 +170,8 @@ print(str.find("abc"))
 `replace` 方法不会修改原字符串，而是返回一个新的经过替换的字符串
 
 ```python
-new_str = str.replace("World", "Python")
-
-# Hello World
-print(str)
-
 # Hello Python
-print(new_str)
+'Hello World'.replace("World", "Python")
 ```
 
 ### 对齐
@@ -239,43 +226,99 @@ for str in str_list:
 
 ### 修剪
 
+有如下定义的字符串
+
 ```python
 str = ' Hello World '
 
 # | Hello World |
 print('|%s|' % str)
+```
 
+利用 `lstrip()` 进行左侧修剪
+
+```Python
 # |Hello World |
 print('|%s|' % str.lstrip())
+```
 
+利用 `rstrip()` 进行左侧修剪
+
+```Python
 # | Hello World|
 print('|%s|' % str.rstrip())
+```
 
+利用 `strip()` 进行两侧修剪
+
+
+```Python
 # |Hello World|
 print('|%s|' % str.strip())
 ```
 
 ### 分割
 
-`split` 方法默认根据空白字符分割字符串
+利用 `split()` 方法根据指定字符分割字符串
+
+`split()`方法默认使用空白字符切割字符串
 
 ```python
-str = 'Hello World'
+str = 'Hello World\nMy,name@is\tPython'
 
-# ['Hello', 'World']
-str_split_list = str.split()
+# ['Hello', 'World', 'My,name@is', 'Python']
+str.split()
+```
+
+`sep` 参数可以接受一个字符，用于改变默认的切割字符
+
+```Python
+# ['Hello World\nMy', 'name@is\tPython']
+str.split(sep=',')
 ```
 
 ### 拼接
 
+####  `join()`函数
+
 ```python
-# Hello World
-str_join = " ".join(str_split_list)
+# Hello World My name is Python
+" ".join(['Hello', 'World', 'My', 'name', 'is', 'Python'])
+```
+
+#### `+` 运算符
+
+```python
+# 'Jack and Rose'
+"Jack" + " and " + "Rose"
 ```
 
 ### 切片
 
 可以把字符串视为 `list` 对其进行切片操作。请参考 `list` 的切片操作
+
+### 查找
+
+#### `index()`方法
+
+```Python
+# 7
+'Hello World'.index('or')                                                                             
+```
+
+#### `find()`方法
+
+```Python
+# 7
+'Hello World'.find('or')
+```
+
+### 包含关系
+
+```Python
+# True
+'el' in 'Hello World'
+```
 
 ## 格式化
 
