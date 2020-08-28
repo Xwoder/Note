@@ -17,3 +17,14 @@
 
 空值是Python里一个特殊的值，用 `None` 表示。
 
+## 整数
+
+```Python
+numbe = 10
+
+# 使用 type 函数查看类型，返回int
+type(number)
+```
+
+## 浮点数
+
