@@ -6,7 +6,7 @@
 
 ### 使用大括号创建
 
-使用 `{}` 定义
+这种创建方式使用 `{}` 定义字典
 
 ```Python
 empty_dict = {}
@@ -100,13 +100,23 @@ score_dict['Ross'] = 80
 'Michael' not in score_dict
 ```
 
-## 删除 / `pop()`
+## 删除
+
+### pop
 
 ```python
 # 100
 score_dict.pop('Michael')
 
 # score_dict == {'Bob': 75, 'Tracy': 85}
+```
+
+### del
+
+```Python
+del score_dict['Bob']
+
+# score_dict == {'Tracy': 85}
 ```
 
 ## 遍历
