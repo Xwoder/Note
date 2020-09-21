@@ -1,4 +1,4 @@
-# Python 的 if...[elif...][else...]
+# Python if 语句
 
 [TOC]
 
