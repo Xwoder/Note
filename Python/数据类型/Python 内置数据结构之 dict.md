@@ -70,7 +70,7 @@ score_dict.get('Jack', -1)
 # 指定key并不存在于字典中，所以返回指定默认值-1
 ```
 
-## 新增/修改
+## 新增 / 修改
 
 对于使用
 
@@ -158,7 +158,7 @@ for name in score_dict:
     print(name)
 ```
 
-### 仅遍历 `value`
+### 仅遍历 `value()`
 
 ```python
 for score in score_dict.values():
@@ -197,11 +197,11 @@ score_dict.update(score_new_dict)
 
 ## 清空 / `clear()`
 
-```python
+```Python
 score_dict.clear()
 ```
 
-## 复制
+## 复制 / `copy()`
 
 ```Python
 area_code.copy()
@@ -222,4 +222,28 @@ d_filter = {key: value for key, value in d.items() if key % 2 == 0}
 # d_filter == {
 #     2: 20, 4: 40
 # }
+```
+
+## 生成
+
+### 从键值列表生成字典
+
+#### 循环式
+
+```Python
+key_lists = ['021', '0551', '101']
+value_lists = ['上海', '合肥', '北京']
+
+d = {}
+for key, value in zip(key_lists, value_lists):
+    d[key] = value
+
+# d = {'021': '上海', '0551': '合肥', '101': '北京'}
+```
+
+#### 构造函数式
+
+```Python
+dict(zip(key_lists, value_lists))
+{'021': '上海', '0551': '合肥', '101': '北京'}
 ```

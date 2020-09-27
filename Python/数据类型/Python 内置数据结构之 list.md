@@ -67,7 +67,7 @@ L.index(20)
 
 ### 添加
 
-#### append
+#### `append`
 
 在列表的尾部追加元素
 
@@ -77,7 +77,7 @@ classmates.append("Adam")
 # classmates == ['Michael', 'Bob', 'Tracy', 'Adam']
 ```
 
-#### insert
+#### `insert`
 
 在列表指定的索引位置插入元素
 
@@ -87,7 +87,7 @@ classmates.insert(1, "Jack")
 # classmates == ['Michael', 'Jack', 'Bob', 'Tracy', 'Adam']
 ```
 
-#### extend
+#### `extend`
 
 将一个可遍历类型的元素追加至列表
 
@@ -99,12 +99,24 @@ classmates = ['ZhangSan', 'LiSi', 'WangWu']
 
 names.extend(classmates)
 
-## clasmates == ['ChenLiu', 'ZhangSan', 'LiSi', 'WangWu']
+# names == ['ChenLiu', 'ZhangSan', 'LiSi', 'WangWu']
 ```
+
+`extend` 方法会在原列表的尾部直接插入元素
+
+#### `+`
+
+```Python
+['abc', 'def', 'ghi'] + ['jkl']
+
+# ['abc', 'def', 'ghi', 'jkl']
+```
+
+`+` 运算符并不会修改原列表，还是返回一个连接后的新的列表
 
 ### 删除
 
-#### pop
+#### `pop`
 
 删除末尾元素
 
@@ -124,7 +136,7 @@ member = classmates.pop(1)
 # classmates == ['Michael', 'Bob', 'Tracy']
 ```
 
-#### del
+#### `del`
 
 删除元素。其本质是将一个变量从内存中删除
 
@@ -138,7 +150,7 @@ del L[1]
 # L == [1, 3]
 ```
 
-#### remove
+#### `remove`
 
 删除指定元素，如果元素在列表存在多个，则仅删除第1个
 
@@ -149,7 +161,7 @@ L.remove('Tom')
 # L == ['Jack', 'Ross', 'Emma']
 ```
 
-#### clear
+#### `clear`
 
 清空列表
 
@@ -253,6 +265,25 @@ d = {'x': 'A', 'y': 'B', 'z': 'C' }
 [s.lower() for s in ['Hello', 'World', 100, 'IBM', 'Apple', 200] if isinstance(s, str)]
 ```
 
+#### 嵌套生成式
+
+```Python
+all_data = [
+    ['John', 'Emily', 'Michael', 'Mary', 'Steven'],
+    ['Maria', 'Juan', 'Javier', 'Natalia', 'Pilar']
+]
+
+# ['Steven']
+[name for names in all_data for name in names if name.count('e') >= 2]
+```
+
+```Python
+some_tuples = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+
+# [1, 2, 3, 4, 5, 6, 7, 8, 9]
+[x for tup in some_tuples for x in tup]
+```
+
 ## 排序
 
 ```python
@@ -307,7 +338,7 @@ L.reverse()
 
 ## 遍历
 
-### for 循环编列
+### `for` 循环编列
 
 ```python
 L = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]
@@ -328,7 +359,7 @@ for item in L:
 # 10
 ```
 
-### while 循环遍历
+### `while` 循环遍历
 
 ```python
 L = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]
@@ -352,12 +383,19 @@ while i < len(L):
 # 10
 ```
 
-## 遍历
+## 是否包含
 
-```python
-name_tuple = ('Jack', 'Rose', 'Emma')
-name_list = list(name_tuple)
+### `in`
 
-# list
-type(name_list)
+```Python
+'def' in ['abc', 'def', 'ghi']
+# True
 ```
+
+### `not in`
+
+```Python
+'def' not in ['abc', 'def', 'ghi']
+# False
+```
+

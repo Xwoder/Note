@@ -1,8 +1,8 @@
-# Python if 语句
+# if
 
 [TOC]
 
-## if...
+## `if...`
 
 ```python
 if 条件表达式:
@@ -18,7 +18,7 @@ if not is_employee:
     print('请勿进入')
 ```
 
-## if...elif...
+## `if...elif...`
 
 ```python
 if 条件表达式:
@@ -27,7 +27,7 @@ elif 条件表达式:
     # code...
 ```
 
-## if...else...
+## `if...else...`
 
 ```python
 if 条件表达式:
@@ -69,7 +69,7 @@ else:
 ```
 
 
-## if...elif...else...
+## `if...elif...else...`
 
 ```python
 if 条件表达式:

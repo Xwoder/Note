@@ -51,7 +51,7 @@ for (x, y) in [(1, 1), (2, 4), (3, 9)]:
 # x = 3, y = 9
 ```
 
-## else 子句
+## `else` 子句
 
 ```python
 for i in list(range(1, 11)):
