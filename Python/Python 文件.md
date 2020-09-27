@@ -36,14 +36,15 @@
 
 ## 基本操作
 
-### 打开
+### 打开 / `open`
 
 ```Python
 file = open(文件名)
 file = open(文件名, 打开方式)
+file = open(文件名, 打开方式, encoding='编码名称')
 ```
 
-### 关闭
+### 关闭 / `close`
 
 ```Python
 file.close()
@@ -51,7 +52,7 @@ file.close()
 
 ### 读取
 
-### `for` 循环
+#### `for` 循环
 
 ```Python
 input_file_name = "file_to_read.txt"
@@ -64,7 +65,7 @@ for row in file:
 file.close()
 ```
 
-### `read()`
+#### `read()`
 
 ```Python
 file = open("note.txt", "r")
@@ -83,7 +84,7 @@ print(content)
 file.close()
 ```
 
-### `readline()`
+#### `readline()`
 
 ```Python
 file = open("note.txt", "r")
@@ -101,7 +102,7 @@ while True:
 file.close()
 ```
 
-### `readlines()`
+#### `readlines()`
 
 ```Python
 file = open("note.txt", "r")
@@ -122,7 +123,7 @@ print(lines)
 file.close()
 ```
 
-### `with...as...`
+#### `with...as...`
 
 ```Python
 input_file_name = "file_to_read.txt"
