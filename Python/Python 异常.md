@@ -6,15 +6,16 @@
 
 ### 语法
 
-```
+```Python
 try:
     pass
 except ZeroDivisionError:
     pass
 except ValueError as result:
+    # 用一个变量引用错误错误类型对象
     pass
 except (ZeroDivisionError, ValueError):
-    # 同时处理多种错误
+    # 同时捕获处理多种错误
     pass
 except Exception as result:
     pass
@@ -25,6 +26,12 @@ finally:
     # 不论是否产生异常，都将执行 finally 部分的语句
     pass
 ```
+
+`except`子句可以省略错误类型
+
+`else` 子句中语句在不发生不发生任何异常时执行
+
+`finally` 子句中语句，不论是否发生异常均执行
 
 ### 例
 
@@ -85,3 +92,10 @@ try:
 except Exception as error:
     print("捕获到异常，异常信息：%s" % error)
 ```
+
+
+
+
+
+
+
