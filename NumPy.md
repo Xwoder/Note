@@ -370,4 +370,167 @@ id,value1,value2,value3
 3,,2.1,19
 ```
 
-## 
+## 常见概率分布
+
+### 二项分布
+
+```Python
+numpy.random.binomial(n, p, size=None)
+```
+
+从一个二项分布中抽取样本
+
+**参数**
+
+* n
+    * 试验次数
+* p
+    * 单次试验事件发生的概率
+* size
+    * 采样次数
+
+**返回值**
+
+从参数化的二项分布中抽取样本，其中每个样本等于 $n$ 次试验中成功的次数。
+
+例
+
+```Python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+# 用来正常显示中文标签
+plt.rcParams['font.sans-serif'] = ['Heiti TC']
+# 用来正常显示负号
+plt.rcParams['axes.unicode_minus'] = False
+
+np.random.seed(47)
+
+n = 100
+p = 0.5
+size = 100
+x = np.random.binomial(n, p, size)
+
+plt.hist(x)
+plt.ylabel('指定事件发生x次的次数')
+plt.xlabel('n次试验中指定事件发生指定的次数')
+plt.show()
+```
+
+还可以使用 `scipy` 提供的 `stats` 类计算指定事件发生特定次数的概率
+
+```Python
+# n次试验中，指定事件发生指定次数的概率
+s = stats.binom.pmf(range(n + 1), n, p)
+print(np.around(s, 3))
+# [
+#     0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    
+#     0.    0.    0.    0.    0.    0.    0.    0.    0.    0.
+#     0.    0.    0.    0.    0.    0.    0.    0.    0.    0.
+#     0.    0.    0.    0.    0.    0.001 0.002 0.003 0.004 0.007
+#     0.011 0.016 0.022 0.03  0.039 0.048 0.058 0.067 0.074 0.078 
+#     0.08  0.078 0.074 0.067 0.058 0.048 0.039 0.03  0.022 0.016
+#     0.011 0.007 0.004 0.003 0.002 0.001 0.    0.    0.    0.    
+#     0.    0.    0.    0.    0.    0.    0.    0.    0.    0.
+#     0.    0.    0.    0.    0.    0.    0.    0.    0.    0.
+#     0.    0.    0.    0.    0.    0.    0.    0.    0.    0.
+#     0.   
+# ]
+```
+
+### 泊松分布
+
+```Python
+numpy.random.poisson(lam=1.0, size=None)
+```
+
+从一个泊松分布中抽取样本
+
+**参数**
+
+* `lam` 单位时间内，事件发生次数的平均值
+
+```Python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+# 用来正常显示中文标签
+plt.rcParams['font.sans-serif'] = ['Heiti TC']
+# 用来正常显示负号
+plt.rcParams['axes.unicode_minus'] = False
+
+np.random.seed(47)
+lam = 7
+size = 50000
+x = np.random.poisson(lam, size)
+
+plt.hist(x)
+
+plt.xlabel('每十分钟接到订票电话的次数')
+plt.ylabel('所有样本中随便变量发生指定次数的次数')
+
+plt.show()
+```
+
+### 超几何分布
+
+```Python
+numpy.random.hypergeometric(ngood, nbad, nsample, size=None)
+```
+
+### 均匀分布
+
+```Python
+numpy.random.uniform(low=0.0, high=1.0, size=None)
+```
+
+### 正态分布
+
+```Python
+numpy.random.standard_normal(size=None)
+```
+
+该函数对应标准正态分布。如果需要使用非标准正态分布应当使用函数
+
+```Python
+numpy.random.normal(loc=0.0, scale=1.0, size=None)
+```
+
+该函数的默认实现也对应标准正态分布
+
+### 指数分布
+
+```Python
+numpy.random.exponential(scale=1.0, size=None)
+```
+
+## 随机
+
+### 随机数
+
+```Python
+numpy.random.seed(seed=None)
+```
+
+`seed()` 用户设定随机数种子
+
+### 随机抽数
+
+```Python
+numpy.random.choice(a, size=None, replace=True, p=None)
+```
+
+### 随机乱序
+
+```Python
+numpy.random.shuffle(x)
+```
+
+原地操作原集合
+
+```Python
+numpy.random.permutation(x)
+```
+
