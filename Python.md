@@ -29,8 +29,17 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ### 退出
 
-* 组合键 `Ctrl + Z`  并敲击 `ENTER` 键
-* 输入 `exit()` 命令
+*  `CTRL + D` 组合键
+*  `exit()` 命令
+
+### 版本
+
+```shell
+$ python --version
+
+# 输出
+# Python 3.8.5
+```
 
 ## 注释
 
