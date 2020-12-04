@@ -20,13 +20,13 @@ Or copy and paste one of these URLs:
 
 ## 配置
 
-### 配置文件路径
+### 路径
 
 ```
-~/.jupyter/jupyter_notebook_config
+~/.jupyter/jupyter_notebook_config.py
 ```
 
-### 生成配置文件
+### 生成
 
 ```Bash
 $ jupyter notebook --generate-config
