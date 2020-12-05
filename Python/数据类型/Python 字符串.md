@@ -200,30 +200,38 @@ for str in str_list:
 ```python
 str = ' Hello World '
 
-# | Hello World |
 print('|%s|' % str)
+
+# 输出
+# | Hello World |
 ```
 
 利用 `lstrip()` 进行左侧修剪
 
 ```Python
-# |Hello World |
 print('|%s|' % str.lstrip())
+
+# 输出
+# |Hello World |
 ```
 
-利用 `rstrip()` 进行左侧修剪
+利用 `rstrip()` 进行右侧修剪
 
 ```Python
-# | Hello World|
 print('|%s|' % str.rstrip())
+
+# 输出
+# | Hello World|
 ```
 
-利用 `strip()` 进行两侧修剪
+利用 `strip()` 进行双侧修剪
 
 
 ```Python
-# |Hello World|
 print('|%s|' % str.strip())
+
+# 输出
+# |Hello World|
 ```
 
 ### 分割 / `split`
@@ -367,6 +375,18 @@ score = 90.5
 # 'name = Jack, age = 18, score = 90.50'
 ```
 
+方括号 `{}` 中的数字是可以省略的，此时，将依据其在字符串中的顺序逐一匹配 `format` 函数中的参数
+
+```Python
+first_name = "Jack"
+last_name = "Chen"
+
+print("{} {}".format(first_name, last_name))
+
+# 输出
+# Jack Chen
+```
+
 占位符
 
 | 占位符 | 替换内容     |
@@ -375,3 +395,35 @@ score = 90.5
 | `f`    | 浮点数       |
 | `s`    | 字符串       |
 | `x`    | 十六进制整数 |
+
+### f-string
+
+```Python
+first_name = "jack"
+last_name = "chen"
+
+full_name = f"{first_name.title()} {last_name.title()}"
+print(full_name)
+
+# 输出
+# Jack Chen
+```
+
+```Python
+first_name = "jack"
+last_name = "chen"
+
+full_name = f"{first_name} {last_name}"
+print(full_name.title())
+
+# 输出
+# Jack Chen
+```
+
+## 转义字符
+
+| 字符 | 含义   |
+| :--: | ------ |
+| `\n` | 换行   |
+| `\t` | 制表符 |
+
