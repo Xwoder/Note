@@ -298,7 +298,7 @@ L.sort(reverse=True)
 # L == [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 ```
 
-### `itemgetter`
+### itemgetter
 
 ```Python
 from operator import itemgetter
@@ -338,7 +338,7 @@ L.reverse()
 
 ## 遍历
 
-### `for` 循环编列
+### for 循环遍历
 
 ```python
 L = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]
@@ -359,7 +359,7 @@ for item in L:
 # 10
 ```
 
-### `while` 循环遍历
+### while 循环遍历
 
 ```python
 L = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]
