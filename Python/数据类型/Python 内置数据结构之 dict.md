@@ -66,20 +66,26 @@ score_dict['Michael']
 
 ### 通过 `get()` 访问
 
-对于 `get()` 方法，如果第 1 个参数指定的键在字典中不存在，则返回第 2 个参数指定的默认值。
-
 ```python
 # 100
 score_dict.get('Michael')
+```
 
+若指定的键在字典中不存在，则返回 `None`
+
+```python
+# None
+score_dict.get('Jack')
+```
+
+可以通过第 2 个参数指定一个值，即默认值，当键在字典中不存在时，返回该默认值。
+
+```python
 # 100
 score_dict.get('Michael', -1)
 
 # -1
 score_dict.get('Jack', -1)
-
-# None
-score_dict.get('Jack')
 ```
 
 ## 新增 / 修改
