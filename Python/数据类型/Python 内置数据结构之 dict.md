@@ -159,6 +159,8 @@ for name, score in score_dict.items():
 # name = Tracy, score = 85
 ```
 
+示例代码在遍历的同时，对 `items()` 方法的键值对进行了拆包
+
 ### 遍历`key`
 
 ```python
