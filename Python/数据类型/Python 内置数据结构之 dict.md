@@ -53,7 +53,7 @@ empty_dict = dict()
 
 ## 访问
 
-### 通过 key 访问
+### 通过键访问
 
 ```python
 score_dict['Michael']
