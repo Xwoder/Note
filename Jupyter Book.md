@@ -152,18 +152,12 @@ mybookname/
 ### 非交互方式
 
 ```bash
-$ jupyter-book create 目录名
-```
-
-例
-
-```bash
-$ jupyter-book create mynewbook/
+$ jupyter-book create 目录
 ```
 
 ### 交互方式
 
 ```bash
-$ jupyter-book create mynewbook/ --cookiecutter
+$ jupyter-book create 目录 --cookiecutter
 ```
 
