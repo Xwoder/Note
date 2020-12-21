@@ -10,13 +10,13 @@
 $ conda activate
 ```
 
-默认的环境是 `base`
+默认激活的环境是 `base`。如果想指定需要激活的环境，则可以使用如下命令
 
 ```shell
 $ conda activate 环境名称
 ```
 
-### 停止
+### 退出
 
 ```shell
 $ conda deactivate
@@ -34,8 +34,18 @@ $ conda info --envs
 
 ### 创建
 
-```shell
+```bash
+$ conda create --name 环境名称
+```
+
+```bash
 $ conda create --name 环境名称 python=版本号
+```
+
+### 删除
+
+```bash
+$ conda remove -n 环境名称
 ```
 
 ## 升级
