@@ -8,10 +8,6 @@
 
 这种创建方式使用 `{}` 定义字典
 
-```Python
-empty_dict = {}
-```
-
 ```python
 score_dict = {
     'Tracy': 60,
@@ -19,6 +15,12 @@ score_dict = {
     'Bob': 75,
     'Tracy': 85
 }
+```
+
+创建一个空字典
+
+```Python
+empty_dict = {}
 ```
 
 `key`  与  `value`  之间使用 `:` 分隔
@@ -41,6 +43,12 @@ score_dict = {
 
 ```Python
 score_dict = dict(Michael=95, Bob=75, Tracy=85)
+```
+
+创建一个空字典
+
+```Python
+empty_dict = dict()
 ```
 
 ## 访问
@@ -112,6 +120,8 @@ score_dict.pop('Michael')
 ```
 
 ### del
+
+根据键来删除指定的元素
 
 ```Python
 del score_dict['Bob']
