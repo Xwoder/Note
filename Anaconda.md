@@ -45,7 +45,7 @@ $ conda create --name 环境名称 python=版本号
 ### 删除
 
 ```bash
-$ conda remove -n 环境名称
+$ conda remove -n 环境名称 --all
 ```
 
 ## 升级
