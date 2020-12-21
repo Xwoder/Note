@@ -139,7 +139,7 @@ del score_dict['Bob']
 score_dict = {'Michael': 95, 'Bob': 75, 'Tracy': 85}
 ```
 
-### 同时遍历`key`与`value`
+### 遍历`key`与`value`
 
 ```python
 for name, score in score_dict.items():
@@ -151,7 +151,7 @@ for name, score in score_dict.items():
 # name = Tracy, score = 85
 ```
 
-### 仅遍历`key`
+### 遍历`key`
 
 ```python
 for name in score_dict.keys():
@@ -170,7 +170,7 @@ for name in score_dict:
     print(name)
 ```
 
-### 仅遍历 `value()`
+### 遍历 `value()`
 
 ```python
 for score in score_dict.values():
