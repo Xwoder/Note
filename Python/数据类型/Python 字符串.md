@@ -411,11 +411,11 @@ print("{} {}".format(first_name, last_name))
 first_name = "jack"
 last_name = "chen"
 
-full_name = f"{first_name.title()} {last_name.title()}"
+full_name = f"My full name is {first_name.title()} {last_name.title()}"
 print(full_name)
 
 # 输出
-# Jack Chen
+# My full name is Jack Chen
 ```
 
 ```Python
