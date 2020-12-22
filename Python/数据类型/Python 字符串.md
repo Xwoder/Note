@@ -8,15 +8,24 @@
 
 ### 双引号定义
 
+以下两个字符串的定义是等价的
+
 ```python
 "Hello World"
-"I'm a programmer."
+
+"Hello " \
+"World"
 ```
 
 ### 单引号定义
 
+以下两个字符串的定义是等价的
+
 ```Python
 'Hello World'
+
+'Hello ' \
+'World'
 ```
 
 ### 三引号定义
