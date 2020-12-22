@@ -436,3 +436,8 @@ print(full_name.title())
 | `\n` | 换行   |
 | `\t` | 制表符 |
 
+## 输入
+
+```python
+name = input("Please enter your name: ")
+```
