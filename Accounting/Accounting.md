@@ -131,6 +131,15 @@ $$
 \end{align}
 $$
 
+### 净资产收益率 / Return on Equity, ROE
+
+$$
+\begin{align}
+\text { Return on Equity } &= \dfrac{\text { Net income }}{\text { Equity }} \\
+\text { 净资产收益率 } &= \dfrac{净收益}{\text {所有者权益}}
+\end{align}
+$$
+
 ## 术语表
 
 中文名 | 英文名
@@ -190,6 +199,10 @@ $$
 已发行股 | outstanding stock 
 优先股 | preferred stock 
 负债比率 | debt ratio 
+审计 | auditing 
+审计师 | auditor 
+公认会计原则 | generally accepted accounting principle 
+净资产收益率 | return on equity 
 
 ## 	账户类型
 
