@@ -140,6 +140,33 @@ $$
 \end{align}
 $$
 
+### 利润率 / Profit Margin Percentage
+
+$$
+\begin{align}
+\text { Profit Margin Percentage } &= \dfrac{\text { Net income }}{\text { Sales revenue }} \\
+\text { 利润率 } &= \dfrac{ 净收益 }{\text { 销售收入 }}
+\end{align}
+$$
+
+### 未收销售额天数 / Days' Sales Uncollected
+
+### 库存周转率 / Intentory Turnover Ratio
+
+### 流动比率 / Current Ratio
+
+### 速动比率 / Quick Ratio
+
+### 负债比率 / Debt Ratio
+
+### 每股收益 / Earnings Per Share
+
+### 市盈率 / Price-Earnings Ratio
+
+### 永久资本回报率 / Return on Permanent Capital
+
+###  投资回收率 / Return on Investment
+
 ## 术语表
 
 中文名 | 英文名
@@ -203,6 +230,11 @@ $$
 审计师 | auditor 
 公认会计原则 | generally accepted accounting principle 
 净资产收益率 | return on equity 
+息税前利润 | Earnings Before Interest and Tax / EBIT 
+资本周转率 | capital turnover ratio 
+资本密集型 | capital-intensive 
+流动性 | liquidity 
+偿付能力 | solvency 
 
 ## 	账户类型
 
