@@ -131,7 +131,7 @@ $$
 \end{align}
 $$
 
-### 净资产收益率 / Return on Equity, ROE
+### 净资产收益率 / Return on Equity / ROE
 
 $$
 \begin{align}
