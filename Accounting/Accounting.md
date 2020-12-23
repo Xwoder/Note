@@ -52,8 +52,8 @@
 又称 Accounting Equation
 $$
 \begin{eqnarray}
-\text {Assets} &=& \text {Liabilities} &+& \text {Equity} \\
-\text {资产} &=& \text {负债} &+& \text {所有者权益} \\
+\text{Assets} &=& \text{Liabilities} &+& \text{Equity} \\
+\text{资产} &=& \text{负债} &+& \text{所有者权益} \\
 \end{eqnarray}
 $$
 
@@ -61,8 +61,8 @@ $$
 
 $$
 \begin{align}
-\text { Current Ratio } &= \dfrac{\text { Current Assets }}{\text { Current Liabilities }} \\
-\text { 流动资产 } &= \dfrac{\text { 流动资产 }}{\text { 流动负债 }}
+\text{Current Ratio} &= \dfrac{\text{Current Assets}}{\text{Current Liabilities}} \\
+\text{流动资产} &= \dfrac{\text{流动资产}}{\text{流动负债}}
 \end{align}
 $$
 
@@ -70,8 +70,8 @@ $$
 
 $$
 \begin{eqnarray}
-\text { Gross Margin } &=& \text { Sales Revenue } &-& \text { Cost of sales } \\
-\text { 毛利润 } &=& \text { 销售收入} &-& \text { 销售成本 } \\
+\text{Gross Margin} &=& \text{Sales Revenue} &-& \text{Cost of sales} \\
+\text{毛利润} &=& \text{销售收入} &-& \text{销售成本} \\
 \end{eqnarray}
 $$
 
@@ -81,8 +81,8 @@ $$
 
 $$
 \begin{align}
-\text { Gross margin percentage } &= \dfrac{\text { Gross margin }}{\text { Sales revenue }} \\
-\text { 毛利率 } &= \dfrac{\text { 毛利润 }}{\text { 销售收入 }}
+\text{Gross margin percentage} &= \dfrac{\text{Gross margin}}{\text{Sales revenue}} \\
+\text{毛利率} &= \dfrac{\text{毛利润}}{\text{销售收入}}
 \end{align}
 $$
 
@@ -90,17 +90,17 @@ $$
 
 $$
 \begin{align}
-\text { Net income percentage } &= \dfrac{\text { Net income }}{\text { Sales revenue }} \\
-\text { 净收益率 } &= \dfrac{\text { 净收益 }}{\text { 销售收入 }}
+\text{Net income percentage} &= \dfrac{\text{Net income}}{\text{Sales revenue}} \\
+\text{净收益率} &= \dfrac{\text{净收益}}{\text{销售收入}}
 \end{align}
 $$
 
-### 存货周转率 / Inventory turnover rate
+### 存货周转率 / Inventory Turnover Ratio
 
 $$
 \begin{align}
-\text { Inventory turnover rate } &= \dfrac{\text { Cost of sales }}{\text { Inventory }} \\
-\text { 存货周转率 } &= \dfrac{\text { 销售成本 }}{\text { 存货 }}
+\text{Inventory Turnover Ratio} &= \dfrac{\text{Cost of sales}}{\text{Inventory}} \\
+\text{存货周转率} &= \dfrac{\text{销售成本}}{\text{存货}}
 \end{align}
 $$
 
@@ -108,8 +108,8 @@ $$
 
 $$
 \begin{align}
-\text { Depreciation rate } &= \dfrac{\text { 1 }}{\text { Number of Years of Service Life }} \\
-\text { 折旧率 } &= \dfrac{\text { 1 }}{\text { 服务年限 }}
+\text{Depreciation rate} &= \dfrac{\text{1}}{\text{Number of Years of Service Life}} \\
+\text{折旧率} &= \dfrac{\text{1}}{\text{服务年限}}
 \end{align}
 $$
 
@@ -117,8 +117,8 @@ $$
 
 $$
 \begin{eqnarray}
-\text { Working capital } &=& \text { Current assets } &-&  \text { Current liabilities } \\
-\text { 营运资本 } &=& \text { 流动资产 } &-& \text { 流动负债 }
+\text{Working capital} &=& \text{Current assets} &-&  \text{Current liabilities} \\
+\text{营运资本} &=& \text{流动资产} &-& \text{流动负债}
 \end{eqnarray}
 $$
 
@@ -126,46 +126,103 @@ $$
 
 $$
 \begin{align}
-\text { Debt ratio } &= \dfrac{\text { Debt ratio }}{\text { Inventory }} \\
-\text { 负债比率 } &= \dfrac{\text { Debt capital }}{\text { Debt ratio} + \text{ Equity capital }}
+\text{Debt ratio} &= \dfrac{\text{Noncurrent liabilities}}{\text{Noncurrent liabilities} + \text{Equity}} \\
+\text{负债比率} &= \dfrac{\text{非流动负债}}{\text{非流动负债} + \text{所有者权益}}
 \end{align}
 $$
 
 ### 净资产收益率 / Return on Equity / ROE
 
 $$
-\begin{align}
-\text { Return on Equity } &= \dfrac{\text { Net income }}{\text { Equity }} \\
-\text { 净资产收益率 } &= \dfrac{净收益}{\text {所有者权益}}
-\end{align}
+\begin{eqnarray}
+\text{Return on Equity} &=& \text{Profit Margin}  &\times& \text{Asset Turnover}  &\times& \text{Equity Multiplier} \\
+\text{净资产收益率} &=&\text{利润率}  &\times& \text{资产周转率}  &\times&\text{权益乘数} \\
+&=& \dfrac{\text{Net income}}{\text{Sales Revenues}} &\times& \dfrac{\text{Sales Revenues}}{\text{Assets}}  &\times& \dfrac{\text{Assets}}{\text{Equity}} \\
+&=& \dfrac{\text{净收益}}{\text{销售收入}} &\times& \dfrac{\text{销售收入}}{\text{资产}}  &\times& \dfrac{\text{资产}}{\text{所有者权益}} \\
+&=& \dfrac{\text{Net income}}{\text{Equity}} \\
+&=& \dfrac{净收益}{\text{所有者权益}} \\
+\end{eqnarray}
 $$
 
 ### 利润率 / Profit Margin Percentage
 
 $$
 \begin{align}
-\text { Profit Margin Percentage } &= \dfrac{\text { Net income }}{\text { Sales revenue }} \\
-\text { 利润率 } &= \dfrac{ 净收益 }{\text { 销售收入 }}
+\text{Profit Margin Percentage} &= \dfrac{\text{Net income}}{\text{Sales revenue}} \\
+\text{利润率} &= \dfrac{净收益}{\text{销售收入}}
 \end{align}
 $$
 
-### 未收销售额天数 / Days' Sales Uncollected
+### 应收销售账款收款期 / Days' Sales Uncollected
 
-### 库存周转率 / Intentory Turnover Ratio
+$$
+\begin{align}
+\text{Days' Sales Uncollected} &= \dfrac{\text{Accounts receivable}}{\text{Sales revenue}} \times 365 \\
+\text{应收销售账款收款期} &= \dfrac{应收账款}{\text{销售收入}} \times 365
+\end{align}
+$$
+
+### 资本周转率 / Capital Turnover
+
+$$
+\begin{align}
+\text{Capital Turnover} &= \dfrac{\text{Sales Revenue}}{\text{Permanent Capital}} \\
+\text{资本周转率} &= \dfrac{销售收入}{\text{永久性资本}}
+\end{align}
+$$
 
 ### 流动比率 / Current Ratio
 
+$$
+\begin{align}
+\text{Current Ratio} &= \frac{\text{Current Assets}}{\text{Current Liabilities}} \\
+\text{流动比率} &= \dfrac{\text{流动资产}}{\text{流动负债}}
+\end{align}
+$$
+
 ### 速动比率 / Quick Ratio
 
-### 负债比率 / Debt Ratio
+$$
+\begin{align}
+\text{Quick Ratio} &= \dfrac{\text{Current Assets} - \text{Inventory}}{\text{Current libabilities}}  \\
+\text{速动比率} &= \dfrac{\text{流动资产} - \text{存货}}{\text{流动负债}}
+\end{align}
+$$
 
-### 每股收益 / Earnings Per Share
+### 每股收益 / Earnings per Share 
+
+$$
+\text{Earnings per Share}=\frac{\text{Net Income} - \text{Preferred Dividends}}{\text{End-of-Period Common Shares Outstanding}}
+$$
 
 ### 市盈率 / Price-Earnings Ratio
 
 ### 永久资本回报率 / Return on Permanent Capital
 
-###  投资回收率 / Return on Investment
+###  投资回收率 / Return on Investment / ROI
+
+### 杠杆率 / Leverage Ratio
+
+又称**权益乘数** / `Equity multiplier`
+$$
+\begin{eqnarray}
+\text{Return on Equity} &=& \text{Profit Margin}  &\times& \text{Asset Turnover}  &\times& \text{Equity Multiplier} \\
+\text{净资产收益率} &=&\text{利润率}  &\times& \text{资产周转率}  &\times&\text{权益乘数} \\
+&=& \dfrac{\text{Net income}}{\text{Sales Revenues}} &\times& \dfrac{\text{Sales Revenues}}{\text{Assets}}  &\times& \dfrac{\text{Assets}}{\text{Equity}} \\
+&=& \dfrac{\text{净收益}}{\text{销售收入}} &\times& \dfrac{\text{销售收入}}{\text{资产}}  &\times& \dfrac{\text{资产}}{\text{所有者权益}} \\
+&=& \dfrac{\text{Net income}}{\text{Equity}} \\
+&=& \dfrac{净收益}{\text{所有者权益}} \\
+\end{eqnarray}
+$$
+
+### 资产周转率 / Asset Turnover Ratio
+
+$$
+\begin{align}
+\text{Asset Turnover Ratio} &= \dfrac{\text{Sales Revenue}}{\text{Assets}} \\
+\text{资产周转率} &= \dfrac{\text{销售收入}}{\text{资产}}
+\end{align}
+$$
 
 ## 术语表
 
@@ -291,7 +348,7 @@ $$
 
 收益是权益的增加；费用是权益的减少。
 
-支出（`expenditure`）
+支出 / `expenditure`
 
 * 导致资产的减少，或者导致负债的增加
 * 一段期间内产生的支出，在期末时，或者成为资产，或者成为费用
