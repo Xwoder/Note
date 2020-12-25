@@ -7,13 +7,13 @@
 ### 安装
 
 ```R
-install.package("包名")
+install.packages("包名")
 ```
 
 例
 
 ```R
-install.package("ggplot2")
+install.packages("ggplot2")
 ```
 
 ### 查看
@@ -73,4 +73,52 @@ remove.packages()
 ```R
 remove.packages("ggplot2")
 ```
+
+### 帮助信息
+
+```R
+help()
+```
+
+或
+
+```R
+help(package = "包名")
+```
+
+或，在浏览器中查看文档
+
+```
+browseVignettes("ggplot2")
+```
+
+## 版本
+
+### 查看
+
+```R
+version
+```
+
+或，通过会话信息查看
+
+```R
+sessionInfo()
+```
+
+## 帮助
+
+查看帮助信息
+
+```R
+help()
+```
+
+或，在浏览器中查看帮助文档
+
+```R
+browseVignettes()
+```
+
+
 
