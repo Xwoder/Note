@@ -12,7 +12,7 @@
 
 如果想在 `HTML` 中使用 `SVG`，可以使用如下的 `SVG` 标签：
 
-```html
+```svg
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
 ```
 
@@ -20,7 +20,7 @@
 
 ### rect / 矩形
 
-```xml
+```svg
 <rect 
       x="150"
       y="20"
@@ -50,7 +50,7 @@
 
 ### circle / 圆形
 
-```xml
+```svg
 <circle 
         r=50 
         cx=80 
@@ -74,7 +74,7 @@
 
 ### ellipse / 椭圆
 
-```xml
+```svg
 <ellipse 
          rx=50 
          ry=30 
@@ -100,7 +100,7 @@
 
 ### line / 线段
 
-```xml
+```svg
 <line 
       x1="10" 
       y1="20" 
@@ -126,7 +126,7 @@
 
 ### polyline / 折线
 
-```xml
+```svg
 <polyline 
           points="10,10 100,30 40,90 10,70" 
           fill="none" 
@@ -142,11 +142,13 @@
 </polyline>
 ```
 
+
+
 其绘制的折线不会自动闭合，默认使用黑色填充
 
 ### polygon / 多边形
 
-```xml
+```svg
 <polygon points="10,10 100,30 40,90 10,70" 
          fill="none" 
          stroke="green" 
@@ -160,7 +162,7 @@
 
 表明路径绘制操作的步骤需要在 `path` 标签中，用属性 `d` 来表示，例
 
-```xml
+```svg
 <path 
       d="m10,10 l80,80 v50 h100 z" 
       stroke="red" 
@@ -184,7 +186,7 @@
 
 ### 文本 / text
 
-```xml
+```svg
 <text x="50" 
       y="80" 
       dx="10" 
@@ -209,3 +211,59 @@
 | `textLength` |     文本长度     |
 |   `rotate`   | 单个字符旋转角度 |
 | `transform`  |       变换       |
+
+## 标签元素
+
+### use 标签
+
+用于复用已有元素
+
+被复用的元素需要使用 `id` 属性来唯一标识。
+
+`use` 标签则通过 `href` 属性来引用上述被复用的元素。
+
+例
+
+```svg
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <circle id="myCircle" cx="15" cy="15" r="10"></circle>
+   <use href="#myCircle" fill="red" x="40" y="60"></use>
+   <use href="#myCircle" fill="orange" x="60" y="80"></use>
+</svg>
+```
+
+### g 标签
+
+用于将一个或多个标签分成一组
+
+需要分组的标签应被包含在 `g` 标签中，然后使用 `use` 标签复用该分组
+
+```svg
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <g id="myGroup">
+     <text x="0" y="20">Circle</text>
+     <circle cx="60" cy="16" r="10"></circle>
+  </g>
+   <use href="#myGroup" x="0" y="30" fill="red"></use>
+   <use href="#myGroup" x="0" y="60" fill="blue"></use>
+</svg>
+```
+
+### defs 标签
+
+用于存储稍后将使用的图形对象
+
+```svg
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <g id="myGroup">
+            <text x="0" y="20">Circle</text>
+            <circle cx="60" cy="16" r="10"></circle>
+        </g>
+    </defs>
+    <use fill="green" href="#myGroup" x="0" y="0"></use>
+    <use fill="red" href="#myGroup" x="0" y="30"></use>
+    <use fill="blue" href="#myGroup" x="0" y="60"></use>
+</svg>
+```
+
