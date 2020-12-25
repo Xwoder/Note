@@ -267,3 +267,56 @@
 </svg>
 ```
 
+### pattern 标签
+
+用于以平铺的方式展示图形对象
+
+需要平铺的标签应被包含在 `pattern` 标签中
+
+```svg
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="500" height="800">
+    <defs>
+        <pattern id="dots" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+            <circle cx="50" cy="50" r="35" fill="green"></circle>
+        </pattern>
+    </defs>
+    <rect x="0" y="0" width="100%" height="100%" fill="url(#dots)"></rect>
+</svg>
+```
+
+属性
+
+|     属性名     |          含义          |
+| :------------: | :--------------------: |
+|      `id`      |        唯一标识        |
+|      `x`       |        x 轴坐标        |
+|      `y`       |        y 轴坐标        |
+|    `width`     |          宽度          |
+|    `height`    |          高度          |
+| `patternUnits` | 几何图形采用的坐标体系 |
+
+### image 标签
+
+```svg
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="500" height="800">
+    <defs>
+        <pattern id="logo" x="0" y="0" width="100" height="100" patternUnits="objectBoundingBox">
+            <image href="logo.jpg" width="100%" height="100%"></image>
+        </pattern>
+    </defs>
+    <rect x="0" y="0" width="100%" height="100%" fill="url(#logo)"></rect>
+</svg>
+```
+
+### animate 标签
+
+用于实现动画效果
+
+```svg
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="500" height="800">
+    <rect width="100" height="100" x="0" y="0" fill="orange">
+        <animate attributeName="x" from="0" to="500" dur="2" repeatCount="indefinite"></animate>
+    </rect>
+</svg>
+```
+
