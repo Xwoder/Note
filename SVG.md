@@ -308,6 +308,8 @@
 </svg>
 ```
 
+## 动画
+
 ### animate 标签
 
 用于实现动画效果
@@ -316,6 +318,24 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="500" height="800">
     <rect width="100" height="100" x="0" y="0" fill="orange">
         <animate attributeName="x" from="0" to="500" dur="2" repeatCount="indefinite"></animate>
+    </rect>
+</svg>
+```
+
+### animateTransform 标签
+
+```svg
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="500" height="800">
+    <rect width="50" height="50" x="100" y="100" fill="orange">
+        <animateTransform
+                attributeName="transform"
+                type="rotate"
+                begin="0s"
+                dur="10s"
+                form="0 200 200"
+                to="360 400 400"
+                repeatCount="indefinite">
+        </animateTransform>
     </rect>
 </svg>
 ```
