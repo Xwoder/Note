@@ -1,6 +1,8 @@
-# Python if
+# Python 分支
 
-## if 语句
+## if 语句簇
+
+### if 语句
 
 语法
 
@@ -21,7 +23,7 @@ if 2 > 1 and not 2 > 3:
 # Correct Judgement!
 ```
 
-## if - else 语句
+### if - else 语句
 
 ```Python
 if expression:
@@ -32,7 +34,7 @@ else:
 
 Python 提供与 `if` 搭配使用的 `else`，如果 `if` 语句的条件表达式结果布尔值为假，那么程序将执行 `else` 语句后的代码。
 
-##  if - elif - else 语句
+###  if - elif - else 语句
 
 ```Python
 if expression1:
@@ -46,6 +48,14 @@ else:
 ```
 
 `elif` 语句即为 `else if`，用来检查多个表达式是否为真，并在为真时执行特定代码块中的代码。
+
+### 简略写法
+
+```python
+age = 10
+
+desc = "成年" if age >= 18 else "未成年"
+```
 
 ## 嵌套
 
@@ -80,5 +90,3 @@ else:
     
 # B
 ```
-
-## 
