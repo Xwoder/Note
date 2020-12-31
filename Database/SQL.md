@@ -254,7 +254,7 @@ SELECT *
 * `NOT` 与 `IN` 连用，则为 `NOT IN`
 * `NOT` 与 `IS NULL` 结合使用，则为 `IS NOT NULL`
 
-## Limit 子句
+## LIMIT 子句
 
 ```SQL
 SELECT *
