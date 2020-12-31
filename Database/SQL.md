@@ -204,7 +204,7 @@ SELECT * FROM `Product` WHERE `sale_price` != 100;
 SELECT * FROM `Product` WHERE `sale_price` <> 100;
 ```
 
-### [NOT] BETWEEN ... AND ...
+### BETWEEN ... AND ...
 
 ```SQL
 SELECT *
@@ -218,7 +218,7 @@ SELECT *
     WHERE `sale_price` NOT BETWEEN 1000 AND 5000;
 ```
 
-### [NOT] IN
+### IN
 
 ```SQL
 SELECT *
@@ -226,7 +226,7 @@ SELECT *
     WHERE `product_type` IN ('办公用品', '交通工具');
 ```
 
-### IS [NOT] NULL
+### IS NULL
 
 ```SQL
 SELECT *
@@ -239,6 +239,20 @@ SELECT *
     FROM `Product`
     WHERE `purchase_price` IS NOT NULL;
 ```
+
+### 逻辑运算符
+
+| 符号  | 含义 | 例                               | 优先级 |
+| :---: | :--: | :------------------------------- | ------ |
+| `NOT` |  非  | `NOT age >= 18`                  | 高     |
+| `AND` |  且  | `age >= 18 AND gender = "女"`    |        |
+| `OR`  |  或  | `price <= 0.01 OR price >= 1000` | 低     |
+
+#### 结合使用
+
+* `NOT` 与 `BETWEEN ... AND ...` 连用，则为 `NOT BETWEEN ... AND ...`
+* `NOT` 与 `IN` 连用，则为 `NOT IN`
+* `NOT` 与 `IS NULL` 结合使用，则为 `IS NOT NULL`
 
 ## Limit 子句
 
