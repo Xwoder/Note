@@ -172,6 +172,38 @@ SELECT *
 
 ## WHERE 子句
 
+### 比较运算符
+
+| 运算符 |   含义   |     例      |
+| :----: | :------: | :---------: |
+|  `>`   |   大于   | `age > 18`  |
+|  `>=`  | 大于等于 | `age >= 18` |
+|  `<`   |   小于   | `age < 18`  |
+|  `<=`  | 小于等于 | `age <= 18` |
+|  `!=`  |  不等于  | `age != 18` |
+|  `<>`  |  不等于  | `age <> 18` |
+
+例
+
+```SQL
+SELECT * FROM `Product` WHERE `sale_price` > 100;
+```
+```SQL
+SELECT * FROM `Product` WHERE `sale_price` >= 100;
+```
+```SQL
+SELECT * FROM `Product` WHERE `sale_price` < 100;
+```
+```SQL
+SELECT * FROM `Product` WHERE `sale_price` <= 100;
+```
+```SQL
+SELECT * FROM `Product` WHERE `sale_price` != 100;
+```
+```SQL
+SELECT * FROM `Product` WHERE `sale_price` <> 100;
+```
+
 ### [NOT] BETWEEN ... AND ...
 
 ```SQL
