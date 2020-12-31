@@ -186,7 +186,7 @@ SELECT *
     WHERE `sale_price` NOT BETWEEN 1000 AND 5000;
 ```
 
-### IN
+### [NOT] IN
 
 ```SQL
 SELECT *
@@ -208,7 +208,7 @@ SELECT *
     WHERE `purchase_price` IS NOT NULL;
 ```
 
-### Limit
+## Limit 子句
 
 ```SQL
 SELECT *
@@ -529,5 +529,54 @@ CREATE TEMPORARY TABLE `temp_userinfo_famle` AS (
     FROM `userinfo`
     WHERE `sex` = 1
 );
+```
+
+## 注释
+
+### 单行注释
+
+使用符号 `#`
+
+```sql
+SELECT `userid`,
+       # `username`,
+       `sex`,
+       `usermoney`
+FROM `userinfo`
+WHERE `sex` = 1;
+```
+
+使用符号 `--`
+
+```sql
+SELECT `userid`,
+       -- `username`,
+       `sex`,
+       `usermoney`
+FROM `userinfo`
+WHERE `sex` = 1;
+```
+
+例
+
+```sql
+# 查询指定性别的用户的信息
+SELECT `userid`,
+       `username`,
+FROM `userinfo`
+WHERE `sex` = 1;
+```
+
+### 多行注释
+
+使用 `/*` 和 `*/`
+
+```sql
+SELECT `userid`,
+       /* `username`,
+       `sex`,*/
+       `usermoney`
+FROM `userinfo`
+WHERE `sex` = 1;
 ```
 
