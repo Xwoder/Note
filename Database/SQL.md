@@ -1,4 +1,4 @@
-# SQL 学习笔记
+# SQL
 
 [TOC]
 
@@ -496,3 +496,38 @@ DELIMITER $
 ```
 
 执行完上述语句后，分隔符将改为`$`符，之后输入的语句都应以`$`结尾。
+
+## 插入
+
+不指明要插入数据的字段
+
+```SQL
+INSERT INTO 表名
+VALUES (值1, 值2, ...);
+```
+
+指明要插入数据的字段
+
+```SQL
+INSERT INTO 表名(字段1, 字段2, ..., 字段n)
+VALUES (值1, 值2, ..., 值n);
+```
+
+## 临时表
+
+```sql
+CREATE TEMPORARY TABLE 表名 AS (
+  SELECT 语句
+);
+```
+
+例
+
+```sql
+CREATE TEMPORARY TABLE `temp_userinfo_famle` AS (
+    SELECT `userid`, `username`
+    FROM `userinfo`
+    WHERE `sex` = 1
+);
+```
+
