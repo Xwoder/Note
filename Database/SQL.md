@@ -657,3 +657,50 @@ WHERE `sex` = 1;
 ## GROUP BY 子句
 
 ## HAVING 子句
+
+## 字符串
+
+### 函数
+
+#### SUBSTR 函数
+
+```SQL
+SUBSTR(字符串值/列, 起始位置, 长度)
+```
+
+例
+
+```sql
+SELECT SUBSTR("Hello World", 7, 2);
+
+-- Wo
+```
+
+```sql
+SELECT SUBSTR(name, 2, 5) 
+FROM user;
+```
+
+### UPPER 函数
+
+```sql
+SELECT UPPER("heLLo world");
+
+-- HELLO WORLD
+```
+
+### LOWER 函数
+
+```sql
+SELECT LOWER("heLLo world");
+
+-- hello world
+```
+
+### UCASE 函数
+
+```sql
+SELECT UCASE("heLLo world");
+
+-- HELLO WORLD
+```
