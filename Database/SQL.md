@@ -704,3 +704,17 @@ SELECT UCASE("heLLo world");
 
 -- HELLO WORLD
 ```
+
+## 日期
+
+### 函数
+
+#### STRFTIME 函数
+
+```sqlite
+SELECT DATE("2020-12-31"),
+       STRFTIME("%Y", DATE("2020-12-31")) AS Year,
+       STRFTIME("%m", DATE("2020-12-31")) AS Month,
+       STRFTIME("%d", DATE("2020-12-31")) AS Day;
+```
+
