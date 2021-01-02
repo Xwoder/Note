@@ -539,7 +539,7 @@ SHOW CREATE VIEW `view_product`;
 ### 删除
 
 ```SQL
-DROP VIEW `view_product`;
+DROP VIEW 视图名;
 ```
 
 ## 分隔符
