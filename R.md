@@ -588,7 +588,7 @@ args(read.csv)
 
 `seq(along.with = my_seq)` 等价于 `seq_along(my_seq)`
 
-## req()
+### req()
 
 该函数生成重复元素的函数，这些元素可能来自标量，也可以来自一个向量，如
 
