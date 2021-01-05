@@ -437,3 +437,50 @@ x <- c(1, 2, NA, NaN)
 # [1] FALSE FALSE FALSE  TRUE
 ```
 
+## 命名
+
+为向量中的元素命名
+
+```R
+x <- c(1, 2, 3)
+
+names(x)  # NULL
+
+names(x) <- c("foo", "bar", "norf")
+
+names(x)
+# [1] "foo"  "bar"  "norf"
+```
+
+为列表中的元素命名
+
+```R
+x <- list(a = 1, b = 2, c = 3)
+
+x
+# $a
+# [1] 1
+# 
+# $b
+# [1] 2
+# 
+# $c
+# [1] 3
+```
+
+为矩阵命名
+
+```R
+> x = matrix(1:6, nrow = 2, ncol = 3)
+
+#      [,1] [,2] [,3]
+# [1,]    1    3    5
+# [2,]    2    4    6
+
+dimnames(x) <- list(c("r1", "r2"), c("c1", "c2", "c3"))
+
+#    c1 c2 c3
+# r1  1  3  5
+# r2  2  4  6
+```
+
