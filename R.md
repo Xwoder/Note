@@ -369,3 +369,71 @@ y <- as.logical(x)
 
 ## 对象属性 / attribute
 
+## 因子 / factor
+
+用于表示分类数据
+
+可以是有序的，也可以是无序的
+
+一个因子（`factor`）内又包含多个水平（`level`）
+
+```R
+> x <- factor(c("yes", "no", "yes", "yes", "yes", "no"))
+# yes no  yes yes yes no 
+# Levels: no yes
+
+> table(x)
+# x
+#  no yes 
+#   2   4 
+
+> unclass(x)
+# 2 1 2 2 2 1
+# attr(,"levels")
+# "no"  "yes"
+```
+
+通过 `levels` 参数指定记基水平
+
+```R
+x <- factor(c("yes", "no", "yes", "yes", "yes", "no"), levels = c("yes", "no"))
+
+# yes no  yes yes yes no 
+# Levels: yes no
+```
+
+## 缺失值 / missing value
+
+用 `NA` 或 `NaN` 表示
+
+`NA` 是有类型的，所以存在 数值型 `NA`，字符型 `NA` 等
+
+`NaN` 是 `NA`，但是 `NA` 不是 `NaN`
+
+```R
+is.nan(NA)  # FALSE
+is.na(NaN)  # TRUE
+```
+
+测试是否是 `NA`
+
+```
+is.na()
+```
+
+测试是否是 `NaN`
+
+```
+is.nan()
+```
+
+```R
+x <- c(1, 2, NA, NaN)
+
+> is.na(x)
+# [1] FALSE FALSE  TRUE  TRUE
+
+> is.nan(x)
+# [1] FALSE FALSE FALSE  TRUE
+```
+
