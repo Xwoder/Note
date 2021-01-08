@@ -170,7 +170,7 @@ with open(input_file_name, "r") as file_reader:
 
 ### 写入
 
-`write()`
+#### `write()`
 
 ```python
 file = open('helloworld.txt', 'w')
@@ -183,5 +183,35 @@ file.close()
 ```python
 with open('helloworld.txt', 'w') as file:
     file.write('Hello World')
+```
+
+### 文件指针
+
+#### `seek()`
+
+该函数用于移动文件指针
+
+```python
+seek(pos, whence=0)
+```
+
+参数
+
+|   参数   | 含义                                                         |
+| :------: | ------------------------------------------------------------ |
+|  `pos`   | 位置 / 偏移量                                                |
+| `whence` | 起始位置；默认值为 `0` 表示绝对位置，`1` 表示相对当前位置，`2`  表示相对末尾位置 |
+
+例
+
+```python
+// 移动至文件头部
+file.seek(0)
+// 移动至第 10 个字节
+file.seek(10)
+// 相对当前位置，向后移动 10 个字节
+file.seek(10, 1)
+// 相对文件末尾，向前移动 10 个字节
+file.seek(-10, 2)
 ```
 
