@@ -70,6 +70,8 @@ file.close()
 
 ### 读取
 
+`open()` 函数返回的文件对象是一个可迭代对象
+
 #### `for` 循环
 
 ```Python
@@ -152,3 +154,21 @@ with open(input_file_name, "r") as file_reader:
 ```
 
 使用 `with...as...`语句，文件会在 `with` 代码块结束后自动关闭
+
+### 写入
+
+`write()`
+
+```python
+file = open('helloworld.txt', 'w')
+file.write('Hello World')
+file.close()
+```
+
+或者
+
+```python
+with open('helloworld.txt', 'w') as file:
+    file.write('Hello World')
+```
+
