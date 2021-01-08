@@ -21,6 +21,13 @@ print('100 + 200 =', 100 + 200)
 # 100 + 200 = 300
 ```
 
+`print` 函数等价于如下代码：
+
+```python
+import sys
+_ = sys.stdout.write('...')
+```
+
 ## 输入
 
 Python 使用 `input` 函数进行输入
