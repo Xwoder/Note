@@ -60,7 +60,7 @@ len('Hello World')
 "=" * 50
 ```
 
-### 访问字符 / `[]`
+### 索引 / `[]`
 
 ```python
 str = 'Hello World'
@@ -283,11 +283,14 @@ str.split(sep=',')
 
 可以把字符串视为 `list` 对其进行切片操作。请参考 `list` 的切片操作。
 
-简单示例
+示例
 
 ```python
 # 'Hello'
 str[0:5]
+
+# 'HloWrd'
+str[0::2]
 ```
 
 ### 查找
