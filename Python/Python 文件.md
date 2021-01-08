@@ -104,6 +104,19 @@ print(content)
 file.close()
 ```
 
+```Python
+with open('helloworld.txt', 'r') as file:
+    # 读取 5 个字节
+    str_hello = file.read(5)
+    # 读取 1 个字节
+    _ = file.read(1)
+    # 读取剩余全部内容
+    str_world = file.read()
+
+print(str_hello)
+print(str_world)
+```
+
 #### `readline()`
 
 ```Python
