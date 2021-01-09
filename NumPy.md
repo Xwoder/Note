@@ -558,51 +558,59 @@ numpy.random.permutation(x)
 
 表示 `The N-dimensional array`，即 N 维数组
 
-### 运算
+### 结构
 
-#### 加
+#### 维度 / `dimension`
 
-对于 2 个 `shape` 完全相同的数组，如果它们的元素定义了合法的加法操作，则可以用 `+` 运算符来执行相加操作，其运行结果为 2 个数组对应位置元素相加。
+维度（`dimension`）亦成为轴（`axis`），编号从 `0` 开始，分别称为 第 0 轴、第 1 轴等，以此类推。
+
+### 创建
+
+#### `array()`
+
+参加其他节
+
+#### `arange()`
 
 ```python
-arr1 + arr2
+arr = np.arange(1, 10, 2)
+
+# [1 3 5 7 9]
+print(arr)
 ```
 
-加法的广播特性
+#### `random()`
 
-如果将一个标量与一个数组相加，则 `NumPy` 会自动将该标量与数组的各个元素逐个相加。例如：
+```python
+arr = np.random.random((2, 3))
 
-```Python
-np.array(object=[[1, 2, 3], [4, 5, 6]]) + 1
+# [[0.51085155 0.67346889 0.58884268]
+#  [0.3702711  0.63469232 0.99166862]]
+arr
 ```
 
-将得到
+#### `randint()`
 
+```python
+arr = np.random.randint(low=1, 
+                        high=10, 
+                        size=(2, 3))
+
+# [[4 5 4]
+#  [9 5 3]]
+arr
 ```
-[[2 3 4]
- [5 6 7]]
-```
 
-### 指定类型
+#### `linspace()`
 
-当在 `ndarray` 中存储元组时，可以使用 `dtype` 来明确表示元组各个位置上的元素类型。例：
+```python
+arr = np.linspace(start=1,
+                  stop=10,
+                  num=19,
+                  endpoint=True)
 
-
-```Python
-deftype = (
-    [
-        ('data', np.str, 10),
-        ('close', np.float),
-        ('vol', np.int)
-    ]
-)
-
- np.array(
-    [('2009-1-1', 11, 13000),
-     ('2010-1-1', 12, 11000),
-     ('2011-1-1', 13, 12000)],
-    dtype=deftype
-)
+# [ 1.   1.5  2.   2.5  3.   3.5  4.   4.5  5.   5.5  6.   6.5  7.   7.5  8.   8.5  9.   9.5 10. ]
+arr
 ```
 
 ### 属性
@@ -625,9 +633,26 @@ arr = np.array([
     [1, 3, 5, 7, 9], 
     [2, 4, 6, 8, 10]
 ])
-arr.dtype
 
 # dtype('int64')
+arr.dtype
+```
+
+```Python
+deftype = (
+    [
+        ('col1', np.int),
+        ('col2', np.int),
+        ('col3', np.int),
+    ]
+)
+arr = np.array([
+    [1, 3, 5],
+    [2, 4, 6]
+], dtype=deftype)
+
+# dtype([('col1', '<i8'), ('col2', '<i8'), ('col3', '<i8')])
+arr.dtype
 ```
 
 #### `ndim`
@@ -674,6 +699,53 @@ arr = np.array([
 arr.shape
 
 # (2, 5)
+```
+
+### 运算
+
+#### 加
+
+对于 2 个 `shape` 完全相同的数组，如果它们的元素定义了合法的加法操作，则可以用 `+` 运算符来执行相加操作，其运行结果为 2 个数组对应位置元素相加。
+
+```python
+arr1 + arr2
+```
+
+加法的广播特性
+
+如果将一个标量与一个数组相加，则 `NumPy` 会自动将该标量与数组的各个元素逐个相加。例如：
+
+```Python
+np.array(object=[[1, 2, 3], [4, 5, 6]]) + 1
+```
+
+将得到
+
+```
+[[2 3 4]
+ [5 6 7]]
+```
+
+### 指定类型
+
+当在 `ndarray` 中存储元组时，可以使用 `dtype` 来明确表示元组各个位置上的元素类型。例：
+
+
+```Python
+deftype = (
+    [
+        ('data', np.str, 10),
+        ('close', np.float),
+        ('vol', np.int)
+    ]
+)
+
+np.array(
+    [('2009-1-1', 11, 13000),
+     ('2010-1-1', 12, 11000),
+     ('2011-1-1', 13, 12000)],
+    dtype=deftype
+)
 ```
 
 ## 帮助
