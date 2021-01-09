@@ -70,9 +70,18 @@ city_dict = dict(city_list)
 
 ```
 
+使用 `fromkeys` 函数创建
+
+```
+# {'Jack': 3000, 'Rose': 3000, 'Tom': 3000}
+dict.fromkeys(['Jack', 'Rose', 'Tom'], 3000)
+```
+
+
+
 ## 访问
 
-### 通过键访问
+### 通过 `[]` 访问
 
 ```Python
 score_dict['Michael']
@@ -81,7 +90,7 @@ score_dict['Michael']
 # 95
 ```
 
-若键不存在，则报错。
+若键不存在，则抛出异常。
 
 ### 通过 `get()` 访问
 
