@@ -8,7 +8,7 @@
 
 这种创建方式使用 `{}` 定义字典
 
-```python
+```Python
 score_dict = {
     'Tracy': 60,
     'Michael': 95,
@@ -39,6 +39,8 @@ score_dict = {
 
 ### 使用构造函数创建
 
+#### 从键值对创建
+
 上例中的 `score_dict` 字典可以等价的使用如下语法创建
 
 ```Python
@@ -51,11 +53,28 @@ score_dict = dict(Michael=95, Bob=75, Tracy=85)
 empty_dict = dict()
 ```
 
+#### 从两元素序列创建
+
+```Python
+city_list = [("0551", "合肥"), ("021", "上海"), ("010", "北京"), ]
+
+# {'0551': '合肥', '021': '上海', '010': '北京'}
+city_dict = dict(city_list)
+```
+
+```Python
+city_list = ('12', '34', '56')
+
+# {'1': '2', '3': '4', '5': '6'}
+city_dict = dict(city_list)
+
+```
+
 ## 访问
 
 ### 通过键访问
 
-```python
+```Python
 score_dict['Michael']
 
 # 输出
@@ -66,21 +85,21 @@ score_dict['Michael']
 
 ### 通过 `get()` 访问
 
-```python
+```Python
 # 100
 score_dict.get('Michael')
 ```
 
 若指定的键在字典中不存在，则返回 `None`
 
-```python
+```Python
 # None
 score_dict.get('Jack')
 ```
 
 可以通过第 2 个参数指定一个值，即默认值，当键在字典中不存在时，返回该默认值。
 
-```python
+```Python
 # 100
 score_dict.get('Michael', -1)
 
@@ -92,13 +111,13 @@ score_dict.get('Jack', -1)
 
 对于使用
 
-```python
+```Python
 dict[key] = value
 ```
 
 语法来改变字典，如果`key`已在字典中存在，则修改该`key`对应的`value`，否则新增一个`key`和对应的`value`
 
-```python
+```Python
 # 修改
 score_dict['Michael'] = 100
 # score_dict == {'Michael': 100, 'Bob': 75, 'Tracy': 85}
@@ -110,7 +129,7 @@ score_dict['Ross'] = 80
 
 ## `in` / `not in`
 
-```python
+```Python
 'Jack' in score_dict
 'Jack' not in score_dict
 
@@ -122,7 +141,7 @@ score_dict['Ross'] = 80
 
 ### pop
 
-```python
+```Python
 # 100
 score_dict.pop('Michael')
 
@@ -143,13 +162,13 @@ del score_dict['Bob']
 
 对于字典
 
-```python
+```Python
 score_dict = {'Michael': 95, 'Bob': 75, 'Tracy': 85}
 ```
 
 ### 遍历`key`与`value`
 
-```python
+```Python
 for name, score in score_dict.items():
     print('name = %s, score = %d' % (name, score))
 
@@ -163,7 +182,7 @@ for name, score in score_dict.items():
 
 ### 遍历`key`
 
-```python
+```Python
 for name in score_dict.keys():
     print('name = %s' % name)
     
@@ -182,7 +201,7 @@ for name in score_dict:
 
 ### 遍历 `value()`
 
-```python
+```Python
 for score in score_dict.values():
     print('score = %d' % score)
     
@@ -194,13 +213,13 @@ for score in score_dict.values():
 
 ## 长度 / `len()`
 
-```python
+```Python
 len(score_dict)
 ```
 
 ## 更新 / `update()`
 
-```python
+```Python
 score_dict = {
     'Tracy': 60,
     'Michael': 95,
