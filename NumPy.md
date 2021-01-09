@@ -2,11 +2,31 @@
 
 [TOC]
 
+## 统计
+
+### 均值
+
+```python
+import numpy as np
+np.mean(data)
+```
+
+### 中位数
+
+```python
+import numpy as np
+np.median(data)
+```
+
+### 众数
+
+未提供
+
 ## 文件
 
 ### 文件类型
 
-#### .npy
+#### `.npy`
 
 一种简单的格式，用于将 numpy 数组的完整信息保存到磁盘。
 
@@ -14,7 +34,7 @@
 
 该格式存储了用于重构数组所需的所有形状和类型信息，即使在具有不同体系结构的另一台机器上也是如此。
 
-#### .npz
+#### `.npz`
 
 The `.npz` format is the standard format for persisting *multiple* NumPy arrays on disk. 
 
@@ -22,7 +42,7 @@ A `.npz` file is a zip file containing multiple `.npy` files, one for each array
 
 #### 文本文件
 
-##### CSV 文件
+##### `CSV` 文件
 
 一种有特定格式的文本文件
 
@@ -30,7 +50,7 @@ A `.npz` file is a zip file containing multiple `.npy` files, one for each array
 
 #### 保存
 
-##### save()
+##### `save()`
 
 将单个数组保存到 `.npy` 格式的二进制文件中
 
@@ -42,7 +62,7 @@ numpy.save(file, arr, allow_pickle=True, fix_imports=True)
 
 函数
 
-##### savez()
+##### `savez()`
 
 将多个数组保存到非压缩的 `.npz` 格式的单个文件中
 
@@ -50,7 +70,7 @@ numpy.save(file, arr, allow_pickle=True, fix_imports=True)
 numpy.savez(file, *args, **kwds)
 ```
 
-##### savetxt()
+##### `savetxt()`
 
 将一个数组保存至文本文件
 
@@ -67,7 +87,7 @@ numpy.savetxt(fname, X, fmt='%.18e', delimiter=' ', newline='n', header='', foot
 
 #### 读取
 
-##### load()
+##### `load()`
 
 Load arrays or pickled objects from `.npy`, `.npz` or pickled files.
 
@@ -75,7 +95,7 @@ Load arrays or pickled objects from `.npy`, `.npz` or pickled files.
 numpy.load(file, mmap_mode=None, allow_pickle=False, fix_imports=True, encoding='ASCII')
 ```
 
-##### loadtxt()
+##### `loadtxt()`
 
 从文本文件加载数据；文件中的每一行都必须具备相同数量的值
 
@@ -110,7 +130,7 @@ print(val1)  # [123. 110. 164.]
 print(val2)  # [1.4 0.5 2.1]
 ```
 
-##### genfromtxt()
+##### `genfromtxt()`
 
 从文本文件加载数据，同时指定一个缺失值处理句柄
 
@@ -256,7 +276,7 @@ print(y)
 
 ### 选项
 
-#### 设置 / set_printoptions
+#### 设置 / `set_printoptions`
 
 设置打印选项
 
@@ -317,7 +337,7 @@ print(x)
 # [ 0.  1.11  2.22 ...  7.78  8.89 10.  ]
 ```
 
-#### 获取 / get_printoptions
+#### 获取 / `get_printoptions`
 
 返回打印选项
 
@@ -534,3 +554,138 @@ numpy.random.shuffle(x)
 numpy.random.permutation(x)
 ```
 
+## `ndarray`
+
+表示 `The N-dimensional array`，即 N 维数组
+
+### 运算
+
+#### 加
+
+对于 2 个 `shape` 完全相同的数组，如果它们的元素定义了合法的加法操作，则可以用 `+` 运算符来执行相加操作，其运行结果为 2 个数组对应位置元素相加。
+
+```python
+arr1 + arr2
+```
+
+加法的广播特性
+
+如果将一个标量与一个数组相加，则 `NumPy` 会自动将该标量与数组的各个元素逐个相加。例如：
+
+```Python
+np.array(object=[[1, 2, 3], [4, 5, 6]]) + 1
+```
+
+将得到
+
+```
+[[2 3 4]
+ [5 6 7]]
+```
+
+### 指定类型
+
+当在 `ndarray` 中存储元组时，可以使用 `dtype` 来明确表示元组各个位置上的元素类型。例：
+
+
+```Python
+deftype = (
+    [
+        ('data', np.str, 10),
+        ('close', np.float),
+        ('vol', np.int)
+    ]
+)
+
+ np.array(
+    [('2009-1-1', 11, 13000),
+     ('2010-1-1', 12, 11000),
+     ('2011-1-1', 13, 12000)],
+    dtype=deftype
+)
+```
+
+### 属性
+
+#### `dtype`
+
+> 数据类型
+
+例
+
+```Python
+arr = np.array([1, 2, 3])
+arr.dtype
+
+# dtype('int64')
+```
+
+```Python
+arr = np.array([
+    [1, 3, 5, 7, 9], 
+    [2, 4, 6, 8, 10]
+])
+arr.dtype
+
+# dtype('int64')
+```
+
+#### `ndim`
+
+> 维度
+
+例
+
+```Python
+arr = np.array([1, 2, 3])
+arr.ndim
+
+# 1
+```
+
+```Python
+arr = np.array([
+    [1, 3, 5, 7, 9], 
+    [2, 4, 6, 8, 10]
+])
+arr.ndim
+
+# 2
+```
+
+#### `shape`
+
+> 形状
+
+例
+
+```Python
+arr = np.array([1, 2, 3])
+arr.shape
+
+# (3,)
+```
+
+```Python
+arr = np.array([
+    [1, 3, 5, 7, 9], 
+    [2, 4, 6, 8, 10]
+])
+arr.shape
+
+# (2, 5)
+```
+
+## 帮助
+
+* `np.info()`
+
+    例：
+
+    ```Python
+    np.info(np.abs)
+    ```
+
+* `help()`
+
+* `?`
