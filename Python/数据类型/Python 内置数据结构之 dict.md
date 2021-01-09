@@ -77,8 +77,6 @@ city_dict = dict(city_list)
 dict.fromkeys(['Jack', 'Rose', 'Tom'], 3000)
 ```
 
-
-
 ## 访问
 
 ### 通过 `[]` 访问
