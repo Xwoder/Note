@@ -127,3 +127,39 @@ $$
   \end{array}
 \right.
 $$
+解得
+$$
+\left\{
+  \begin{array}{l}
+    u_1 &= 2 \\
+    u_2 &= 3 \\
+    u_3 &= 4 \\
+    u_4 &= -\frac{1}{2} \\
+    u_5 &= 7 \\
+    u_6 &= -1 \\
+
+  \end{array}
+\right.
+, \quad
+\left\{
+  \begin{array}{l}
+    l_1 &= \frac{1}{2} \\
+    l_2 &= \frac{1}{2} \\
+    l_3 &= -1 \\
+  \end{array}
+\right.
+$$
+由此可得
+$$
+L = \left[\begin{array}{ccc}
+1 & 0 & 0 \\
+\frac{1}{2} & 1 & 0 \\
+\frac{1}{2} & -1 & 1
+\end{array}\right]
+, \quad
+U = \left[\begin{array}{ccc}
+2 & 3 & 4 \\
+0 & -\frac{1}{2} & 7 \\
+0 & 0 & -1
+\end{array}\right]
+$$
