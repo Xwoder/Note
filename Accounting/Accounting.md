@@ -6,6 +6,14 @@
 
 **会计**是一种用来传达财务信息的语言。
 
+## 商业实体类型
+
+* `Sole trader` / 个体制
+* `Partnership` / 合伙制
+* `Incorporated entity` / 股份制
+    * `Limited Liability Company` / 有限责任公司
+    * `Public Limited Company` / 公开发行股份有限责任公司
+
 ## 核心概念 / Core concept
 
 中文名 | 英文名
@@ -223,6 +231,35 @@ $$
 \text{资产周转率} &= \dfrac{\text{销售收入}}{\text{资产}}
 \end{align}
 $$
+
+### 负债比率 / Debt to Total Assets Ratio
+
+$$
+\text{Debt to Total Assets} = \frac{\text{Total Debt}}{\text{Total Assets}} \\
+\text{负债比率} = \frac{\text{总负债}}{\text{总资产}}
+$$
+
+### 盈亏平衡点 / Break-Even Point
+
+$$
+\text { BEP }=\frac{\text { Fixed cost }}{\text { Sales revenue per unit - Variable cost per unit }}
+$$
+
+计算结果为盈亏平衡点处的产量
+
+### 边际贡献率 / Contribution Margin Ratio / CMR
+
+$$
+\text{CMR} = \dfrac{\text { Contribution }}{\text { Sales revenue }} \times 100 \% = \dfrac{\text { Sales revenue } - \text { Variable Cost}}{\text { Sales revenue }} \times 100 \%
+$$
+
+### 目标利润产量 / Target profit / TP
+
+$$
+\text{TP} = \frac{\text { Fixed cost }+\text { Target profit }}{\text { Sales revenue per unit} - \text{ Variable cost per unit }}
+$$
+
+计算结果为实现指定利润时的产量
 
 ## 术语表
 
