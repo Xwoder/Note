@@ -28,7 +28,35 @@
 
 **权益**是指企业资产扣除负债后，由所有者享有的剩余权益。又称所有者权益。
 
-## 会计原则 / Accounting Concept
+### 资产（Assets）
+
+#### 分类
+
+##### 按照存续周期分类
+
+* 资本资产（Capital Assets）
+
+    例：固定资产
+
+* 流动资产（Current Assets）
+
+    例：存货（Inventory）、应收账款（Accounts Receivable）、现金（Cash）、预付费用（Prepaid Expenses）
+
+##### 按有无形分类
+
+* 有形资产（Tangible Assets）
+* 无形资产（Intangible Assets）
+
+### 负债（Liabilities）
+
+#### 分类
+
+##### 按照存续周期分类
+
+* 长期负债（Long-term Liabilities）
+* 流动负债（Current Liabilities）
+
+## 会计原则（Accounting Concept）
 
 中文名 | 英文名
 :---: | :---:
@@ -401,10 +429,23 @@ $$
 * 一段期间内产生的支出，在期末时，或者成为资产，或者成为费用
 * 获得资产时，产生支出；消耗资产时，产生费用
 
-## 折旧 / Depreciation
+## 折旧（Depreciation）
 
 ### 折旧方式
 
 * 工作量折旧法 / Units-of-production Depreciation Method
 * 直线法折法 / Straight-line Depreciation Method
 * 加速折旧法 / Accelerated Depreciation Method
+* 余额递减法（Declining Balance Method）
+
+#### 累计折旧（Accumulated Depreciation）
+
+固定资产的备抵账户
+
+## 摊销（Amortization）
+
+指对除固定资产之外，其他可以长期使用的经营性资产按照其使用年限每年分摊购置成本的会计处理办法，与固定资产折旧类似。
+
+## 折耗（Depletion）
+
+指将自然资源的成本分摊到其各个折耗期的过程
