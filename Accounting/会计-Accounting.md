@@ -449,3 +449,11 @@ $$
 ## 折耗（Depletion）
 
 指将自然资源的成本分摊到其各个折耗期的过程
+
+## 股本资金（Share Capital）
+
+* 普通股（Common Share）
+
+* 优先股（Preferred Share）
+
+    先于普通股获得分红
