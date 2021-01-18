@@ -167,7 +167,7 @@ $$
 \end{align}
 $$
 
-### 净资产收益率 / Return on Equity / ROE
+### 净资产收益率 / Return on Equity / `ROE`
 
 $$
 \begin{eqnarray}
@@ -180,7 +180,7 @@ $$
 \end{eqnarray}
 $$
 
-### 利润率 / Profit Margin Percentage
+### 利润率 / `Profit Margin Percentage`
 
 $$
 \begin{align}
@@ -198,7 +198,7 @@ $$
 \end{align}
 $$
 
-### 资本周转率 / Capital Turnover
+### 资本周转率 / `Capital Turnover`
 
 $$
 \begin{align}
@@ -207,7 +207,7 @@ $$
 \end{align}
 $$
 
-### 流动比率 / Current Ratio
+### 流动比率 / `Current Ratio`
 
 $$
 \begin{align}
@@ -216,7 +216,7 @@ $$
 \end{align}
 $$
 
-### 速动比率 / Quick Ratio
+### 速动比率 / `Quick Ratio`
 
 $$
 \begin{align}
@@ -231,13 +231,13 @@ $$
 \text{Earnings per Share}=\frac{\text{Net Income} - \text{Preferred Dividends}}{\text{End-of-Period Common Shares Outstanding}}
 $$
 
-### 市盈率 / Price-Earnings Ratio
+### 市盈率 / `Price-Earnings Ratio`
 
 ### 永久资本回报率 / Return on Permanent Capital
 
-###  投资回收率 / Return on Investment / ROI
+###  投资回收率 / Return on Investment / `ROI`
 
-### 杠杆率 / Leverage Ratio
+### 杠杆率 / `Leverage Ratio`
 
 又称**权益乘数** / `Equity multiplier`
 $$
@@ -275,13 +275,13 @@ $$
 
 计算结果为盈亏平衡点处的产量
 
-### 边际贡献率 / Contribution Margin Ratio / CMR
+### 边际贡献率 / Contribution Margin Ratio / `CMR`
 
 $$
 \text{CMR} = \dfrac{\text { Contribution }}{\text { Sales revenue }} \times 100 \% = \dfrac{\text { Sales revenue } - \text { Variable Cost}}{\text { Sales revenue }} \times 100 \%
 $$
 
-### 目标利润产量 / Target profit / TP
+### 目标利润产量 / Target profit / `TP`
 
 $$
 \text{TP} = \frac{\text { Fixed cost }+\text { Target profit }}{\text { Sales revenue per unit} - \text{ Variable cost per unit }}
@@ -429,7 +429,7 @@ $$
 * 一段期间内产生的支出，在期末时，或者成为资产，或者成为费用
 * 获得资产时，产生支出；消耗资产时，产生费用
 
-## 折旧（Depreciation）
+## 折旧（`Depreciation`）
 
 ### 折旧方式
 
@@ -438,22 +438,28 @@ $$
 * 加速折旧法 / Accelerated Depreciation Method
 * 余额递减法（Declining Balance Method）
 
-#### 累计折旧（Accumulated Depreciation）
+#### 累计折旧（`Accumulated Depreciation`）
 
 固定资产的备抵账户
 
-## 摊销（Amortization）
+## 摊销（`Amortization`）
 
 指对除固定资产之外，其他可以长期使用的经营性资产按照其使用年限每年分摊购置成本的会计处理办法，与固定资产折旧类似。
 
-## 折耗（Depletion）
+## 折耗（`Depletion`）
 
 指将自然资源的成本分摊到其各个折耗期的过程
 
-## 股本资金（Share Capital）
+## 股本资金（`Share Capital`）
 
-* 普通股（Common Share）
+* 普通股（`Common Share`）
 
-* 优先股（Preferred Share）
+* 优先股（`Preferred Share`）
 
     先于普通股获得分红
+
+## 存货成本计量方式
+
+* 先进先出（`First In First Out`，`FIFO`）
+* 后进先出（`Last In First Out`，`LIFO`）
+
