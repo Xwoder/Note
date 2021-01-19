@@ -113,7 +113,7 @@ $$
 
 
 
-### 毛利率 / Gross Margin Percentage
+### 毛利率 / `Gross Margin Percentage`
 
 $$
 \begin{align}
@@ -122,7 +122,7 @@ $$
 \end{align}
 $$
 
-### 净收益率 / Net income percentage
+### 净收益率 / `Net income percentage`
 
 $$
 \begin{align}
@@ -131,7 +131,7 @@ $$
 \end{align}
 $$
 
-### 存货周转率 / Inventory Turnover Ratio
+### 存货周转率 / `Inventory Turnover Ratio`
 
 $$
 \begin{align}
@@ -140,7 +140,7 @@ $$
 \end{align}
 $$
 
-### 折旧率 / Depreciation rate
+### 折旧率 / `Depreciation rate`
 
 $$
 \begin{align}
@@ -149,7 +149,7 @@ $$
 \end{align}
 $$
 
-### 营运资本 /  Working capital
+### 营运资本 /  `Working capital`
 
 $$
 \begin{eqnarray}
@@ -158,7 +158,7 @@ $$
 \end{eqnarray}
 $$
 
-### 负债比率 / Debt ratio
+### 负债比率 / `Debt ratio`
 
 $$
 \begin{align}
@@ -167,7 +167,7 @@ $$
 \end{align}
 $$
 
-### 净资产收益率 / Return on Equity / `ROE`
+### 净资产收益率 / `Return on Equity` / `ROE`
 
 $$
 \begin{eqnarray}
@@ -189,7 +189,7 @@ $$
 \end{align}
 $$
 
-### 应收销售账款收款期 / Days' Sales Uncollected
+### 应收销售账款收款期 / `Days' Sales Uncollected`
 
 $$
 \begin{align}
@@ -225,7 +225,7 @@ $$
 \end{align}
 $$
 
-### 每股收益 / Earnings per Share 
+### 每股收益 / `Earnings per Share` 
 
 $$
 \text{Earnings per Share}=\frac{\text{Net Income} - \text{Preferred Dividends}}{\text{End-of-Period Common Shares Outstanding}}
@@ -233,9 +233,9 @@ $$
 
 ### 市盈率 / `Price-Earnings Ratio`
 
-### 永久资本回报率 / Return on Permanent Capital
+### 永久资本回报率 / `Return on Permanent Capital`
 
-###  投资回收率 / Return on Investment / `ROI`
+###  投资回收率 / `Return on Investment` / `ROI`
 
 ### 杠杆率 / `Leverage Ratio`
 
@@ -251,7 +251,7 @@ $$
 \end{eqnarray}
 $$
 
-### 资产周转率 / Asset Turnover Ratio
+### 资产周转率 / `Asset Turnover Ratio`
 
 $$
 \begin{align}
@@ -260,14 +260,14 @@ $$
 \end{align}
 $$
 
-### 负债比率 / Debt to Total Assets Ratio
+### 负债比率 / `Debt to Total Assets Ratio`
 
 $$
 \text{Debt to Total Assets} = \frac{\text{Total Debt}}{\text{Total Assets}} \\
 \text{负债比率} = \frac{\text{总负债}}{\text{总资产}}
 $$
 
-### 盈亏平衡点 / Break-Even Point
+### 盈亏平衡点 / `Break-Even Point`
 
 $$
 \text { BEP }=\frac{\text { Fixed cost }}{\text { Sales revenue per unit - Variable cost per unit }}
@@ -275,13 +275,13 @@ $$
 
 计算结果为盈亏平衡点处的产量
 
-### 边际贡献率 / Contribution Margin Ratio / `CMR`
+### 边际贡献率 / `Contribution Margin Ratio` / `CMR`
 
 $$
 \text{CMR} = \dfrac{\text { Contribution }}{\text { Sales revenue }} \times 100 \% = \dfrac{\text { Sales revenue } - \text { Variable Cost}}{\text { Sales revenue }} \times 100 \%
 $$
 
-### 目标利润产量 / Target profit / `TP`
+### 目标利润产量 / `Target profit` / `TP`
 
 $$
 \text{TP} = \frac{\text { Fixed cost }+\text { Target profit }}{\text { Sales revenue per unit} - \text{ Variable cost per unit }}
@@ -423,7 +423,7 @@ $$
 
 收益是权益的增加；费用是权益的减少。
 
-支出 / `expenditure`
+支出（`expenditure`）
 
 * 导致资产的减少，或者导致负债的增加
 * 一段期间内产生的支出，在期末时，或者成为资产，或者成为费用
@@ -433,9 +433,9 @@ $$
 
 ### 折旧方式
 
-* 工作量折旧法 / Units-of-production Depreciation Method
-* 直线法折法 / Straight-line Depreciation Method
-* 加速折旧法 / Accelerated Depreciation Method
+* 工作量折旧法（Units-of-production Depreciation Method）
+* 直线法折法（Straight-line Depreciation Method）
+* 加速折旧法（Accelerated Depreciation Method）
 * 余额递减法（Declining Balance Method）
 
 #### 累计折旧（`Accumulated Depreciation`）
@@ -462,4 +462,50 @@ $$
 
 * 先进先出（`First In First Out`，`FIFO`）
 * 后进先出（`Last In First Out`，`LIFO`）
+
+## 保理（`Factoring`）
+
+简单记作：应收账款贴现
+
+## 票据贴现（`Invoice Discounting`）
+
+特点：
+
+* confidential
+* low charge
+* control over all aspects of customer relationship is retained
+
+## 资本成本
+
+* 外部长期资金
+
+    * 普通股（Common Share）
+        $$
+        \text { Cost of Equity }=\frac{\text{Dividends Per Share for Next Year}}{\text{Current Market Value of Stock}}+\text{Growth Rate of Dividends}
+        $$
+
+        $$
+        K_0 = K_{RF}+\beta(K_M -K_{RF})
+        $$
+
+        
+
+    * 优先股（Preferred Share）
+        $$
+        K_0 = \dfrac{D_0}{P_p}
+        $$
+        
+* 借入资本（Loan Capital）
+        $$
+        \text { Cost of debt }=\frac{\text { Interest expense }}{\text { Total debt }} \times(1-T)
+        $$
+        
+    
+* 内部长期资金
+
+    * 留存利润（Retained Profit）
+
+## WACC
+
+![q123](data:image/png;base64,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)
 
