@@ -42,6 +42,20 @@ $ conda create --name 环境名称
 $ conda create --name 环境名称 python=版本号
 ```
 
+### 版本
+
+#### 列示
+
+```bash
+conda list --revisions
+```
+
+#### 切换
+
+```bash
+conda install --revision 版本号
+```
+
 ### 删除
 
 ```bash
