@@ -235,6 +235,12 @@ $$
 
 ### 永久资本回报率 / `Return on Permanent Capital`
 
+### 资产回报率 / `Return On Assets` / `ROA`
+
+$$
+\text {Return on Assets}=\dfrac{\text {Net Income}}{\text {Total Assets}}
+$$
+
 ###  投资回收率 / `Return on Investment` / `ROI`
 
 ### 杠杆率 / `Leverage Ratio`
