@@ -88,3 +88,25 @@ $ conda list
 $ conda intall 库名
 ```
 
+## 卸载
+
+删除配置
+
+```bash
+conda install anaconda-clean
+anaconda-clean --yes
+```
+
+删除安装文件
+
+```bash
+rm -rf ~/anaconda3
+```
+
+删除目录
+
+```text
+~/.anaconda_backup/<timestamp>
+```
+
+清理 `.bash_profile` 或 `.zsh_rc` 等用户配置文件的相关配置项
