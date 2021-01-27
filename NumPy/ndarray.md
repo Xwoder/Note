@@ -45,8 +45,6 @@ arr = np.array(t)
 
 ### 快捷创建
 
-
-
 ### 特殊创建
 
 #### `ones`
@@ -154,5 +152,116 @@ arr = np.array([-1, 0, 1, True, False])
 
 # False
 np.alltrue(arr)
+```
+
+## 运算
+
+### 加法
+
+```Python
+import numpy as np
+
+# [[0 1 2]
+#  [3 4 5]
+#  [6 7 8]]
+arr1 = np.arange(0, 9).reshape(3, 3)
+print(arr1)
+
+# [[8 7 6]
+#  [5 4 3]
+#  [2 1 0]]
+arr2 = np.arange(8, -1, -1).reshape(3, 3)
+print(arr2)
+
+# [[8 8 8]
+#  [8 8 8]
+#  [8 8 8]]
+arr3 = arr1 + arr2
+print(arr3)
+```
+
+#### 加法广播
+
+##### 标量加法广播
+
+```Python
+import numpy as np
+
+# [[0 1 2]
+#  [3 4 5]
+#  [6 7 8]]
+arr1 = np.arange(0, 9).reshape(3, 3)
+print(arr1)
+
+# [[10 11 12]
+#  [13 14 15]
+#  [16 17 18]]
+arr2 = arr1 + 10
+print(arr2)
+```
+
+##### 向量加法广播
+
+```Python
+import numpy as np
+
+# [[0 1 2]
+#  [3 4 5]
+#  [6 7 8]]
+arr1 = np.arange(0, 9).reshape(3, 3)
+print(arr1)
+
+# [1 2 3]
+arr2 = np.arange(1, 4)
+print(arr2)
+
+# [[ 1  3  5]
+#  [ 4  6  8]
+#  [ 7  9 11]]
+arr3 = arr1 + arr2
+print(arr3)
+```
+
+```python
+import numpy as np
+
+# [[0 1 2]
+#  [3 4 5]
+#  [6 7 8]]
+arr1 = np.arange(0, 9).reshape(3, 3)
+print(arr1)
+
+# [[1]
+#  [2]
+#  [3]]
+arr2 = np.arange(1, 4).reshape(-1, 1)
+
+print(arr2)
+
+# [[ 1  2  3]
+#  [ 5  6  7]
+#  [ 9 10 11]]
+arr3 = arr1 + arr2
+print(arr3)
+```
+
+### 乘法
+
+#### 乘法广播
+
+```Python
+import numpy as np
+
+# [[0 1 2]
+#  [3 4 5]
+#  [6 7 8]]
+arr1 = np.arange(0, 9).reshape(3, 3)
+print(arr1)
+
+# [[10 11 12]
+#  [13 14 15]
+#  [16 17 18]]
+arr2 = arr1 * 10
+print(arr2)
 ```
 
