@@ -245,6 +245,8 @@ df.drop_duplicates(subset=['title_year', 'director_name'])
 
 拼接数据
 
+###### 拼接多个 DataFrame
+
 现有以下 `DataFrame` 对象
 
 df1:
@@ -279,7 +281,7 @@ df3:
 
 合并上述 `DataFrame` 对象
 
-```
+```python
 pd.concat([df1, df2, df3])
 ```
 
@@ -302,6 +304,44 @@ pd.concat([df1, df2, df3])
 ```
 
 由此可知，连接多个 `DataFrame` 对象时，默认是在行方向上连接
+
+###### 拼接 DataFrame 和 Series
+
+现有 Series 对象如下
+
+```python
+n_series = pd.Series(['n1', 'n2', 'n3', 'n4'])
+```
+
+即
+
+```
+0    n1
+1    n2
+2    n3
+3    n4
+dtype: object
+```
+
+将其与 `df1` 对象拼接
+
+```python
+pd.concat([df1, n_series])
+```
+
+可得到
+
+```
+     A    B    C    D    0
+0   a0   b0   c0   d0  NaN
+1   a1   b1   c1   d1  NaN
+2   a2   b2   c2   d2  NaN
+3   a3   b3   c3   d3  NaN
+0  NaN  NaN  NaN  NaN   n1
+1  NaN  NaN  NaN  NaN   n2
+2  NaN  NaN  NaN  NaN   n3
+3  NaN  NaN  NaN  NaN   n4
+```
 
 #### 操作
 
