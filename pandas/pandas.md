@@ -241,6 +241,68 @@ df.drop_duplicates(subset=['title_year'])
 df.drop_duplicates(subset=['title_year', 'director_name'])
 ```
 
+##### concat()
+
+拼接数据
+
+现有以下 `DataFrame` 对象
+
+df1:
+
+```
+    A   B   C   D
+0  a0  b0  c0  d0
+1  a1  b1  c1  d1
+2  a2  b2  c2  d2
+3  a3  b3  c3  d3
+```
+
+df2:
+
+```
+    A   B   C   D
+0  a4  b4  c4  d4
+1  a5  b5  c5  d5
+2  a6  b6  c6  d6
+3  a7  b7  c7  d7
+```
+
+df3:
+
+```
+     A    B    C    D
+0   a8   b8   c8   d8
+1   a9   b9   c9   d9
+2  a10  b10  c10  d10
+3  a11  b11  c11  d11
+```
+
+合并上述 `DataFrame` 对象
+
+```
+pd.concat([df1, df2, df3])
+```
+
+可得到
+
+```
+     A    B    C    D
+0   a0   b0   c0   d0
+1   a1   b1   c1   d1
+2   a2   b2   c2   d2
+3   a3   b3   c3   d3
+0   a4   b4   c4   d4
+1   a5   b5   c5   d5
+2   a6   b6   c6   d6
+3   a7   b7   c7   d7
+0   a8   b8   c8   d8
+1   a9   b9   c9   d9
+2  a10  b10  c10  d10
+3  a11  b11  c11  d11
+```
+
+由此可知，连接多个 `DataFrame` 对象时，默认是在行方向上连接
+
 #### 操作
 
 ##### 添加列
