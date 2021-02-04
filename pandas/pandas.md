@@ -343,6 +343,22 @@ pd.concat([df1, n_series])
 3  NaN  NaN  NaN  NaN   n4
 ```
 
+参数 
+
+##### append()
+
+拼接单个 `DataFrame` 对象至尾部
+
+```python
+df.append(df)
+```
+
+还可以拼接字典
+
+```python
+df1.append({'A':'n1', 'B':'n2', 'C':'n3', 'D':'n4', 'E':'n5'}, ignore_index=True)
+```
+
 #### 操作
 
 ##### 添加列
@@ -371,13 +387,25 @@ df['total_score'] = df['chinese'] + df['english'] + df['math']
 df.insert(loc=0, column='profit', value=df['revenue'] - df['cost'])
 ```
 
-##### 删除列
+##### drop()
 
 ```python
 df.drop('age', axis='columns', inplace=True)
 ```
 
 `inplace` 参数用于指定是否原地操作
+
+##### dropna()
+
+```python
+df.dropna(subset=['age'], how='any', inplace=True)
+```
+
+subset 参数用于指定删除空值所依据的列
+
+how 参数用于指定删除方式
+
+inplace 参数指定是否原地操作
 
 ### Series
 
