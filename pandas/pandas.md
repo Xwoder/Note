@@ -199,6 +199,48 @@ df.describe(include=[np.object, pd.Categorical])
 
 `include` 参数用于指定需要展示描述信息的列
 
+##### sort_values()
+
+对单个列进行升序排序
+
+```python
+df.sort_values(['title_year'])
+```
+
+对单个列进行降序排序
+
+```python
+df.sort_values(['title_year'],  ascending=False)
+```
+
+对多个列进行降序排序
+
+```python
+df.sort_values(['title_year', 'imdb_score'], ascending=False)
+```
+
+对多个列进行排序的同时，指定各列的升降序情况
+
+```python
+df.sort_values(['title_year', 'imdb_score'], ascending=[False, True])
+```
+
+##### drop_duplicates()
+
+移除各列上的值完全一样的行
+
+```python
+df.drop_duplicates()
+```
+
+依据指定列上的值，移除重复的行
+
+```python
+df.drop_duplicates(subset=['title_year'])
+
+df.drop_duplicates(subset=['title_year', 'director_name'])
+```
+
 #### 操作
 
 ##### 添加列
@@ -846,6 +888,8 @@ df.groupby(['year', 'continent'])[['lifeExp', 'gdpPercap']].mean()
 ```
 
 ## 复合索引
+
+未完成
 
 ## 分组频数
 
