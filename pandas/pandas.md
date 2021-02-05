@@ -407,6 +407,16 @@ how 参数用于指定删除方式
 
 inplace 参数指定是否原地操作
 
+##### fillna()
+
+```python
+df.fillna(0, inplace=True)
+
+df['Age'].fillna(df['Age'].mean(), inplace=True)
+```
+
+`method` 参数用于指明填充方式，常见的取值有：`ffill`、`bfill`
+
 ### Series
 
 #### 创建
