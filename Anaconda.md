@@ -35,17 +35,17 @@ $ conda info --envs
 ### 创建
 
 ```bash
-$ conda env create --name 环境名称
+$ conda create --name 环境名称
 ```
 
 ```bash
-$ conda env create --name 环境名称 python=版本号
+$ conda create --name 环境名称 python=版本号
 ```
 
 指定创建 conda 环境并克隆指定环境包
 
 ```python
-conda env create -n 目标环境名 --clone 源环境名
+conda create -n 目标环境名 --clone 源环境名
 ```
 
 ### 版本
