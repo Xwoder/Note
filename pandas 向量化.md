@@ -55,6 +55,3 @@ The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any
         else:
             return x + y
     ```
-
-    
-
