@@ -389,6 +389,16 @@ while i < len(L):
 # 10
 ```
 
+或者
+
+```python
+i = 0
+while i in range(len(L)):
+    item = L[i]
+    print(item)
+    i += 1
+```
+
 ## 是否包含
 
 ### `in`
@@ -403,5 +413,19 @@ while i < len(L):
 ```Python
 'def' not in ['abc', 'def', 'ghi']
 # False
+```
+
+## 拷贝
+
+```Python
+L = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]
+
+L_copy = L.copy()
+```
+
+或者
+
+```Python
+L_copy = L[:]
 ```
 
