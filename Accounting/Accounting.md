@@ -500,12 +500,11 @@ $$
         $$
         K_0 = \dfrac{D_0}{P_p}
         $$
-        
+    
 * 借入资本（Loan Capital）
-        $$
-        \text { Cost of debt }=\frac{\text { Interest expense }}{\text { Total debt }} \times(1-T)
-        $$
-        
+    $$
+    \text { Cost of debt }=\dfrac{\text { Interest expense }}{\text { Total debt }} \times(1-T)
+    $$
     
 * 内部长期资金
 
