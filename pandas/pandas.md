@@ -656,6 +656,76 @@ dtype: object
 | `std`  | 标准差 |
 | `mean` | 均值   |
 
+### Categorical
+
+通过 `pd.Categorical()` 方法创建数据，例
+
+```python
+pd.Categorical(['a', 'b', 'c', 'd'], categories=['A', 'B', 'C'])
+```
+
+还可以通过 `ordered` 参数指明是否有序
+
+```python
+pd.Categorical(['a', 'b', 'c', 'd'], categories=['A', 'B', 'C'], ordered=True)
+```
+
+### 类型转换
+
+#### astype()
+
+#### to_numberic()
+
+### 遍历操作
+
+#### apply()
+
+对于给定 `DataFrame` 对象
+
+```python
+df = pd.DataFrame(
+    {
+        'A': [1, 2, 3],
+        'B': [4, 5, 6]
+    }
+)
+```
+
+以如下方式调用 `apply` 方法
+
+```python
+df.apply(lambda x: x ** 2)
+```
+
+将得到
+
+```
+   A   B
+0  1  16
+1  4  25
+2  9  36
+```
+
+可以通过指定 `axis` 参数的值，指定轴向
+
+```
+df.apply(lambda x: np.sum(x), axis=0)
+```
+
+将得到
+
+```
+A     6
+B    15
+dtype: int64
+```
+
+
+
+#### transform()
+
+
+
 ## 文件操作
 
 ### CSV
@@ -1037,3 +1107,4 @@ df.groupby(['year', 'continent'])[['lifeExp', 'gdpPercap']].mean()
 df.groupby('continent')['country'].nunique()
 ```
 
+w

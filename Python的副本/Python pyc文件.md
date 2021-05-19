@@ -1,0 +1,2 @@
+# Python pyc文件
+
