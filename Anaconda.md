@@ -50,6 +50,12 @@ conda create -n 目标环境名 --clone 源环境名
 
 ### 版本
 
+#### 查看
+
+```bash
+conda --version
+```
+
 #### 列示
 
 ```bash
@@ -65,7 +71,7 @@ conda install --revision 版本号
 ### 删除
 
 ```bash
-$ conda env remove -n 环境名称 --all
+$ conda env remove -n 环境名称
 ```
 
 ## 升级
