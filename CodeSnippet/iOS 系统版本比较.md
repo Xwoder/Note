@@ -1,6 +1,6 @@
 # iOS 系统版本比较宏
 
-```objc
+```objective-c
 #define SYSTEM_VERSION_EQUAL_TO(v) \
     ([UIDevice.currentDevice.systemVersion compare:v options:NSNumericSearch] == NSOrderedSame)
 
