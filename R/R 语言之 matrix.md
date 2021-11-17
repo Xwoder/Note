@@ -57,11 +57,15 @@ star_wars_matrix <- matrix(box_office, nrow=3, byrow=TRUE)
 
 ## 命名
 
+### 行命名
+
 为矩阵的行命名可使用 `rownames()` 函数
 
 ```R
 rownames(my_matrix) <- row_names_vector
 ```
+
+### 列命名
 
 为矩阵的列命名可使用 `colnames()` 函数
 
@@ -69,7 +73,7 @@ rownames(my_matrix) <- row_names_vector
 colnames(my_matrix) <- col_names_vector
 ```
 
-示例
+### 示例
 
 ```R
 new_hope <- c(460.998, 314.4)
