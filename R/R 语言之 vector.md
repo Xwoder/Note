@@ -202,6 +202,23 @@ selection_vector
 #     TRUE   FALSE      TRUE    FALSE   TRUE 
 ```
 
+### 逻辑运算
+
+```R
+c(TRUE, TRUE, FALSE) & c(TRUE, FALSE, FALSE)
+# TRUE FALSE FALSE
+```
+
+```R
+c(TRUE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)
+# TRUE TRUE FALSE
+```
+
+```R
+!c(TRUE, TRUE, FALSE)
+# FALSE FALSE TRUE
+```
+
 ### 合并
 
 将多个向量依次合并为一个向量。
