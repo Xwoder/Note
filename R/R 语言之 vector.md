@@ -173,11 +173,19 @@ mean(poker_start)
 # 36.66667
 ```
 
-### 比较运算
+### 关系运算
 
 ```R
 c(4, 5, 6) > 5
 # FALSE FALSE TRUE
+```
+
+```R
+c(4, 5, 6) > c(3, 5, 7)
+# TRUE FALSE FALSE
+
+c(4, 5, 6) <= c(5, 4, 3)
+# TRUE FALSE FALSE
 ```
 
 ```R
@@ -189,9 +197,7 @@ names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
 selection_vector <- poker_vector > 0
-  
 selection_vector
-
 #   Monday Tuesday Wednesday Thursday Friday 
 #     TRUE   FALSE      TRUE    FALSE   TRUE 
 ```
