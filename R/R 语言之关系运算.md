@@ -94,6 +94,19 @@ TRUE > FALSE
 # TRUE
 ```
 
+```R
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+last <- tail(linkedin, 1)
+last
+# 14
+
+last < 5 | last > 10
+# TRUE
+
+last > 15 & last >= 20
+# FALSE
+```
+
 ## 与容器类型结合使用
 
 ### 与 vector 结合使用
@@ -128,5 +141,29 @@ views <= 14
 #       [,1] [,2] [,3]  [,4] [,5]  [,6] [,7]
 # [1,] FALSE TRUE TRUE  TRUE TRUE FALSE TRUE
 # [2,] FALSE TRUE TRUE FALSE TRUE  TRUE TRUE
+```
+
+```R
+linkedin
+# 16  9 13  5  2 17 14
+
+facebook
+# 17  7  5 16  8 13 14
+
+views
+#      [,1] [,2] [,3] [,4] [,5] [,6] [,7]
+# [1,]   16    9   13    5    2   17   14
+# [2,]   17    7    5   16    8   13   14
+
+linkedin > 10 & facebook < 10
+# FALSE FALSE TRUE FALSE FALSE FALSE FALSE
+
+linkedin >= 12 | facebook >= 12
+# TRUE FALSE TRUE TRUE FALSE TRUE  TRUE
+
+views > 11 & views <= 14
+#       [,1]  [,2]  [,3]  [,4]  [,5]  [,6] [,7]
+# [1,] FALSE FALSE  TRUE FALSE FALSE FALSE TRUE
+# [2,] FALSE FALSE FALSE FALSE FALSE  TRUE TRUE
 ```
 
