@@ -1,6 +1,6 @@
 # R 语言之 repeat
 
-`repeat`循 必须配合 `break`语句强制结束。
+`repeat`循 必须配合 `break`或 `return` 等语句强制结束。
 
 ```R
 count <- 10
