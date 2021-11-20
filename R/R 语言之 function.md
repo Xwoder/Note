@@ -91,3 +91,45 @@ paste("1", "2", "3", "4", "5", sep = ",")
 # "1,2,3,4,5"
 ```
 
+## 嵌套函数
+
+```R
+power_maker <- function(n) {
+
+  pow <- function(x) {
+    x^n
+  }
+  pow
+
+}
+
+cube <- power_maker(3)
+squre <- power_maker(2)
+
+squre(3)
+# 9
+
+cube(4)
+#64
+```
+
+```R
+two <- function() {
+  2
+}
+
+three <- function() {
+  3
+}
+
+my_add <- function() {
+  two() + three() + four()
+}
+
+four <- function() {
+  4
+}
+
+my_add()
+```
+
