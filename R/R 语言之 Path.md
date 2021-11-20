@@ -1,4 +1,4 @@
-# R 语言之 Path
+# R 语言之 path
 
 ## path.expand
 
