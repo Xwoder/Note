@@ -66,6 +66,8 @@ tail(planets_df)
 
 ### 描述 / `str()`
 
+这个命令的来自于英文 `structure`
+
 ```R
 str(planets_df)
 'data.frame':   8 obs. of  5 variables:
