@@ -61,7 +61,20 @@ names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
 poker_wednesday <- poker_vector[3]
+poker_wednesday
+# Wednesday 
+#        20
 ```
+
+还可以使用负数索引，将返回删除指定元素后的其他元素
+
+```R
+poker_vector[-3]
+#   Monday  Tuesday Thursday   Friday 
+#      140      -50     -120      240 
+```
+
+
 
 #### 访问多个元素
 
@@ -74,6 +87,9 @@ names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
 roulette_selection_vector <- roulette_vector[c(2, 3, 4)]
+roulette_selection_vector
+#   Tuesday Wednesday  Thursday 
+#       -50       100      -350 
 ```
 
 ```R
@@ -180,6 +196,39 @@ total_roulette <- sum(roulette_vector)
 total_week <- sum(total_poker, total_roulette)
 ```
 
+#### 元素乘积
+
+```R
+prod(c(1, 3, 5))
+# 15
+```
+
+#### 乘方
+
+```R
+c(1, 3, 5)^2
+# 1 9 25
+```
+
+#### 乘法
+
+两个向量对应位置元素相乘
+
+```R
+c(1, 3, 5) * c(10, 20, 30)
+# 10  60 150
+```
+
+#### 内积
+
+```R
+c(1, 3, 5) %*% c(10, 20, 30)
+#      [,1]
+# [1,]  220
+
+# 等价于 1 * 10 + 3 * 20 + 5 * 30
+```
+
 ### 统计运算
 
 #### 均值
@@ -196,6 +245,13 @@ poker_start <- poker_vector[c("Monday", "Tuesday", "Wednesday")]
 
 mean(poker_start)
 # 36.66667
+```
+
+#### 标准差
+
+```R
+sd(c(1, 3, 5))
+# 2
 ```
 
 ### 关系运算
