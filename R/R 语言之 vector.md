@@ -35,6 +35,12 @@ rep(c(1,2,3), 3)
 # 1 2 3 1 2 3 1 2 3
 ```
 
+### vector
+
+```R
+vector(mode = 'integer', length = 10L)
+```
+
 
 
 ## 命名
