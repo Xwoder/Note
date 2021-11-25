@@ -55,6 +55,20 @@ box_office <- c(new_hope, empire_strikes, return_jedi)
 star_wars_matrix <- matrix(box_office, nrow=3, byrow=TRUE)
 ```
 
+## dim
+
+可以利用 `dim` 函数和一个已知的向量，为其传入一个指明行数和列数的向量，从而将其转换为对应形状的矩形。
+
+```R
+ma <- 1:10
+dim(ma) <- c(2, 5)
+
+ma
+#      [,1] [,2] [,3] [,4] [,5]
+# [1,]    1    3    5    7    9
+# [2,]    2    4    6    8   10
+```
+
 ## 命名
 
 ### 行命名
@@ -116,6 +130,21 @@ star_wars_matrix <- matrix(box_office,
                            dimnames = list(titles, region))
 ```
 
+## 维度
+
+```R
+ma <- matrix(c(1:6), 
+             byrow = TRUE, 
+             nrow = 2)
+ma
+#      [,1] [,2] [,3]
+# [1,]    1    2    3
+# [2,]    4    5    6
+
+dim(ma)
+# 2 3
+```
+
 ## 求和
 
 ### 按行求和
@@ -166,6 +195,8 @@ total_revenue_vector
 
 ### 增加列
 
+利用 `cbind` 函数可以增加列
+
 ```R
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
 region <- c("US", "non-US")
@@ -190,6 +221,8 @@ all_wars_matrix
 ```
 
 ### 增加行
+
+利用 `rbind` 函数可以增加行
 
 ```R
 star_wars_matrix
