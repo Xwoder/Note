@@ -54,6 +54,12 @@ CREATE TABLE `customers`
 );
 ```
 
+### 删除表
+
+```SQL
+DROP TABLE `数据表名`;
+```
+
 ### 修改表
 
 #### 增加列
@@ -91,12 +97,6 @@ ALTER TABLE `customers` RENAME TO `customer`;
 # 或
 
 RENAME TABLE `customer` TO `customers`;
-```
-
-### 删除表
-
-```SQL
-DROP TABLE `数据表名`;
 ```
 
 ## 主键
