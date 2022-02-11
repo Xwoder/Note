@@ -99,7 +99,7 @@ ALTER TABLE `customers` RENAME TO `customer`;
 RENAME TABLE `customer` TO `customers`;
 ```
 
-## 查询
+### 查询
 
 ```sql
 SELECT * FROM `表名`
@@ -107,6 +107,35 @@ SELECT * FROM `表名`
 
 ```sql
 SELECT `列名1`, `列名2`, ... FROM `表名`
+```
+
+### 更新
+
+```sql
+UPDATE `表名`
+SET `列名1` = 值1, `列名2` = 值2, 
+WHERE `列名n` = 值n;
+```
+
+### 插入
+
+```sql
+INSERT INTO `表名`
+VALUE (值1, 值2, ...);
+```
+
+```sql
+INSERT INTO `表名`(`列名1`, `列名2`, ...)
+VALUE (值1, 值2, ...);
+```
+
+
+
+
+
+```sql
+INSERT INTO `表名`
+VALUES (值1.1, 值1.2, ...), (值2.1, 值2.2, ...);
 ```
 
 ## 主键
