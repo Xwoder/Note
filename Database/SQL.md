@@ -99,6 +99,16 @@ ALTER TABLE `customers` RENAME TO `customer`;
 RENAME TABLE `customer` TO `customers`;
 ```
 
+## 查询
+
+```sql
+SELECT * FROM `表名`
+```
+
+```sql
+SELECT `列名1`, `列名2`, ... FROM `表名`
+```
+
 ## 主键
 
 ### 删除主键
