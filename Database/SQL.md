@@ -42,7 +42,7 @@ SHOW DATABASES like '%pattern%';
 
 ## 数据表
 
-### 创建数据表
+### 创建表
 
 ```SQL
 CREATE TABLE `customers`
@@ -65,7 +65,7 @@ ALTER TABLE `customers`
 
 #### 修改列
 
-```
+```sql
 ALTER TABLE `customers`
     CHANGE COLUMN `name` `name` VARCHAR(5) NULL;
     
