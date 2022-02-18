@@ -131,6 +131,12 @@ SELECT DATABASE();
 USE `数据库名`;
 ```
 
+查看当前使用的数据库
+
+```mysql
+SELECT database();
+```
+
 删除数据库
 
 ```mysql
