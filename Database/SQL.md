@@ -129,10 +129,6 @@ INSERT INTO `表名`(`列名1`, `列名2`, ...)
 VALUE (值1, 值2, ...);
 ```
 
-
-
-
-
 ```sql
 INSERT INTO `表名`
 VALUES (值1.1, 值1.2, ...), (值2.1, 值2.2, ...);
@@ -756,4 +752,3 @@ SELECT DATE("2020-12-31"),
        STRFTIME("%m", DATE("2020-12-31")) AS Month,
        STRFTIME("%d", DATE("2020-12-31")) AS Day;
 ```
-
