@@ -40,9 +40,9 @@
 
 * 字符串类型
 
-    |   类型名称   | 类型说明   | 类型示例      |
-    | :----------: | ---------- | ------------- |
-    |    `CHAR`    | 定长字符串 | `CHAR(8)`     |
+    |   类型名称   |  类型说明  |   类型示例    |
+    | :----------: | :--------: | :-----------: |
+    |    `CHAR`    | 定长字符串 |   `CHAR(8)`   |
     |  `VARCHAR`   | 变长字符串 | `VARCHAR(10)` |
     |  `TINYTEXT`  |            |               |
     |    `TEXT`    |            |               |
@@ -67,47 +67,43 @@ gender ENUM('男', '女')
 |   `DEFAULT`   | 默认值约束 |
 | `FOREIGN KEY` |  外键约束  |
 
-## 登录登出
+## 登录
 
-从终端登录和登出
-
-### 登录
-
-```bash
-$ mysql -uroot -p
-```
+同时指定用户名和密码
 
 ```bash
 $ mysql -uroot -ppassword
 ```
 
-### 登出
+仅指定用户
 
-#### 方法1
+```bash
+$ mysql -uroot -p
+```
+
+## 登出
 
 ```mysql
 mysql> quit
 ```
 
-#### 方法2
-
 ```mysql
 mysql> exit
 ```
 
-#### 方法3
-
-快捷键 `CTRL + D`
+还可以通过快捷键 `CTRL + D` 退出 `MySQL` 终端
 
 ## SQL
 
-查看数据库
+### 数据接操作
+
+#### 查看数据库
 
 ```mysql
 SHOW DATABASES;
 ```
 
-创建数据库
+#### 创建数据库
 
 ```mysql
 CREATE DATABASE `数据库名` CHARSET = `utf8`;
@@ -119,25 +115,25 @@ CREATE DATABASE `数据库名` CHARSET = `utf8`;
 SHOW CREATE DATABASE `数据库名`;
 ```
 
+#### 使用数据库
+
+```mysql
+USE `数据库名`;
+```
+
+#### 查看当前使用的数据库
+
+```mysql
+SELECT DATABASE();
+```
+
 查看当前使用的数据库
 
 ```mysql
 SELECT DATABASE();
 ```
 
-使用指定数据库
-
-```mysql
-USE `数据库名`;
-```
-
-查看当前使用的数据库
-
-```mysql
-SELECT database();
-```
-
-删除数据库
+#### 删除数据库
 
 ```mysql
 DROP DATABASE `数据库名`
@@ -149,7 +145,7 @@ DROP DATABASE `数据库名`
 SHOW TABLES;
 ```
 
-查看表结构
+#### 查看表结构
 
 ```mysql
 DESC `表名`;
@@ -179,14 +175,19 @@ CREATE TABLE `student`
 
 ```mysql
 ALTER TABLE `student`
-    ADD `age` INT;
+    ADD COLUMN `age` INT;
+```
+
+```mysql
+ALTER TABLE `student`
+    ADD COLUMN `age` INT NOT NULL DEFAULT 0 AFTER `name`;
 ```
 
 表结构修改-修改字段名
 
 ```mysql
 ALTER TABLE `student`
-    CHANGE `agee` `age` INT;
+    CHANGE `agee` `age` INT NOT NULL DEFAULT 0;
 ```
 
 修改表结构-删除字段
@@ -208,19 +209,27 @@ DROP TABLE `student`;
 DROP DATABASE `mytest`;
 ```
 
-插入数据
+### 插入数据
+
+插入单个记录，指定全部列的值
 
 ```mysql
 INSERT INTO `表名` VALUES (值1, 值2, 值3, ...);
 ```
 
+插入单个记录，指定部分列的值
+
 ```mysql
 INSERT INTO `表名(列1, 列2, 列3)` VALUES (值1, 值2, 值3, ...);
 ```
 
+插入多个记录，指定全部列的值
+
 ```mysql
 INSERT INTO `表名` VALUES (值1, 值2, 值3, ...), (值1, 值2, 值3, ...), ...;
 ```
+
+插入多个记录，指定部分列的值
 
 ```mysql
 INSERT INTO `表名(列1, 列2, 列3)` VALUES (值1, 值2, 值3, ...), (值1, 值2, 值3, ...), ...;
@@ -275,19 +284,23 @@ SELECT 列名1, 列名2, ... FROM 表名;
 SELECT 列名1, 列名2, ... FROM 表名 where 列名3 = 值3;
 ```
 
-删除数据
+## 删除数据
+
+删除全部数据
 
 ```mysql
 DELETE FROM 表名;
 ```
 
+删除指定数据
+
 ```mysql
 DELETE FROM 表名 WHERE <条件语句>;
 ```
 
-### SELECT
+## 查询
 
-#### 指定数据库
+### 指定数据库
 
 ```mysql
 SELECT *
@@ -301,28 +314,28 @@ SELECT `数据表名`.`字段名`
 FROM `数据库名`.`数据表名`;
 ```
 
-#### 字段别名
+### 字段别名
 
 ```mysql
 SELECT `字段名` AS `别名`
 FROM `数据表名`;
 ```
 
-#### 表别名
+### 表别名
 
 ```
 SELECT `字段名`
 FROM `数据表名` as `别名`;
 ```
 
-#### 去重
+### 去重
 
 ```mysql
 SELECT DISTINCT `字段名`
 FROM `数据表名`;
 ```
 
-#### WHERE 子句
+### WHERE 子句
 
 ##### 比较运算符
 
@@ -429,7 +442,7 @@ WHERE `name` LIKE '__%';
 
 ##### 范围查询
 
-###### between ... and ...
+###### BETWEEN ... AND ...
 
 ```mysql
 SELECT *
@@ -437,7 +450,7 @@ FROM `students`
 WHERE `age` BETWEEN 18 AND 28;
 ```
 
-###### in
+###### IN
 
 ```mysql
 SELECT *
@@ -566,7 +579,7 @@ GROUP BY `gender`;
 | 保密   | 28.0000   |
 | 中性   | 33.0000   |
 
-#### having
+#### HAVING
 
 ```mysql
 SELECT `gender`, AVG(`age`)
@@ -575,7 +588,7 @@ GROUP BY `gender`
 HAVING AVG(`age`) >= 30;
 ```
 
-#### with rollup
+#### WITH ROLLUP
 
 ```mysql
 SELECT `gender`, COUNT(*)
@@ -584,7 +597,7 @@ GROUP BY `gender`
 WITH ROLLUP;
 ```
 
-#### limit
+#### LIMIT
 
 从第 1 条记录开始，查询 2 条数据，即：第 1、2 条数据
 
@@ -914,3 +927,25 @@ DROP VIEW `视图名`;
     ROLLBACK;
     ```
 
+## 索引
+
+### 显示
+
+```mysql
+SHOW INDEX FROM `表名`;
+```
+
+### 创建索引
+
+```mysql
+ALTER TABLE `表名`
+    ADD INDEX `索引名` (`字段名1`, `字段名2`, ...);
+```
+
+其中，索引名可以省略
+
+### 删除索引
+
+```mysql
+DROP INDEX `索引名` ON `表名；`
+```
