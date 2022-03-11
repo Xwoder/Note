@@ -67,6 +67,3 @@
 ```objc
 @property (nonatomic, readwrite) UIGestureRecognizerState state;
 ```
-
-
-
