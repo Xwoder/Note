@@ -26,6 +26,14 @@ $ brew leaves
 
 显示所有安装的且不依赖其他 `formula` 的 `formula`
 
+### deps
+
+显示所有的依赖关系
+
+```bash
+$ brew deps --tree --installed
+```
+
 ### cask
 
 #### list
@@ -47,5 +55,4 @@ http://mirrors.ustc.edu.cn/
 ```url
 https://mirrors.tuna.tsinghua.edu.cn/
 ```
-
 
