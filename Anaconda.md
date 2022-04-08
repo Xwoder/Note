@@ -2,6 +2,25 @@
 
 [TOC]
 
+## 源
+
+### 清华大学
+
+```
+https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+```
+
+### 中国科学技术大学
+
+```
+https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
+https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
+```
+
 ## 环境
 
 ### 启动
@@ -111,7 +130,7 @@ anaconda-clean --yes
 
 删除安装文件
 
-```bash
+```shell
 rm -rf ~/anaconda3
 ```
 
@@ -122,3 +141,70 @@ rm -rf ~/anaconda3
 ```
 
 清理 `.bash_profile` 或 `.zsh_rc` 等用户配置文件的相关配置项
+
+```shell
+conda info
+```
+
+```shell
+conda config --show
+```
+
+```shell
+conda update -n base conda
+```
+
+```shell
+conda update anaconda
+```
+
+```shell
+conda update python 
+```
+
+```shell
+conda list
+conda list 包名
+```
+
+```shell
+conda list -n 环境名
+```
+
+```shell
+conda search 包名
+conda search pandas
+```
+
+```shell
+conda install 包名
+conda install pandas
+
+conda install 包名=版本号
+conda install pandas=1.4.2
+```
+
+```shell
+conda install "包名[version='版本号1 | 版本号2']"
+conda install "pandas[version='1.4.2 | 1.4.0']"
+```
+
+```shell
+conda update 包名
+conda update pandas
+```
+
+```shell
+conda remove 包名
+conda remove pandas
+```
+
+```shell
+conda activate 环境名
+conda activate quant
+```
+
+```shell
+conda deactivate
+```
+
