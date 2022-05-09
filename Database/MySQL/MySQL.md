@@ -235,7 +235,26 @@ INSERT INTO `表名` VALUES (值1, 值2, 值3, ...), (值1, 值2, 值3, ...), ..
 INSERT INTO `表名(列1, 列2, 列3)` VALUES (值1, 值2, 值3, ...), (值1, 值2, 值3, ...), ...;
 ```
 
-修改数据
+将从一个数据表中查询到的结果插入到另一个数据表中
+
+```mysql
+INSERT INTO `student`(`name`, `gender`)
+VALUES ('张三', 'F'), ('李四', 'F'), ('张三', 'M');
+
+CREATE TABLE `student_female`
+(
+    `id`     SERIAL,
+    `name`   VARCHAR(20)    NOT NULL,
+    `gender` ENUM ('M','F') NOT NULL
+);
+
+INSERT INTO `student_female`(`name`, `gender`)
+    SELECT `name`, `gender`
+    FROM `student`
+    WHERE `gender` = 'F';
+```
+
+### 修改数据
 
 ```mysql
 UPDATE `表名`
@@ -270,7 +289,7 @@ WHERE `id` = 1;
 `gender` enum('男','女') DEFAULT NULL,
 ```
 
-查询数据表
+### 查询数据
 
 ```mysql
 SELECT * FROM 表名;
@@ -284,7 +303,7 @@ SELECT 列名1, 列名2, ... FROM 表名;
 SELECT 列名1, 列名2, ... FROM 表名 where 列名3 = 值3;
 ```
 
-## 删除数据
+### 删除数据
 
 删除全部数据
 
@@ -975,3 +994,26 @@ ALTER TABLE `表名`
 ```mysql
 DROP INDEX `索引名` ON `表名；`
 ```
+
+**创建数据表的同时插入数据**
+
+```mysql
+CREATE TABLE `goods`
+(
+    `id`    SERIAL,
+    `name`  VARCHAR(20) NOT NULL,
+    `brand` VARCHAR(20) NOT NULL
+);
+
+INSERT INTO `goods`(`name`, `brand`)
+VALUES ('笔记本电脑1', '联想'), ('笔记本电脑2', '华为'), ('笔记本电脑3', '华硕');
+
+CREATE TABLE `brand`
+(
+    `id`   SERIAL,
+    `name` VARCHAR(20) NOT NULL
+)
+SELECT DISTINCT `brand` AS `name`
+FROM `goods`;
+```
+
