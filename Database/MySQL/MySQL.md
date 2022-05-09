@@ -876,6 +876,32 @@ ALTER TABLE `表名`
     DROP CONSTRAINT `约束名`;
 ```
 
+在创建数据表的同时指定外键约束
+
+```mysql
+CREATE TABLE `student`
+(
+    `id`   SERIAL,
+    `name` VARCHAR(20) NOT NULL
+);
+
+
+CREATE TABLE `class`
+(
+    `id`   SERIAL,
+    `name` VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE `student_class`
+(
+    `student_id` BIGINT UNSIGNED NOT NULL,
+    `class_id`   BIGINT UNSIGNED NOT NULL,
+    PRIMARY KEY (`student_id`, `class_id`),
+    CONSTRAINT `外键约束名1` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `外键约束名2` FOREIGN KEY (`class_id`) REFERENCES `class` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+```
+
 ### 视图
 
 #### 创建
