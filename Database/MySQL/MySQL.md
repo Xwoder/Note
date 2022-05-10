@@ -941,6 +941,8 @@ DROP VIEW `视图名`;
 
 ## 事务
 
+`MySQL` 数据库的 `MyISAM` 引擎不支持实务，`InnoDB` 引擎支持事务。
+
 ### 四大特性 / ACID
 
 * 原子性 / Atomicity
@@ -971,6 +973,12 @@ DROP VIEW `视图名`;
     ```mysql
     ROLLBACK;
     ```
+
+- 禁用事务自动提交
+
+```mysql
+SET AUTOCOMMIT = 0;
+```
 
 ## 索引
 
@@ -1017,3 +1025,71 @@ SELECT DISTINCT `brand` AS `name`
 FROM `goods`;
 ```
 
+## 索引
+
+### 创建/添加索引
+
+```mysql
+ALTER TABLE `表名`
+    ADD INDEX `索引名` (`字段名`);
+```
+
+联合索引
+
+```mysql
+ALTER TABLE `表名`
+    ADD INDEX `索引名` (`列名1`, `列名2`);
+```
+
+### 查看索引
+
+```mysql
+SHOW INDEX FROM `表名`;
+```
+
+### 删除索引
+
+```mysql
+ALTER TABLE `表名`
+    DROP INDEX `索引名`;
+```
+
+对于复合索引，在查询时是否会使用到改类索引，遵循一个最左原则。
+
+
+```mysql
+ALTER TABLE `student`
+    ADD INDEX (`name`, `gender`);
+```
+
+这两个查询会使用的上述索引
+
+```mysql
+SELECT *
+FROM `student`
+WHERE `name` = '李四';
+
+SELECT *
+FROM `student`
+WHERE `name` = '李四'
+  AND `gender` = 'F';
+```
+
+这个查询不会使用到上述索引
+
+```mysql
+SELECT *
+FROM `student`
+WHERE `gender` = 'F';
+```
+
+## 引擎
+
+```mysql
+SHOW ENGINES;
+```
+
+```mysql
+ALTER TABLE `表名`
+    ENGINE = 'MyISAM'
+```
