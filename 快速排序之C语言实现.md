@@ -81,10 +81,10 @@ void swapElem(ElemType *a, ElemType *b) {
 }
 
 void printArr(char *message, ElemType arr[], size_t length) {
-    printf("%s: (", message);
+    printf("%s: {", message);
     for (size_t i = 0; i < length; ++i) {
         printElem(arr[i]);
-        printf(i == length - 1 ? ")\n" : ", ");
+        printf(i == length - 1 ? "}\n" : ", ");
     }
 }
 
@@ -106,8 +106,7 @@ ComparisonResult compareElem(ElemType a, ElemType b) {
 ## 输出
 
 ```txt
-排序前: (987, 473, 686, 385, 213, 376, 848, 799, 774, 611)
-排序后: (213, 376, 385, 473, 611, 686, 774, 799, 848, 987)
+排序前: {987, 473, 686, 385, 213, 376, 848, 799, 774, 611}
+排序后: {213, 376, 385, 473, 611, 686, 774, 799, 848, 987}
 ```
-
 
