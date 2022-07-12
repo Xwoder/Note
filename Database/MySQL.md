@@ -93,17 +93,15 @@ mysql> exit
 
 还可以通过快捷键 `CTRL + D` 退出 `MySQL` 终端
 
-## SQL
+## 数据接操作
 
-### 数据接操作
-
-#### 查看数据库
+### 查看数据库
 
 ```mysql
 SHOW DATABASES;
 ```
 
-#### 创建数据库
+### 创建数据库
 
 ```mysql
 CREATE DATABASE `数据库名` CHARSET = `utf8`;
@@ -115,13 +113,13 @@ CREATE DATABASE `数据库名` CHARSET = `utf8`;
 SHOW CREATE DATABASE `数据库名`;
 ```
 
-#### 使用数据库
+### 使用数据库
 
 ```mysql
 USE `数据库名`;
 ```
 
-#### 查看当前使用的数据库
+### 查看当前使用的数据库
 
 ```mysql
 SELECT DATABASE();
@@ -133,7 +131,7 @@ SELECT DATABASE();
 SELECT DATABASE();
 ```
 
-#### 删除数据库
+### 删除数据库
 
 ```mysql
 DROP DATABASE `数据库名`
@@ -289,7 +287,7 @@ WHERE `id` = 1;
 `gender` enum('男','女') DEFAULT NULL,
 ```
 
-### 查询数据
+## 查询数据
 
 ```mysql
 SELECT * FROM 表名;
@@ -317,9 +315,9 @@ DELETE FROM 表名;
 DELETE FROM 表名 WHERE <条件语句>;
 ```
 
-## 查询
+# 查询
 
-### 指定数据库
+## 指定数据库
 
 ```mysql
 SELECT *
