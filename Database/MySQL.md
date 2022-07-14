@@ -132,15 +132,9 @@ SELECT DATABASE();
 DROP DATABASE `数据库名`
 ```
 
-查看当前数据库的数据表
-
-```mysql
-SHOW TABLES;
-```
-
 ## 数据表操作
 
-### 创建数据表
+### 查看数据表
 
 ```mysql
 SHOW TABLES;
@@ -148,21 +142,7 @@ SHOW TABLES LIKE 'per%';
 SHOW TABLES LIKE 'perso_';
 ```
 
-### 查看数据表
-
-### 查看表结构
-
-```mysql
-DESC `表名`;
-```
-
-查看数据表的创建语句
-
-```mysql
-SHOW CREATE TABLE `表名`;
-```
-
-创建数据库
+### 创建数据表
 
 ```mysql
 CREATE TABLE `student`
@@ -202,16 +182,22 @@ ALTER TABLE `student`
     DROP `age`;
 ```
 
-删除数据表
+### 删除数据表
 
 ```mysql
 DROP TABLE `student`;
 ```
 
-删除数据库
+### 查看表结构
 
 ```mysql
-DROP DATABASE `mytest`;
+DESC `表名`;
+```
+
+### 查看建表语句
+
+```mysql
+SHOW CREATE TABLE `表名`;
 ```
 
 ### 插入数据
@@ -294,20 +280,6 @@ WHERE `id` = 1;
 `gender` enum('男','女') DEFAULT NULL,
 ```
 
-## 查询数据
-
-```mysql
-SELECT * FROM 表名;
-```
-
-```mysql
-SELECT 列名1, 列名2, ... FROM 表名;
-```
-
-```mysql
-SELECT 列名1, 列名2, ... FROM 表名 where 列名3 = 值3;
-```
-
 ### 删除数据
 
 删除全部数据
@@ -322,9 +294,19 @@ DELETE FROM 表名;
 DELETE FROM 表名 WHERE <条件语句>;
 ```
 
-# 查询
+## 查询
 
-## 指定数据库
+### 查询数据
+
+```mysql
+SELECT * FROM 表名;
+
+SELECT 列名1, 列名2, ... FROM 表名;
+
+SELECT 列名1, 列名2, ... FROM 表名 where 列名3 = 值3;
+```
+
+### 指定数据库
 
 ```mysql
 SELECT *
@@ -948,12 +930,12 @@ DROP VIEW `视图名`;
 
 `MySQL` 数据库的 `MyISAM` 引擎不支持实务，`InnoDB` 引擎支持事务。
 
-### 四大特性 / ACID
+### 四大特性 / `ACID`
 
-* 原子性 / Atomicity
-* 一致性 / Consistency
-* 隔离性 / Isolation
-* 持久性 / Durability
+* 原子性 / `Atomicity`
+* 一致性 / `Consistency`
+* 隔离性 / `Isolation`
+* 持久性 / `Durability`
 
 ### 使用步骤
 
