@@ -156,7 +156,9 @@ CREATE TABLE `student`
 );
 ```
 
-表结构修改-添加字段
+### 修改数据表
+
+#### 添加字段
 
 ```mysql
 ALTER TABLE `student`
@@ -168,14 +170,14 @@ ALTER TABLE `student`
     ADD COLUMN `age` INT NOT NULL DEFAULT 0 AFTER `name`;
 ```
 
-表结构修改-修改字段名
+#### 修改字段名
 
 ```mysql
 ALTER TABLE `student`
     CHANGE `agee` `age` INT NOT NULL DEFAULT 0;
 ```
 
-修改表结构-删除字段
+#### 删除字段
 
 ```mysql
 ALTER TABLE `student`
@@ -185,6 +187,8 @@ ALTER TABLE `student`
 ### 删除数据表
 
 ```mysql
+DROP TABLE `表名`;
+
 DROP TABLE `student`;
 ```
 
@@ -192,12 +196,16 @@ DROP TABLE `student`;
 
 ```mysql
 DESC `表名`;
+
+DESC `student`;
 ```
 
 ### 查看建表语句
 
 ```mysql
 SHOW CREATE TABLE `表名`;
+
+SHOW CREATE TABLE `student`;
 ```
 
 ### 插入数据
