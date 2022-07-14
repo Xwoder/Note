@@ -1,4 +1,4 @@
-# MySQL
+### MySQL
 
 [TOC]
 
@@ -267,14 +267,14 @@ INSERT INTO `student_female`(`name`, `gender`)
 UPDATE `表名`
 SET 字段1 = 值1
 WHERE `字段` = 值;
-```
 
-```mysql
 UPDATE `表名`
 SET 字段1 = 值1,
     字段2 = 值2
 WHERE `字段` = 值;
 ```
+
+`where` 子句可以省略，测试会修改表中的所有数据。
 
 对于枚举类型的字段，既可以通过指定枚举值，也可以通过指定其对应的数值来插入或更新数据
 
@@ -282,15 +282,13 @@ WHERE `字段` = 值;
 UPDATE `student`
 SET `gender` = '男'
 WHERE `id` = 1;
-```
 
-```mysql
 UPDATE `student`
 SET `gender` = 1
 WHERE `id` = 1;
 ```
 
-其中，gender 列的定义为
+其中，`gender` 列的定义为
 
 ```mysql
 `gender` enum('男','女') DEFAULT NULL,
@@ -310,7 +308,7 @@ DELETE FROM 表名;
 DELETE FROM 表名 WHERE <条件语句>;
 ```
 
-## 查询
+## 查询数据
 
 ### 查询数据
 
@@ -339,7 +337,7 @@ FROM `数据库名`.`数据表名`;
 ### 字段别名
 
 ```mysql
-SELECT `字段名` AS `别名`
+SELECT `字段名1` AS `字段别名1`, `字段名2` AS `字段别名2`
 FROM `数据表名`;
 ```
 
@@ -347,13 +345,13 @@ FROM `数据表名`;
 
 ```mysql
 SELECT `字段名`
-FROM `数据表名` AS `别名`;
+FROM `数据表名` AS `表别名`;
 ```
 
 ### 去重
 
 ```mysql
-SELECT DISTINCT `字段名`
+SELECT DISTINCT `字段名1`, `字段名2`, ...
 FROM `数据表名`;
 ```
 
@@ -494,7 +492,7 @@ FROM `students`
 WHERE `height` IS NOT NULL;
 ```
 
-#### ORDER BY 排序
+### ORDER BY 子句
 
 ```mysql
 SELECT *
@@ -520,7 +518,7 @@ FROM `students`
 ORDER BY `age` ASC, `height` ASC;
 ```
 
-#### 聚合函数
+### 聚合函数
 
 ```mysql
 SELECT COUNT(*)
@@ -553,11 +551,11 @@ SELECT AVG(`height`)
 FROM `students`;
 ```
 
-计算过程中自动忽略值为 NULL 的记录
+计算过程中自动忽略值为 `NULL` 的记录
 
 不允许出现嵌套，例如 `SUM(MAX(xxx))`
 
-#### GROUP BY 分组
+### GROUP BY 分组
 
 ```mysql
 SELECT `gender`
@@ -619,7 +617,7 @@ GROUP BY `gender`
 WITH ROLLUP;
 ```
 
-#### LIMIT
+### `LIMIT` 子句
 
 从第 1 条记录开始，查询 2 条数据，即：第 1、2 条数据
 
@@ -671,7 +669,7 @@ LIMIT 4;
 
 ### 函数
 
-#### ROUND
+#### `ROUND` 函数
 
 ```mysql
 SELECT ROUND(3.1415926, 2);
