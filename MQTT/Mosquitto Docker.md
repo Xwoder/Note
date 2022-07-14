@@ -27,7 +27,7 @@ $ chmod -R 777 ~/mosquitto/log
 
 ## 配置
 
-`mosquitto.conf` 配置文件的模板参见：[mosquitto/mosquitto.conf at master · eclipse/mosquitto (github.com)](https://github.com/eclipse/mosquitto/blob/master/mosquitto.conf)
+> 配置文件 `mosquitto.conf` 的模板参见：[mosquitto/mosquitto.conf at master · eclipse/mosquitto (github.com)](https://github.com/eclipse/mosquitto/blob/master/mosquitto.conf)
 
 创建配置文件
 
