@@ -156,6 +156,12 @@ CREATE TABLE `student`
 );
 ```
 
+### 重命名表
+
+```mysql
+ALTER TABLE `原表名` RENAME TO `新表名`;
+```
+
 ### 修改数据表
 
 #### 添加字段
@@ -207,6 +213,8 @@ SHOW CREATE TABLE `表名`;
 
 SHOW CREATE TABLE `student`;
 ```
+
+## 数据操作
 
 ### 插入数据
 
@@ -296,7 +304,7 @@ WHERE `id` = 1;
 DELETE FROM 表名;
 ```
 
-删除指定数据
+删除满足某些条件的数据
 
 ```mysql
 DELETE FROM 表名 WHERE <条件语句>;
