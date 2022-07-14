@@ -1,4 +1,6 @@
-# Mosquitto Docker
+# Eclipse Mosquitto Docker
+
+[TOC]
 
 ## 拉取镜像
 
@@ -37,7 +39,7 @@ $ touch ~/mosquitto/config/mosquitto.conf
 
 内容如下
 
-```text
+```ruby
 persistence true
 persistence_location /home/username/mosquitto/data
 log_dest file /home/username/mosquitto/log/mosquitto.log
@@ -103,7 +105,7 @@ password_file /home/username/mosquitto/config/pwfile.conf
 $ touch ~/mosquitto/config/pwfile.conf
 ```
 
-授权
+修改文件权限
 
 ```bash
 $ chmod -R 755 ~/mosquitto/config/pwfile.conf
