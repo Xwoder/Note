@@ -120,13 +120,7 @@ SHOW CREATE DATABASE `数据库名`;
 USE `数据库名`;
 ```
 
-### 查看当前使用的数据库
-
-```mysql
-SELECT DATABASE();
-```
-
-查看当前使用的数据库
+### 查看当前数据库
 
 ```mysql
 SELECT DATABASE();
@@ -143,6 +137,18 @@ DROP DATABASE `数据库名`
 ```mysql
 SHOW TABLES;
 ```
+
+## 数据表操作
+
+### 创建数据表
+
+```mysql
+SHOW TABLES;
+SHOW TABLES LIKE 'per%';
+SHOW TABLES LIKE 'perso_';
+```
+
+### 查看数据表
 
 ### 查看表结构
 
