@@ -93,7 +93,7 @@ mysql> exit
 
 还可以通过快捷键 `CTRL + D` 退出 `MySQL` 终端
 
-## 数据接操作
+## 数据库操作
 
 ### 查看数据库
 
@@ -105,6 +105,7 @@ SHOW DATABASES;
 
 ```mysql
 CREATE DATABASE `数据库名` CHARSET = `utf8`;
+CREATE DATABASE IF NOT EXISTS `数据库名` CHARSET = `utf8`;
 ```
 
 查看数据库的创建语句
@@ -143,7 +144,7 @@ DROP DATABASE `数据库名`
 SHOW TABLES;
 ```
 
-#### 查看表结构
+### 查看表结构
 
 ```mysql
 DESC `表名`;
