@@ -1,4 +1,4 @@
-### MySQL
+# MySQL
 
 [TOC]
 
@@ -134,7 +134,7 @@ DROP DATABASE `数据库名`
 |   `DEFAULT`   | 默认值约束 |
 | `FOREIGN KEY` |  外键约束  |
 
-> `MySQL` 不支持 `CHECK` 约束
+> MySQL 不支持 `CHECK` 约束
 
 ## 
 
@@ -957,6 +957,8 @@ DROP VIEW `视图名`;
 
 ### 使用步骤
 
+#### MySQL 中
+
 * 开启事务
 
     ```mysql
@@ -981,9 +983,33 @@ DROP VIEW `视图名`;
 
 - 禁用事务自动提交
 
-```mysql
-SET AUTOCOMMIT = 0;
-```
+    ```mysql
+    SET AUTOCOMMIT = 0;
+    ```
+
+#### JDBC 中
+
+- 关闭自动提交
+
+    如果自动提交事务，之后在 `commit` 和 `rollback` 方法之前的语句将被归为一组成为一个事务。
+
+    ```java
+    conn.setAutoCommit(false);
+    ```
+
+    提交事务
+
+    ```java
+    conn.commit();
+    ```
+
+- 回滚事务
+
+    ```java
+    conn.rollback();
+    ```
+
+    
 
 ## 索引
 
