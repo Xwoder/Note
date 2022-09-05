@@ -131,7 +131,7 @@ $ psql -h 127.0.0.1 -p 5432 -U postgres -d database_test
 
 #### `\c`
 
-切换数据库
+> 切换数据库
 
 ```postgresql
 \c 数据库名
@@ -151,11 +151,15 @@ $ psql -h 127.0.0.1 -p 5432 -U postgres -d database_test
 
 #### `\l` 或 `\list`
 
-查看所有的数据库
+> 查看所有的数据库
 
 #### `\q`
 
-退出数据库
+> 退出数据库
+
+#### `\dt`
+
+> 查看数据表
 
 ### 操作
 
