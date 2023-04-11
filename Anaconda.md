@@ -55,16 +55,22 @@ $ conda info --envs
 
 ```bash
 $ conda create --name 环境名称
+
+# 例
+$ conda create --name csv_test
 ```
 
 ```bash
 $ conda create --name 环境名称 python=版本号
+
+# 例
+$ conda create --name csv_test python=3.10
 ```
 
 指定创建 conda 环境并克隆指定环境包
 
-```python
-conda create -n 目标环境名 --clone 源环境名
+```bash
+$ conda create -n 目标环境名 --clone 源环境名
 ```
 
 ### 版本
@@ -143,45 +149,46 @@ rm -rf ~/anaconda3
 清理 `.bash_profile` 或 `.zsh_rc` 等用户配置文件的相关配置项
 
 ```shell
-conda info
+$ conda info
 ```
 
 ```shell
-conda config --show
+$ conda config --show
 ```
 
 ```shell
-conda update -n base conda
+$ conda update -n base conda
 ```
 
 ```shell
-conda update anaconda
+$ conda update anaconda
 ```
 
 ```shell
-conda update python 
+$ conda update python 
 ```
 
 ```shell
-conda list
-conda list 包名
+$ conda list
+$ conda list 包名
 ```
 
 ```shell
-conda list -n 环境名
+$ conda list -n 环境名
 ```
 
 ```shell
-conda search 包名
-conda search pandas
+$ conda search 包名
+# 例
+$ conda search pandas
 ```
 
 ```shell
-conda install 包名
-conda install pandas
-
-conda install 包名=版本号
-conda install pandas=1.4.2
+$ conda install 包名
+$ conda install 包名=版本号
+# 例
+$ conda install pandas
+$ conda install pandas=1.4.2
 ```
 
 ```shell
@@ -189,22 +196,38 @@ conda install "包名[version='版本号1 | 版本号2']"
 conda install "pandas[version='1.4.2 | 1.4.0']"
 ```
 
-```shell
-conda update 包名
-conda update pandas
-```
+## 更新
 
 ```shell
-conda remove 包名
-conda remove pandas
+$ conda update 包名
+$ pip install --upgrade package_name
+
+# 例
+$ conda update pandas
+$ pip install --upgrade pandas
 ```
 
-```shell
-conda activate 环境名
-conda activate quant
-```
+## 删除
 
 ```shell
-conda deactivate
+$ conda remove 包名
+# 例
+$ conda remove pandas
+```
+
+## 激活环境
+
+```shell
+# 激活环境
+$ conda activate 环境名
+# 例
+$ conda activate quant
+```
+
+## 反激活环境 
+
+```shell
+# 退出环境
+$ conda deactivate
 ```
 
