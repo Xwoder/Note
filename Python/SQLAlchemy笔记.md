@@ -1,22 +1,32 @@
 # SQLAlchemy 笔记
 
+## ORM 方式
+
 ```python
 import sqlalchemy
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import sessionmaker
 
-# 创建一个 SQLite 数据库引擎
+##################################################
+# 创建数据库引擎
+##################################################
 engine = create_engine('sqlite:///:memory:')
 
-# 创建一个会话类
+##################################################
+# 创建会话对象
+##################################################
 Session = sessionmaker(bind=engine)
 session = Session()
 
-# 创建一个基类来定义表格
+##################################################
+# 用于衍生类定义的基类
+##################################################
 Base = sqlalchemy.orm.declarative_base()
 
 
-# 定义一个示例表格类
+##################################################
+# 用户类
+##################################################
 class User(Base):
     __tablename__ = 'users'
     id = Column(Integer, primary_key=True)
@@ -30,7 +40,7 @@ class User(Base):
 
 
 ##################################################
-# 创建数据表
+# 创建表格
 ##################################################
 Base.metadata.create_all(engine)
 
