@@ -393,6 +393,31 @@ on_next: 2
 on_next: 3
 ```
 
+### start_with
+
+代码：
+
+```Python
+rx.of(1, 2, 3, 4, 5).pipe(
+    ops.start_with(-2, -1, 0)
+).subscribe(
+    on_next=lambda x: print(f"on_next: {x}"),
+)
+```
+
+输出：
+
+```text
+on_next: -2
+on_next: -1
+on_next: 0
+on_next: 1
+on_next: 2
+on_next: 3
+on_next: 4
+on_next: 5
+```
+
 ### last
 
 #### 例1
@@ -538,6 +563,24 @@ rx.of(1, 2, 2, 4, 2, 2, 1).pipe(
 on_next: 1
 on_next: 2
 on_next: 2
+```
+
+### take_last_buffer
+
+输出：
+
+```python
+rx.of(1, 2, 3, 4, 5).pipe(
+    ops.take_last_buffer(2)
+).subscribe(
+    on_next=lambda x: print(f"on_next: {x}"),
+)
+```
+
+代码：
+
+```text
+on_next: [4, 5]
 ```
 
 ### map
