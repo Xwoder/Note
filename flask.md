@@ -1,6 +1,65 @@
-# flask
+# Flask
 
-将以下代码所在的 `py` 文件命名为 `helloworld.py`
+## 安装
+
+```bash
+pip install flask
+```
+
+## app.run
+
+### debug模式
+
+#### IDE
+
+如果使用 `PyCharm Professional` 集成开发环境，则可以在 `Run/Debug Configurations`对话框中的勾选 `FLASK_DEBUG` 选项以使用 `debug` 模式。
+
+#### 代码
+
+如果使用其他编辑器或者集成开发环境，则可以通过在 `app.run` 方法中将 `debug` 参数指定为 `True` 以实现使用调试模式，如：
+
+```python
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+## 主机地址
+
+#### IDE
+
+如果使用 `PyCharm Professional` 集成开发环境，则可以在 `Run/Debug Configurations`对话框中的 `Additional options` 文本框中输入如下内容以指定要监听的端口，例如：
+
+```
+--host=0.0.0.0
+```
+
+#### 代码
+
+```python
+if __name__ == '__main__':
+    app.run(host="0.0.0.0")
+```
+
+## 端口
+
+#### IDE
+
+如果使用 `PyCharm Professional` 集成开发环境，则可以在 `Run/Debug Configurations`对话框中的 `Additional options` 文本框中输入如下内容以指定要监听的端口，例如：
+
+```
+--post=8080
+```
+
+#### 代码
+
+```python
+if __name__ == '__main__':
+    app.run(port=8080)
+```
+
+## 示例
+
+### 示例1
 
 ```python
 from flask import Flask
@@ -8,31 +67,21 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
+@app.route("/")
+def hello():
+    return "Hello World"
 
 
 if __name__ == '__main__':
     app.run()
 ```
 
-在终端中调用如下命令，即可启动 Web 服务器
+## Config 对象
 
-```bash
-$ python app.py 
-```
+## 模板
 
-将得到类似如下输出
+默认模板文件夹名称：`templates`
 
-```
- * Serving Flask app "app" (lazy loading)
- * Environment: production
-   WARNING: This is a development server. Do not use it in a production deployment.
-   Use a production WSGI server instead.
- * Debug mode: off
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-127.0.0.1 - - [14/Feb/2021 16:11:09] "GET / HTTP/1.1" 200 -
-```
+## 静态文件
 
-其中以 `http://` 开头的就是此次启动的 Web 服务器的地址。
+默认静态文件夹名称：`static`
