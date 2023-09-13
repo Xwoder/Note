@@ -44,7 +44,7 @@ if __name__ == '__main__':
 
 ## 端口
 
-#### IDE
+### IDE
 
 如果使用 `PyCharm Professional` 集成开发环境，则可以在 `Run/Debug Configurations`对话框中的 `Additional options` 文本框中输入如下内容以指定要监听的端口，例如：
 
@@ -52,7 +52,7 @@ if __name__ == '__main__':
 --post=8080
 ```
 
-#### 代码
+### 代码
 
 ```python
 if __name__ == '__main__':
