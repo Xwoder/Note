@@ -258,8 +258,6 @@ def index():
 | `@app.delete` | `DELETE`  | `@app.route(methods=["DELETE"])` |
 | `@app.patch`  |  `PATCH`  | `@app.route("methods=["PATCH"])` |
 
-
-
 ## 查询字符串
 
 可以使用查询字符串的形式传递参数，形如：
