@@ -580,7 +580,21 @@ if __name__ == '__main__':
     app.run()
 ```
 
+## 钩子函数
 
+- `after_request`
+- `before_first_request`
+- `before_request`
+- `teardown_appcontext`
+- `teardown_request`
+
+### before_first_request
+
+```python
+@app.before_first_request
+def before_first_request():
+    print('first time request')
+```
 
 ## 模板
 
