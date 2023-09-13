@@ -405,6 +405,105 @@ app.add_url_rule(rule="/person/",
                  view_func=User.as_view(name="person"))
 ```
 
+## 蓝图
+
+即 `Blueprint`
+
+```python
+from flask import Blueprint, Flask
+
+userBp = Blueprint(name="user",
+                   import_name=__name__,
+                   url_prefix="/user",
+                   template_folder="user/template",
+                   static_folder="user/static")
+
+
+@userBp.route(rule="/list")
+def userList():
+    return "用户列表"
+
+
+@userBp.route(rule="/profile/<int:userId>")
+def userProfile(userId: int):
+    return f"用户信息：{userId}"
+
+
+app = Flask(__name__)
+
+# 注册蓝图
+app.register_blueprint(userBp)
+
+if __name__ == '__main__':
+    app.run()
+```
+
+## Cookie
+
+- `Response` 对象的 `set_cookie` 方法用于设置 `cookie`
+- `Request` 对象的 `cookies` 属性用于获取 `cookie`
+
+```python
+from flask import make_response, request, Flask, Response
+
+app = Flask(__name__)
+
+
+# 设置cookie
+@app.route('/')
+def index():
+    resp: Response = make_response()
+    resp.set_cookie('username', 'Jack')
+    return resp
+
+
+# 获取cookie
+@app.route('/user/')
+def user():
+    username: str | None = request.cookies.get('username')
+    return f"Hello, {username}"
+
+
+if __name__ == '__main__':
+    app.run()
+```
+
+## Session
+
+```python
+from flask import session, Flask, redirect, url_for
+
+app = Flask(__name__)
+
+app.secret_key = b"abcdefg"
+
+
+@app.route('/')
+def index():
+    if 'username' in session:
+        # 访问 session
+        username = session["username"]
+        return f'Logged in as {username}'
+    return 'You are not logged in'
+
+
+@app.route('/login/')
+def login():
+    # 设置 session
+    session['username'] = "Jack"
+    return redirect(url_for('/'))
+
+
+@app.route('/logout/')
+def logout():
+		# 删除 session
+    session.pop('username', None)
+    return redirect(url_for('/'))
+
+```
+
+
+
 ## 模板
 
 默认模板文件夹名称：`templates`
