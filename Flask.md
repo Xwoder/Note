@@ -321,6 +321,90 @@ def sayHelloTo(name: str = None):
         return f"Hello, {name}"
 ```
 
+## 类视图
+
+- 以函数形式定义视图，这种方式被称为**函数视图**。
+- 以类的形式定义视图，这种方式被称为**类视图**。
+
+类视图的类应该继承自 `flask.views.View` 类，并实现 `dispatch_request` 方法。
+
+如下所示：
+
+```python
+# 例1
+class User(View):
+
+    def dispatch_request(self) -> ft.ResponseReturnValue:
+        return "User"
+
+# 例2
+class Person(View):
+
+    def dispatch_request(self) -> ft.ResponseReturnValue:
+        method = request.method
+
+        if method == "GET":
+            return "GET Method"
+        elif method == "POST":
+            return "POST Method"
+        else:
+            return "None"
+```
+
+之后通过 `app.add_url_rule` 方法将类视图与 `URL` 规则绑定：
+
+```python
+app.add_url_rule(rule="/user/", 
+                 view_func=User.as_view(name="user"))
+```
+
+其中，`as_view` 方法将类视图转换为视图函数，其 `name` 参数用于指定该视图函数的函数名，可用于 `url_for` 函数。
+
+### HTTP 方法限制
+
+`View` 类的 `methods` 类属性用于限制 HTTP 方法。
+
+```python
+# 例1
+class User(View):
+    # 仅支持 GET 方法
+    methods = ["GET"]
+
+    def dispatch_request(self) -> ft.ResponseReturnValue:
+        return "User"
+
+# 例2
+class Person(View):
+    # 同时支持 GET 和 POST 方法
+    methods = ["GET", "POST"]
+
+    def dispatch_request(self) -> ft.ResponseReturnValue:
+        method = request.method
+
+        if method == "GET":
+            return "GET Method"
+        elif method == "POST":
+            return "POST Method"
+        else:
+            return "None"
+```
+
+### MethodView 类
+
+`MethodView` 类是 `View` 类的子类，通过继承 `MethodView` 类，并实现 `get` 或 `post` 方法来实现对不同 `HTTP` 方法的控制，例如：
+
+```python
+class Person(MethodView):
+    def get(self):
+        return "GET Method"
+
+    def post(self):
+        return "POST Method"
+
+app.add_url_rule(rule="/person/", 
+                 view_func=User.as_view(name="person"))
+```
+
 ## 模板
 
 默认模板文件夹名称：`templates`
