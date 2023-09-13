@@ -502,6 +502,84 @@ def logout():
 
 ```
 
+## 信号
+
+### 内置信号
+
+|         信号名称          |     含义     |
+| :-----------------------: | :----------: |
+| `before_render_template`  | 模板渲染开始 |
+|    `template_rendered`    | 模板渲染结束 |
+|     `request_started`     |   请求开始   |
+|    `request_finished`     |   请求结束   |
+|  `request_tearing_down`   |              |
+|  `got_request_exception`  |              |
+| `appcontext_tearing_down` |              |
+|    `appcontext_pushed`    |              |
+|    `appcontext_popped`    |              |
+|     `message_flashed`     |              |
+
+#### template_rendered
+
+```python
+from typing import Any
+
+import flask
+from flask import Flask, render_template
+from jinja2 import Template
+
+app = Flask(__name__)
+
+
+def template_rendered_triggered(sender: Flask,
+                                template: Template,
+                                context: dict[str, Any],
+                                **extra):
+    print(f"sender: {sender}")
+    print(f"template: {template}")
+    print(f"context: {context}")
+    print(f"extra: {extra}")
+
+
+flask.template_rendered.connect(template_rendered_triggered,app)
+
+
+@app.get("/")
+def index():
+    return render_template("hello.html")
+
+
+if __name__ == '__main__':
+    app.run()
+```
+
+#### request_started
+
+```python
+import flask
+from flask import Flask
+
+app = Flask(__name__)
+
+
+def request_started_triggered(sender: Flask,
+                              **extra):
+    print(f"sender: {sender}")
+    print(f"extra: {extra}")
+
+
+flask.request_started.connect(request_started_triggered, app)
+
+
+@app.get("/")
+def index():
+    return "Hello World"
+
+
+if __name__ == '__main__':
+    app.run()
+```
+
 
 
 ## 模板
