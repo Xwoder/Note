@@ -281,6 +281,46 @@ def login():
 
 `request.args` 是一个继承自 `dict` 的对象，以键值对的形式保存了当前查询字符串的键和值，可以通过索引或`get` 方法获取。
 
+## 重定向
+
+使用 `flask.redirect` 实现重定向，其有两个参数：`location` 和 `code`。
+
+- `location` 参数：用于指定要定向到的视图函数的 `rule`。
+- `code` 参数：用于指定 `HTTP code`，默认为 `302`。
+
+```python
+@app.route("/")
+def index():
+    return redirect("/hello/")
+
+
+@app.route('/hello/')
+@app.route('/hello/<name>/')
+def sayHelloTo(name: str = None):
+    if name is None:
+        return "Hello"
+    else:
+        return f"Hello, {name}"
+```
+
+### url_for 函数
+
+`url_for` 函数接受一个视图函数的名称和其参数。
+
+```python
+@app.route("/")
+def index():
+    return redirect(url_for("sayHelloTo", name="Jack"))
+
+@app.route('/hello')
+@app.route('/hello/<name>')
+def sayHelloTo(name: str = None):
+    if name is None:
+        return "Hello"
+    else:
+        return f"Hello, {name}"
+```
+
 ## 模板
 
 默认模板文件夹名称：`templates`
